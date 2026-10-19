@@ -1,0 +1,45 @@
+INFO:     Started server process [5]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:41834 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET /assets/index-CLRe5ggT.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET /assets/index-f1kyCXaF.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET /api/projects HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:41834 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:41834 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET /api/config/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET /api/projects/1/messages HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "GET /api/projects/1/cards HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "GET /api/projects/1/agent/runs HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "GET /api/projects/1 HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "GET /api/projects/1 HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "GET /api/projects/1/tasks HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "PATCH /api/tasks/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/projects/1/submissions HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "POST /api/projects/1/submissions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/submissions/1/review HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "POST /api/submissions/1/review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/projects/1/submissions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/submissions/2/review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/projects/1/submissions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/submissions/3/review HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "POST /api/submissions/3/review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/projects/1/submissions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/submissions/4/review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/projects/1/submissions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/submissions/5/review HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:41834 - "POST /api/submissions/5/review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/projects/1/submissions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "POST /api/submissions/6/review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41834 - "GET /api/projects/1/submissions HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5]

@@ -106,9 +106,10 @@ def create_delivery(root, output="work/delivery/course-collaboration.zip", *, re
         raise FileExistsError(f"拒绝覆盖已有交付包：{destination}")
 
     selected = {}
-    for name in SOURCE_ROOTS:
-        path = _inside(root, name)
-        if path.exists():
+    source_names = {name.casefold() for name in SOURCE_ROOTS}
+    for entry in sorted(root.iterdir(), key=lambda item: item.name):
+        if entry.name.casefold() in source_names:
+            path = _inside(root, entry)
             _collect(root, path, selected)
 
     selected_results = []

@@ -1,0 +1,224 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/",
+      "role": null,
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-CLRe5ggT.js",
+      "role": null,
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/assets/index-f1kyCXaF.css",
+      "role": null,
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects",
+      "role": null,
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "role": null,
+      "status": 401
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "role": null,
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "role": null,
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "role": null,
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "role": null,
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/login",
+      "role": null,
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/config/status",
+      "role": "leader",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects",
+      "role": "leader",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/1/messages",
+      "role": "teacher",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/1/cards",
+      "role": "teacher",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/1/agent/runs",
+      "role": "teacher",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/1",
+      "role": "leader2",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/1",
+      "role": "member3",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/1/tasks",
+      "role": "member1",
+      "status": 200
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/tasks/1",
+      "role": "member1",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/1/submissions",
+      "role": "member1",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/1/submissions",
+      "role": "leader",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/1/review",
+      "role": "leader",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/1/review",
+      "role": "teacher",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/1/submissions",
+      "role": "leader",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/2/review",
+      "role": "teacher",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/1/submissions",
+      "role": "leader",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/3/review",
+      "role": "leader",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/3/review",
+      "role": "teacher",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/1/submissions",
+      "role": "leader",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/4/review",
+      "role": "teacher",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/1/submissions",
+      "role": "leader",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/5/review",
+      "role": "leader",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/5/review",
+      "role": "teacher",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/1/submissions",
+      "role": "leader",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/submissions/6/review",
+      "role": "teacher",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/1/submissions",
+      "role": "teacher",
+      "status": 200
+    }
+  ],
+  "browser_acceptance": false,
+  "model_calls": 0,
+  "note": "仅 HTTP；链接为明确标注的演示占位材料"
+}

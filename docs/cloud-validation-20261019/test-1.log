@@ -1,0 +1,195 @@
+...........FFFFFFFFF.................................FFF              [100%]
+=================================== FAILURES ===================================
+_________ test_launcher_defaults_to_8001_ai_disabled_and_isolated_data _________
+scripts/tests/test_defense_demo.py:255: in test_launcher_defaults_to_8001_ai_disabled_and_isolated_data
+    result, payload, destination = run_launcher(tmp_path)
+                                   ^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:244: in run_launcher
+    result = subprocess.run(command, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+____ test_launcher_opt_in_ai_still_overrides_env_data_and_appends_no_proxy _____
+scripts/tests/test_defense_demo.py:263: in test_launcher_opt_in_ai_still_overrides_env_data_and_appends_no_proxy
+    result, payload, destination = run_launcher(tmp_path, enable_ai=True, direct=True)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:244: in run_launcher
+    result = subprocess.run(command, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+__________ test_launcher_refuses_non_demo_data_before_running_python ___________
+scripts/tests/test_defense_demo.py:272: in test_launcher_refuses_non_demo_data_before_running_python
+    result, payload, _ = run_launcher(tmp_path, target='data')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:244: in run_launcher
+    result = subprocess.run(command, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+___________ test_launcher_refuses_empty_database_even_with_manifest ____________
+scripts/tests/test_defense_demo.py:277: in test_launcher_refuses_empty_database_even_with_manifest
+    result, payload, _ = run_launcher(tmp_path, database_bytes=b'')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:244: in run_launcher
+    result = subprocess.run(command, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+___ test_launcher_refuses_attachment_redirect_before_service[files_junction] ___
+scripts/tests/test_defense_demo.py:283: in test_launcher_refuses_attachment_redirect_before_service
+    result, payload, _ = run_launcher(tmp_path, attachments_mode=attachments_mode)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:226: in run_launcher
+    made = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(outside)], capture_output=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'cmd'
+__ test_launcher_refuses_attachment_redirect_before_service[nested_junction] ___
+scripts/tests/test_defense_demo.py:283: in test_launcher_refuses_attachment_redirect_before_service
+    result, payload, _ = run_launcher(tmp_path, attachments_mode=attachments_mode)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:226: in run_launcher
+    made = subprocess.run(['cmd', '/c', 'mklink', '/J', str(link), str(outside)], capture_output=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'cmd'
+___ test_launcher_refuses_attachment_redirect_before_service[file_hardlink] ____
+scripts/tests/test_defense_demo.py:283: in test_launcher_refuses_attachment_redirect_before_service
+    result, payload, _ = run_launcher(tmp_path, attachments_mode=attachments_mode)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:244: in run_launcher
+    result = subprocess.run(command, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+_____________ test_launcher_refuses_sqlite_magic_without_database ______________
+scripts/tests/test_defense_demo.py:288: in test_launcher_refuses_sqlite_magic_without_database
+    result, payload, _ = run_launcher(tmp_path, database_bytes=b'SQLite format 3\x00')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:244: in run_launcher
+    result = subprocess.run(command, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+__________ test_launcher_refuses_valid_sqlite_without_business_schema __________
+scripts/tests/test_defense_demo.py:293: in test_launcher_refuses_valid_sqlite_without_business_schema
+    result, payload, _ = run_launcher(tmp_path, uninitialized=True)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/tests/test_defense_demo.py:244: in run_launcher
+    result = subprocess.run(command, env=env, capture_output=True, text=True, encoding='utf-8', errors='replace')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+_ PackageDeliveryTests.test_case_variants_of_followup_results_are_excluded_before_reading (result_root='ExPeRiMeNtS/ReLiAbIlItY_FoLlOwUp/ReSuLtS') _
+scripts/tests/test_package_delivery.py:380: in test_case_variants_of_followup_results_are_excluded_before_reading
+    self.assertTrue(any(name.endswith("/runner.py") for name in package.namelist()))
+E   AssertionError: False is not true
+___________ test_test_command_isolates_environment_and_restores_it[] ___________
+scripts/tests/test_test_script.py:40: in test_test_command_isolates_environment_and_restores_it
+    result = subprocess.run([shutil.which('pwsh') or 'powershell', '-NoProfile', '-NonInteractive', '-Command', command],
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+_______ test_test_command_isolates_environment_and_restores_it[backend] ________
+scripts/tests/test_test_script.py:40: in test_test_command_isolates_environment_and_restores_it
+    result = subprocess.run([shutil.which('pwsh') or 'powershell', '-NoProfile', '-NonInteractive', '-Command', command],
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+_ test_test_command_isolates_environment_and_restores_it[experiments/reliability_followup/tests] _
+scripts/tests/test_test_script.py:40: in test_test_command_isolates_environment_and_restores_it
+    result = subprocess.run([shutil.which('pwsh') or 'powershell', '-NoProfile', '-NonInteractive', '-Command', command],
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py:1955: in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+E   FileNotFoundError: [Errno 2] No such file or directory: 'powershell'
+=============================== warnings summary ===============================
+scripts/tests/test_defense_demo.py::test_real_api_history_privacy_materials_and_member_update
+  /workspace/scratch/ebc8cdf16a51/biyesheji/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED scripts/tests/test_defense_demo.py::test_launcher_defaults_to_8001_ai_disabled_and_isolated_data
+FAILED scripts/tests/test_defense_demo.py::test_launcher_opt_in_ai_still_overrides_env_data_and_appends_no_proxy
+FAILED scripts/tests/test_defense_demo.py::test_launcher_refuses_non_demo_data_before_running_python
+FAILED scripts/tests/test_defense_demo.py::test_launcher_refuses_empty_database_even_with_manifest
+FAILED scripts/tests/test_defense_demo.py::test_launcher_refuses_attachment_redirect_before_service[files_junction]
+FAILED scripts/tests/test_defense_demo.py::test_launcher_refuses_attachment_redirect_before_service[nested_junction]
+FAILED scripts/tests/test_defense_demo.py::test_launcher_refuses_attachment_redirect_before_service[file_hardlink]
+FAILED scripts/tests/test_defense_demo.py::test_launcher_refuses_sqlite_magic_without_database
+FAILED scripts/tests/test_defense_demo.py::test_launcher_refuses_valid_sqlite_without_business_schema
+SUBFAILED(result_root='ExPeRiMeNtS/ReLiAbIlItY_FoLlOwUp/ReSuLtS') scripts/tests/test_package_delivery.py::PackageDeliveryTests::test_case_variants_of_followup_results_are_excluded_before_reading
+FAILED scripts/tests/test_test_script.py::test_test_command_isolates_environment_and_restores_it[]
+FAILED scripts/tests/test_test_script.py::test_test_command_isolates_environment_and_restores_it[backend]
+FAILED scripts/tests/test_test_script.py::test_test_command_isolates_environment_and_restores_it[experiments/reliability_followup/tests]
+13 failed, 44 passed, 1 warning, 74 subtests passed in 17.59s
