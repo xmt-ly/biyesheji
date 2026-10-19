@@ -1,0 +1,171 @@
+{
+  "createTime": "2026-10-11T13:43:06.843985Z",
+  "designTheme": {
+    "bodyFont": "GEIST",
+    "bodyFontFamily": "Geist",
+    "colorMode": "LIGHT",
+    "colorVariant": "FIDELITY",
+    "customColor": "#2f6f65",
+    "designMd": "---\nname: Studio Calm\ncolors:\n  surface: '#fbf8fc'\n  surface-dim: '#dcd9dd'\n  surface-bright: '#fbf8fc'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f6f2f7'\n  surface-container: '#f0edf1'\n  surface-container-high: '#eae7eb'\n  surface-container-highest: '#e4e1e6'\n  on-surface: '#1b1b1e'\n  on-surface-variant: '#3f4946'\n  inverse-surface: '#303033'\n  inverse-on-surface: '#f3f0f4'\n  outline: '#6f7976'\n  outline-variant: '#bfc9c5'\n  surface-tint: '#28685f'\n  primary: '#0f564d'\n  on-primary: '#ffffff'\n  primary-container: '#2f6f65'\n  on-primary-container: '#afefe2'\n  inverse-primary: '#93d3c6'\n  secondary: '#5e5e67'\n  on-secondary: '#ffffff'\n  secondary-container: '#e0dee9'\n  on-secondary-container: '#62626b'\n  tertiary: '#743e2e'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#905544'\n  on-tertiary-container: '#ffdad1'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#aeefe2'\n  primary-fixed-dim: '#93d3c6'\n  on-primary-fixed: '#00201c'\n  on-primary-fixed-variant: '#035047'\n  secondary-fixed: '#e3e1ec'\n  secondary-fixed-dim: '#c7c5d0'\n  on-secondary-fixed: '#1a1b23'\n  on-secondary-fixed-variant: '#46464f'\n  tertiary-fixed: '#ffdbd1'\n  tertiary-fixed-dim: '#ffb5a0'\n  on-tertiary-fixed: '#360e04'\n  on-tertiary-fixed-variant: '#6d3829'\n  background: '#fbf8fc'\n  on-background: '#1b1b1e'\n  surface-variant: '#e4e1e6'\n  paper-canvas: '#FAFAFA'\n  surface-white: '#FFFFFF'\n  zinc-wash: '#F4F4F5'\n  structural-line: '#E4E4E7'\n  zinc-ink: '#18181B'\n  secondary-ink: '#52525B'\n  studio-teal: '#2F6F65'\n  teal-wash: '#EEF5F3'\ntypography:\n  headline-page:\n    fontFamily: Geist\n    fontSize: 28px\n    fontWeight: '600'\n    lineHeight: 36px\n    letterSpacing: -0.02em\n  headline-section:\n    fontFamily: Geist\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 26px\n    letterSpacing: -0.01em\n  headline-card:\n    fontFamily: Geist\n    fontSize: 16px\n    fontWeight: '600'\n    lineHeight: 24px\n  body-default:\n    fontFamily: Geist\n    fontSize: 15px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-secondary:\n    fontFamily: Geist\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 22px\n  label-numeric:\n    fontFamily: JetBrains Mono\n    fontSize: 13px\n    fontWeight: '500'\n    lineHeight: 18px\n  caption:\n    fontFamily: Geist\n    fontSize: 12px\n    fontWeight: '500'\n    lineHeight: 16px\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  gutter: 1.5rem\n  margin: 1.5rem\n  space-xs: 0.25rem\n  space-sm: 0.5rem\n  space-md: 0.75rem\n  space-lg: 1rem\n  space-xl: 1.5rem\n---\n\n# Design System: 课协 · 课程项目智能协作系统\n\n## 1. Visual Theme & Atmosphere\n- 风格：安静的浅色课程工作室风格（Studio Calm），内容优先，结构清晰\n- 基础基调：Zinc 中性灰，纸面白底底色，细结构分隔线，微圆角（8px 按钮，12px 容器卡片）\n- 强调色：唯一松石绿 Studio Teal `#2F6F65`，次级选中底色淡松石 Teal Wash `#EEF5F3`\n- 中文排版：Geist, Noto Sans SC, sans-serif；等宽数字 Geist Mono\n- 避免 AI 霓虹、渐变大标题、虚假评分或营销卡片\n\n## 2. Color Palette & Roles\n- Paper Canvas (底色): #FAFAFA\n- Surface White (卡片/弹窗/容器): #FFFFFF\n- Zinc Wash (浅灰底色/悬停): #F4F4F5\n- Structural Line (边框线): #E4E4E7\n- Zinc Ink (主要文字): #18181B\n- Secondary Ink (次级说明): #52525B\n- Studio Teal (唯一强调色): #2F6F65\n- Teal Wash (选中底色): #EEF5F3\n\n## 3. Typography\n- 字体：Geist, Noto Sans SC, PingFang SC, sans-serif\n- 代码/数值：Geist Mono, JetBrains Mono, monospace\n- 标题：页标题 28px/650，区块标题 18px/600，卡片标题 16px/600\n- 正文：15px/1.65，表单/次级 14px\n\n## 4. Components\n- 侧栏：宽 224px，白底，右侧 1px 细线，学生完整导航项目\n- 顶栏：高 64px，白底，项目切换、面包屑、演示数据标记及用户信息\n- 工作台布局：左侧约 2/3 主工作区（本人下一步与核心任务），右侧约 1/3 辅助协作区（待核对草案与阶段提醒）\n- 任务卡：清晰展示状态、剩余工时、截止时间、需求关联、阻碍文字提示，主次动作明确\n",
+    "font": "GEIST",
+    "headlineFont": "GEIST",
+    "headlineFontFamily": "Geist",
+    "labelFont": "JETBRAINS_MONO",
+    "labelFontFamily": "JetBrains Mono",
+    "namedColors": {
+      "background": "#fbf8fc",
+      "error": "#ba1a1a",
+      "error_container": "#ffdad6",
+      "inverse_on_surface": "#f3f0f4",
+      "inverse_primary": "#93d3c6",
+      "inverse_surface": "#303033",
+      "on_background": "#1b1b1e",
+      "on_error": "#ffffff",
+      "on_error_container": "#93000a",
+      "on_primary": "#ffffff",
+      "on_primary_container": "#afefe2",
+      "on_primary_fixed": "#00201c",
+      "on_primary_fixed_variant": "#035047",
+      "on_secondary": "#ffffff",
+      "on_secondary_container": "#62626b",
+      "on_secondary_fixed": "#1a1b23",
+      "on_secondary_fixed_variant": "#46464f",
+      "on_surface": "#1b1b1e",
+      "on_surface_variant": "#3f4946",
+      "on_tertiary": "#ffffff",
+      "on_tertiary_container": "#ffdad1",
+      "on_tertiary_fixed": "#360e04",
+      "on_tertiary_fixed_variant": "#6d3829",
+      "outline": "#6f7976",
+      "outline_variant": "#bfc9c5",
+      "paper-canvas": "#FAFAFA",
+      "primary": "#0f564d",
+      "primary_container": "#2f6f65",
+      "primary_fixed": "#aeefe2",
+      "primary_fixed_dim": "#93d3c6",
+      "secondary": "#5e5e67",
+      "secondary-ink": "#52525B",
+      "secondary_container": "#e0dee9",
+      "secondary_fixed": "#e3e1ec",
+      "secondary_fixed_dim": "#c7c5d0",
+      "structural-line": "#E4E4E7",
+      "studio-teal": "#2F6F65",
+      "surface": "#fbf8fc",
+      "surface-white": "#FFFFFF",
+      "surface_bright": "#fbf8fc",
+      "surface_container": "#f0edf1",
+      "surface_container_high": "#eae7eb",
+      "surface_container_highest": "#e4e1e6",
+      "surface_container_low": "#f6f2f7",
+      "surface_container_lowest": "#ffffff",
+      "surface_dim": "#dcd9dd",
+      "surface_tint": "#28685f",
+      "surface_variant": "#e4e1e6",
+      "teal-wash": "#EEF5F3",
+      "tertiary": "#743e2e",
+      "tertiary_container": "#905544",
+      "tertiary_fixed": "#ffdbd1",
+      "tertiary_fixed_dim": "#ffb5a0",
+      "zinc-ink": "#18181B",
+      "zinc-wash": "#F4F4F5"
+    },
+    "overrideNeutralColor": "#18181b",
+    "overridePrimaryColor": "#2f6f65",
+    "overrideSecondaryColor": "#52525b",
+    "roundness": "ROUND_EIGHT",
+    "spacing": {
+      "gutter": "1.5rem",
+      "margin": "1.5rem",
+      "space-lg": "1rem",
+      "space-md": "0.75rem",
+      "space-sm": "0.5rem",
+      "space-xl": "1.5rem",
+      "space-xs": "0.25rem"
+    },
+    "spacingScale": 2,
+    "typography": {
+      "body-default": {
+        "fontFamily": "Geist",
+        "fontSize": "15px",
+        "fontWeight": "400",
+        "lineHeight": "24px"
+      },
+      "body-secondary": {
+        "fontFamily": "Geist",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "22px"
+      },
+      "caption": {
+        "fontFamily": "Geist",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "lineHeight": "16px"
+      },
+      "headline-card": {
+        "fontFamily": "Geist",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "lineHeight": "24px"
+      },
+      "headline-page": {
+        "fontFamily": "Geist",
+        "fontSize": "28px",
+        "fontWeight": "600",
+        "letterSpacing": "-0.02em",
+        "lineHeight": "36px"
+      },
+      "headline-section": {
+        "fontFamily": "Geist",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "letterSpacing": "-0.01em",
+        "lineHeight": "26px"
+      },
+      "label-numeric": {
+        "fontFamily": "JetBrains Mono",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "18px"
+      }
+    }
+  },
+  "deviceType": "DESKTOP",
+  "metadata": {
+    "userRole": "OWNER"
+  },
+  "name": "projects/10095907054989016469",
+  "origin": "STITCH",
+  "projectType": "PROJECT_DESIGN",
+  "screenInstances": [
+    {
+      "height": 1024,
+      "id": "3810f939f3134c559557d1b2f5c41717",
+      "label": "Generating Screen...",
+      "sourceScreen": "projects/10095907054989016469/screens/3810f939f3134c559557d1b2f5c41717",
+      "width": 1280,
+      "x": 1024
+    },
+    {
+      "height": 540,
+      "id": "assets_c91e42b7bf0a4156ba52ca59cd60d4bc",
+      "sourceAsset": "assets/c91e42b7bf0a4156ba52ca59cd60d4bc",
+      "type": "DESIGN_SYSTEM_INSTANCE",
+      "width": 960
+    },
+    {
+      "height": 884,
+      "id": "13110152016906758998",
+      "sourceScreen": "projects/10095907054989016469/screens/13110152016906758998",
+      "width": 390,
+      "x": 2404
+    }
+  ],
+  "thumbnailScreenshot": {
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WAwVie-2OCpPoTWMQ-lQYQ5of5BN3TTaOpC9p_Mko9_7k-Zz3Dg0xT7d5AVvCWKOzW2l5GZCG8BWh3hVW5Un7Cnxw9_qYEXTDisxGekQGyS_XNbHwa_ZGdivIFj1yknuUWHftwWv-wRzmF1_1WN9EYdI2Mk12yArmRQvKz9oq9V_UDULxRWUFMJklbwXS88g3NgqJk6f6hnSxNazQaGwz1YVC0Br7NuDXqnYpguFuYBSLCg5oe5o0yOSf9",
+    "name": "projects/10095907054989016469/files/73f988ade5394b10a42c58ac61780d41"
+  },
+  "title": "课协 · 学生课程项目智能协作系统",
+  "updateTime": "2026-10-11T13:45:56.057598Z",
+  "visibility": "PRIVATE"
+}

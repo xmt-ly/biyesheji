@@ -1,0 +1,251 @@
+{
+  "version": "2026-10-16-v1",
+  "run_mode": "dry_run",
+  "split": "eval",
+  "groups": [
+    "chat_only",
+    "context_only",
+    "agent"
+  ],
+  "repetitions": 2,
+  "seed": 20261016,
+  "max_calls": 180,
+  "cases_sha256": "bf617a5b1430e3660361b02b68b3c59a5b8310414fd5ec312560d380c9ad23eb",
+  "protocol_sha256": "d353244739b397b2de5284408a895c86a376adc88cabde08fc2038bd9c480d1c",
+  "prompt_version": "v2-tools",
+  "temperature": 0.2,
+  "per_analysis_timeout_seconds": 60,
+  "max_agent_rounds": 6,
+  "max_retries": 0,
+  "response_protocol": {
+    "$defs": {
+      "DraftTask": {
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "description": {
+            "default": "",
+            "maxLength": 20000,
+            "title": "Description",
+            "type": "string"
+          },
+          "requirement_id": {
+            "maximum": 9223372036854775807,
+            "minimum": 1,
+            "title": "Requirement Id",
+            "type": "integer"
+          },
+          "acceptance": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Acceptance",
+            "type": "string"
+          },
+          "assignee_id": {
+            "maximum": 9223372036854775807,
+            "minimum": 1,
+            "title": "Assignee Id",
+            "type": "integer"
+          },
+          "estimated_hours": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Estimated Hours",
+            "type": "number"
+          },
+          "remaining_hours": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Remaining Hours",
+            "type": "number"
+          },
+          "dependencies": {
+            "items": {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "type": "string"
+            },
+            "maxItems": 200,
+            "title": "Dependencies",
+            "type": "array"
+          },
+          "start_date": {
+            "format": "date",
+            "title": "Start Date",
+            "type": "string"
+          },
+          "due_date": {
+            "format": "date",
+            "title": "Due Date",
+            "type": "string"
+          },
+          "status": {
+            "default": "todo",
+            "enum": [
+              "todo",
+              "doing",
+              "done"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "progress": {
+            "default": 0,
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Progress",
+            "type": "number"
+          },
+          "artifact_url": {
+            "default": "",
+            "maxLength": 2000,
+            "title": "Artifact Url",
+            "type": "string"
+          },
+          "blocker": {
+            "default": "",
+            "maxLength": 10000,
+            "title": "Blocker",
+            "type": "string"
+          },
+          "stage_index": {
+            "default": 2,
+            "maximum": 2,
+            "minimum": 0,
+            "title": "Stage Index",
+            "type": "integer"
+          },
+          "key": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "title": "Key",
+            "type": "string"
+          },
+          "existing_id": {
+            "anyOf": [
+              {
+                "maximum": 9223372036854775807,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Existing Id"
+          }
+        },
+        "required": [
+          "title",
+          "requirement_id",
+          "acceptance",
+          "assignee_id",
+          "estimated_hours",
+          "remaining_hours",
+          "start_date",
+          "due_date",
+          "key"
+        ],
+        "title": "DraftTask",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "kind": {
+        "default": "plan",
+        "enum": [
+          "discussion",
+          "plan",
+          "adjust"
+        ],
+        "title": "Kind",
+        "type": "string"
+      },
+      "title": {
+        "default": "人工规划草案",
+        "maxLength": 200,
+        "minLength": 1,
+        "title": "Title",
+        "type": "string"
+      },
+      "summary": {
+        "maxLength": 20000,
+        "minLength": 1,
+        "title": "Summary",
+        "type": "string"
+      },
+      "questions": {
+        "items": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "maxItems": 100,
+        "title": "Questions",
+        "type": "array"
+      },
+      "source_message_ids": {
+        "items": {
+          "maximum": 9223372036854775807,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "maxItems": 200,
+        "title": "Source Message Ids",
+        "type": "array"
+      },
+      "tasks": {
+        "items": {
+          "$ref": "#/$defs/DraftTask"
+        },
+        "maxItems": 300,
+        "title": "Tasks",
+        "type": "array"
+      },
+      "supersedes_card_ids": {
+        "items": {
+          "maximum": 9223372036854775807,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "maxItems": 100,
+        "title": "Supersedes Card Ids",
+        "type": "array"
+      }
+    },
+    "required": [
+      "summary"
+    ],
+    "title": "AgentOutput",
+    "type": "object"
+  },
+  "response_format_forced": false,
+  "environment": {
+    "python": "3.12.12 | packaged by conda-forge | (main, Oct 22 2025, 23:13:34) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.22631-SP0"
+  },
+  "information_scope": {
+    "chat_only": "聊天室消息+共用名称编号目录",
+    "context_only": "与agent完全相同的ProjectTools业务上下文+消息",
+    "agent": "业务上下文+消息+生产工具和校验反馈"
+  },
+  "budget_difference": {
+    "chat_only": "单次请求",
+    "context_only": "单次请求",
+    "agent": "至多6次请求"
+  },
+  "model": null,
+  "base_url": null,
+  "preflight": null,
+  "freeze": null,
+  "stop_reason": null
+}

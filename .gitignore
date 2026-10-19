@@ -1,0 +1,45 @@
+# 本地配置与凭据
+.env
+.env.*
+!.env.example
+
+# 运行数据与中间产物
+data/
+work/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 前端依赖与构建产物
+frontend/node_modules/
+frontend/dist/
+*.log
+
+# 本机密钥、数据库与开发环境
+*.key
+*.pem
+*.p12
+*.pfx
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+.venv/
+venv/
+node_modules/
+.mypy_cache/
+.ruff_cache/
+.chart-data-*/
+
+# 编辑器与办公软件临时文件
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*

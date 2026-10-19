@@ -1,0 +1,81 @@
+test_all_oracle_labels_pass_local_scorer_and_public_constraints (test_candidate.CandidateTests.test_all_oracle_labels_pass_local_scorer_and_public_constraints) ... ok
+test_business_cases_are_new_and_deep_copied (test_candidate.CandidateTests.test_business_cases_are_new_and_deep_copied) ... ok
+test_candidate_documents_budget_and_synthetic_oracle_limits (test_candidate.CandidateTests.test_candidate_documents_budget_and_synthetic_oracle_limits) ... ok
+test_completed_task_protection_covers_every_entity_field (test_candidate.CandidateTests.test_completed_task_protection_covers_every_entity_field) ... ok
+test_execution_sources_are_byte_identical_to_reviewed_v3 (test_candidate.CandidateTests.test_execution_sources_are_byte_identical_to_reviewed_v3) ... ok
+test_expected_dates_and_hard_preservation_are_explicit (test_candidate.CandidateTests.test_expected_dates_and_hard_preservation_are_explicit) ... ok
+test_fixed_timezone_message_identity_and_creator_integrity (test_candidate.CandidateTests.test_fixed_timezone_message_identity_and_creator_integrity) ... ok
+test_initial_state_is_feasible_except_explicit_dependency_repair (test_candidate.CandidateTests.test_initial_state_is_feasible_except_explicit_dependency_repair) ... ok
+test_no_expectation_or_oracle_fields_enter_serialized_input (test_candidate.CandidateTests.test_no_expectation_or_oracle_fields_enter_serialized_input) ... ok
+test_preexisting_sources_results_and_locks_remain_unchanged (test_candidate.CandidateTests.test_preexisting_sources_results_and_locks_remain_unchanged) ... ok
+test_acceptance_failure_condition_and_forbidden_omission_are_positive (test_protocol.ProtocolTests.test_acceptance_failure_condition_and_forbidden_omission_are_positive) ... ok
+test_baseline_integrity_and_no_settings_startup (test_protocol.ProtocolTests.test_baseline_integrity_and_no_settings_startup) ... ok
+test_budget_and_zero_price_guard (test_protocol.ProtocolTests.test_budget_and_zero_price_guard) ... ok
+test_default_dry_run_no_sdk_or_environment (test_protocol.ProtocolTests.test_default_dry_run_no_sdk_or_environment) ... ok
+test_each_attempt_has_independent_real_sqlite (test_protocol.ProtocolTests.test_each_attempt_has_independent_real_sqlite) ... ok
+test_equivalent_questions_and_asserted_start_context (test_protocol.ProtocolTests.test_equivalent_questions_and_asserted_start_context) ... ok
+test_equivalent_video_acceptance_and_plan_questions_are_unresolved (test_protocol.ProtocolTests.test_equivalent_video_acceptance_and_plan_questions_are_unresolved) ... ok
+test_explicit_negation_cannot_satisfy_positive_acceptance_labels (test_protocol.ProtocolTests.test_explicit_negation_cannot_satisfy_positive_acceptance_labels) ... ok
+test_frozen_new_cases_and_no_label_leakage (test_protocol.ProtocolTests.test_frozen_new_cases_and_no_label_leakage) ... ok
+test_interrupted_running_attempt_cannot_count_success_even_with_saved_partial_output (test_protocol.ProtocolTests.test_interrupted_running_attempt_cannot_count_success_even_with_saved_partial_output) ... ok
+test_interruption_recovery_without_fabricated_response_and_complete_flag (test_protocol.ProtocolTests.test_interruption_recovery_without_fabricated_response_and_complete_flag) ... ok
+test_invalid_kind_remains_a_schema_failure (test_protocol.ProtocolTests.test_invalid_kind_remains_a_schema_failure) ... ok
+test_labels_have_feasible_expected_plan_and_ignore_unstated_stage (test_protocol.ProtocolTests.test_labels_have_feasible_expected_plan_and_ignore_unstated_stage) ... ok
+test_legal_kind_cannot_resolve_questions_in_a_plan (test_protocol.ProtocolTests.test_legal_kind_cannot_resolve_questions_in_a_plan) ... ok
+test_legal_kind_is_diagnostic_for_clarification_plan_and_adjustment (test_protocol.ProtocolTests.test_legal_kind_is_diagnostic_for_clarification_plan_and_adjustment) ... ok
+test_only_missing_questions_and_extra_questions_reported_separately (test_protocol.ProtocolTests.test_only_missing_questions_and_extra_questions_reported_separately) ... ok
+test_preserve_title_is_exact_even_when_another_alias_matches (test_protocol.ProtocolTests.test_preserve_title_is_exact_even_when_another_alias_matches) ... ok
+test_ranking_requires_complete_exact_case_repeat_matrix (test_protocol.ProtocolTests.test_ranking_requires_complete_exact_case_repeat_matrix) ... ok
+test_raw_content_accepts_only_bare_or_complete_json_fence_with_wrapper (test_protocol.ProtocolTests.test_raw_content_accepts_only_bare_or_complete_json_fence_with_wrapper) ... ok
+test_raw_content_rejects_multiple_fences_and_surrounding_text (test_protocol.ProtocolTests.test_raw_content_rejects_multiple_fences_and_surrounding_text) ... ok
+test_raw_duplicates_wrong_ids_and_completed_mutation_cannot_be_hidden (test_protocol.ProtocolTests.test_raw_duplicates_wrong_ids_and_completed_mutation_cannot_be_hidden) ... ok
+test_raw_finalize_analysis_keeps_original_arguments_and_last_response_only (test_protocol.ProtocolTests.test_raw_finalize_analysis_keeps_original_arguments_and_last_response_only) ... ok
+test_runner_api_also_enforces_global_180_limit (test_protocol.ProtocolTests.test_runner_api_also_enforces_global_180_limit) ... ok
+test_source_hallucination_and_missing_information (test_protocol.ProtocolTests.test_source_hallucination_and_missing_information) ... ok
+test_stopped_preflight_preserves_whole_plan_and_saved_score_only_summary (test_protocol.ProtocolTests.test_stopped_preflight_preserves_whole_plan_and_saved_score_only_summary) ... ok
+test_unknown_usage_costs_and_failures_stay_in_actual_denominator (test_protocol.ProtocolTests.test_unknown_usage_costs_and_failures_stay_in_actual_denominator) ... ok
+test_attempt_identity_and_input_hash_conflicts_reject_without_any_writes (test_protocol.RecoveryTests.test_attempt_identity_and_input_hash_conflicts_reject_without_any_writes) ... ok
+test_attempt_request_prefix_and_known_evidence_conflicts_reject_without_writes (test_protocol.RecoveryTests.test_attempt_request_prefix_and_known_evidence_conflicts_reject_without_writes) ... ok
+test_attempt_restores_returned_response_usage_and_tools_after_replace_crash (test_protocol.RecoveryTests.test_attempt_restores_returned_response_usage_and_tools_after_replace_crash) ... ok
+test_completed_attempt_is_preserved_without_rescoring_stale_running_records (test_protocol.RecoveryTests.test_completed_attempt_is_preserved_without_rescoring_stale_running_records) ... ok
+test_unknown_attempt_filename_rejects_without_writes (test_protocol.RecoveryTests.test_unknown_attempt_filename_rejects_without_writes) ... ok
+test_actual_nonzero_cost_stops_and_unknown_usage_stays_null (test_protocol.SDKIntegrationTests.test_actual_nonzero_cost_stops_and_unknown_usage_stays_null) ... ok
+test_default_sdk_construction_explicitly_disables_redirects_for_both_groups (test_protocol.SDKIntegrationTests.test_default_sdk_construction_explicitly_disables_redirects_for_both_groups) ... ok
+test_default_sdk_redirect_fails_after_one_recorded_post (test_protocol.SDKIntegrationTests.test_default_sdk_redirect_fails_after_one_recorded_post) ... ok
+test_failed_http_counts_once_sdk_retry_disabled_and_cost_unknown (test_protocol.SDKIntegrationTests.test_failed_http_counts_once_sdk_retry_disabled_and_cost_unknown) ... ok
+test_injected_provider_keeps_its_local_sdk_transport (test_protocol.SDKIntegrationTests.test_injected_provider_keeps_its_local_sdk_transport) ... ok
+test_new_provider_normalization_does_not_hide_raw_redundancy (test_protocol.SDKIntegrationTests.test_new_provider_normalization_does_not_hide_raw_redundancy) ... ok
+test_real_sdk_local_discussion_kind_can_return_e02_questions (test_protocol.SDKIntegrationTests.test_real_sdk_local_discussion_kind_can_return_e02_questions) ... Executing <Task finished name='Task-161' coro=<SDKIntegrationTests.test_real_sdk_local_discussion_kind_can_return_e02_questions() done, defined at D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_protocol.py:661> result=None created at D:\Anaconda3\envs\face_env\Lib\asyncio\runners.py:100> took 0.125 seconds
+ok
+test_real_sdk_local_fenced_json_preserves_raw_strict_success (test_protocol.SDKIntegrationTests.test_real_sdk_local_fenced_json_preserves_raw_strict_success) ... ok
+test_real_sdk_local_transport_old_json_and_new_finalize (test_protocol.SDKIntegrationTests.test_real_sdk_local_transport_old_json_and_new_finalize) ... ok
+test_six_round_limit_and_recorded_tool_checkpoints (test_protocol.SDKIntegrationTests.test_six_round_limit_and_recorded_tool_checkpoints) ... ok
+test_total_deadline_and_global_budget_stop (test_protocol.SDKIntegrationTests.test_total_deadline_and_global_budget_stop) ... ok
+test_unsupported_raw_task_becomes_four_safe_questions_in_public_output (test_protocol.SDKIntegrationTests.test_unsupported_raw_task_becomes_four_safe_questions_in_public_output) ... ok
+
+----------------------------------------------------------------------
+Ran 53 tests in 13.903s
+
+OK
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+零价或冻结预检未通过；完整计划与停止原因已保存，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。
+离线计划：6 个样例、24 项，模型请求 0 次。

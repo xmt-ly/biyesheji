@@ -1,0 +1,25 @@
+sequenceDiagram
+    actor M as 团队成员
+    actor L as 项目组长
+    participant UI as 前端工作区
+    participant API as 卡片发布接口
+    participant CK as 完整集合检查
+    participant DB as 数据库事务
+    M->>UI: 补充信息与反馈草案
+    L->>UI: 核对并确认发布
+    UI->>API: POST cards/id/publish
+    API->>API: 校验本项目组长权限
+    API->>DB: 查询已有发布结果
+    alt 已发布
+        DB-->>API: 原计划
+        API-->>UI: 返回同一结果
+    else 未发布
+        API->>API: 检查状态 修订与来源
+        API->>CK: 叠加全部任务后复验
+        CK-->>API: 约束结果
+        API->>DB: 条件更新项目 revision
+        API->>DB: 写任务 依赖 快照 审计与发布关联
+        DB-->>API: 统一提交或失败回滚
+        API-->>UI: 发布结果
+        API-->>UI: 广播项目与卡片变化
+    end

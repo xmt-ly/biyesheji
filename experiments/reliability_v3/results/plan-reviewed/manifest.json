@@ -1,0 +1,293 @@
+{
+  "version": "2026-10-20-reliability-v3.1",
+  "run_mode": "dry_run",
+  "split": "eval",
+  "groups": [
+    "baseline_v2",
+    "improved_v3"
+  ],
+  "case_ids": [
+    "V3E01",
+    "V3E02",
+    "V3E03",
+    "V3E04",
+    "V3E05",
+    "V3E06"
+  ],
+  "repetitions": 2,
+  "seed": 20261020,
+  "max_calls": 180,
+  "worst_case_model_requests": 144,
+  "cases_sha256": "193b68e2a8823b456228589a79139f121b802a4597c5f26a04aa605bb22db7aa",
+  "protocol_sha256": "fe16dce24d4e543deb103fee3d4e58efffe2386c3831b51ba325429442290dc7",
+  "source_sha256": {
+    "__init__.py": "99bfb35af4ae894fadf76d13938e0d0e5258fa6d9a487263c2e91ba115e24584",
+    "backend.py": "9d51a8b571d6290206128d1f7589bed1fffd5531f3fa289e865357ee0a88fad1",
+    "cases.py": "b3dd9b2980de34a98feb212a72e5a2f3f3c49363bde8b77ab129d8ac0270c7db",
+    "runner.py": "2cdf04ae633ffa7874511d0da537af4c0f861a7087c2ada540152c1ae85a758e",
+    "scoring.py": "815434c027f6e1c3ae8ad38c2a630f868d169a74fa27cff301f9061944204921",
+    "state.py": "4b936b5ab2204dba7fbd2e93be23d9e36bcbd9361bd3bb0756408323a8e9afe7",
+    "tests/test_protocol.py": "b44edc287744836cc298bae887d232bf743797ac53dfb454cfba94fb4dce3875",
+    "PROTOCOL.md": "403f04b45f7286aff0f6041b9a2d6aecb26549dfe13fc7b1cb782897dad9f413",
+    "README.md": "1a351e55341b417ebc505d5d0a4cc84f393eb7992cf46cbbc5933edfbb950696",
+    "baseline/agent.py": "249ee3f3e5eae67abbe1f9e52299b5509fb50b3eb8593eed2c4fc51d21befaae",
+    "baseline/database.py": "0f090729bcbdcde97cb7bddc6e57f8e0e35b86ace16f2fecd6ad93651b37eddc",
+    "baseline/manifest.json": "0f0533b73915e0d4fd2973cfb68dc9931fdfae9f8664819b3933bed21dbf3a93",
+    "baseline/models.py": "a699ec3cfce9f5961ee92a354fba325cf969712b3856de45416c61e8cd3b4324",
+    "baseline/permissions.py": "ac99b9d3ed0d17618eec924cbb832b03e8ea3e42fbc6c73b8ac9d6c213533474",
+    "baseline/planning.py": "968fbb218dcd6d057258fba6bf3cdf979cf0cc4427f4e674765799201fc2e95f",
+    "baseline/schemas.py": "3a33d4d62ab296bdc7442c68affc92877227eddc327814d4baf076554da981a2",
+    "baseline/serializers.py": "7a6f1a45ff3fc8c02251cfe8c837130afc8a647edf9c28b1e9b6ccf727e7e97b",
+    "production/agent.py": "5a8eb09d6e4b42fb4bcad19844e3df5247cfd4a83e1469757f4014d3bf8fe679",
+    "production/agent_output.py": "b320b126fdbb78aa50c3293aa2142317b6fae57ea00faa91c714913b2a372e1a",
+    "production/database.py": "0f090729bcbdcde97cb7bddc6e57f8e0e35b86ace16f2fecd6ad93651b37eddc",
+    "production/models.py": "a699ec3cfce9f5961ee92a354fba325cf969712b3856de45416c61e8cd3b4324",
+    "production/permissions.py": "ac99b9d3ed0d17618eec924cbb832b03e8ea3e42fbc6c73b8ac9d6c213533474",
+    "production/planning.py": "968fbb218dcd6d057258fba6bf3cdf979cf0cc4427f4e674765799201fc2e95f",
+    "production/schemas.py": "3a33d4d62ab296bdc7442c68affc92877227eddc327814d4baf076554da981a2",
+    "production/serializers.py": "7a6f1a45ff3fc8c02251cfe8c837130afc8a647edf9c28b1e9b6ccf727e7e97b",
+    "shared/transport.py": "905cca7ee455d810eb45921299a26d47fbdbb26bf1b3d803dfe77f9e8f494ff5"
+  },
+  "baseline_sha256": {
+    "agent.py": "249ee3f3e5eae67abbe1f9e52299b5509fb50b3eb8593eed2c4fc51d21befaae",
+    "schemas.py": "3a33d4d62ab296bdc7442c68affc92877227eddc327814d4baf076554da981a2",
+    "planning.py": "968fbb218dcd6d057258fba6bf3cdf979cf0cc4427f4e674765799201fc2e95f",
+    "models.py": "a699ec3cfce9f5961ee92a354fba325cf969712b3856de45416c61e8cd3b4324",
+    "serializers.py": "7a6f1a45ff3fc8c02251cfe8c837130afc8a647edf9c28b1e9b6ccf727e7e97b",
+    "database.py": "0f090729bcbdcde97cb7bddc6e57f8e0e35b86ace16f2fecd6ad93651b37eddc",
+    "permissions.py": "ac99b9d3ed0d17618eec924cbb832b03e8ea3e42fbc6c73b8ac9d6c213533474"
+  },
+  "temperature": 0.2,
+  "per_analysis_timeout_seconds": 60,
+  "max_requests_per_analysis": 6,
+  "max_retries": 0,
+  "response_schema": {
+    "$defs": {
+      "DraftTask": {
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "description": {
+            "default": "",
+            "maxLength": 20000,
+            "title": "Description",
+            "type": "string"
+          },
+          "requirement_id": {
+            "maximum": 9223372036854775807,
+            "minimum": 1,
+            "title": "Requirement Id",
+            "type": "integer"
+          },
+          "acceptance": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Acceptance",
+            "type": "string"
+          },
+          "assignee_id": {
+            "maximum": 9223372036854775807,
+            "minimum": 1,
+            "title": "Assignee Id",
+            "type": "integer"
+          },
+          "estimated_hours": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Estimated Hours",
+            "type": "number"
+          },
+          "remaining_hours": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Remaining Hours",
+            "type": "number"
+          },
+          "dependencies": {
+            "items": {
+              "maxLength": 80,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "type": "string"
+            },
+            "maxItems": 200,
+            "title": "Dependencies",
+            "type": "array"
+          },
+          "start_date": {
+            "format": "date",
+            "title": "Start Date",
+            "type": "string"
+          },
+          "due_date": {
+            "format": "date",
+            "title": "Due Date",
+            "type": "string"
+          },
+          "status": {
+            "default": "todo",
+            "enum": [
+              "todo",
+              "doing",
+              "done"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "progress": {
+            "default": 0,
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Progress",
+            "type": "number"
+          },
+          "artifact_url": {
+            "default": "",
+            "maxLength": 2000,
+            "title": "Artifact Url",
+            "type": "string"
+          },
+          "blocker": {
+            "default": "",
+            "maxLength": 10000,
+            "title": "Blocker",
+            "type": "string"
+          },
+          "stage_index": {
+            "default": 2,
+            "maximum": 2,
+            "minimum": 0,
+            "title": "Stage Index",
+            "type": "integer"
+          },
+          "key": {
+            "maxLength": 80,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "title": "Key",
+            "type": "string"
+          },
+          "existing_id": {
+            "anyOf": [
+              {
+                "maximum": 9223372036854775807,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Existing Id"
+          }
+        },
+        "required": [
+          "title",
+          "requirement_id",
+          "acceptance",
+          "assignee_id",
+          "estimated_hours",
+          "remaining_hours",
+          "start_date",
+          "due_date",
+          "key"
+        ],
+        "title": "DraftTask",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "kind": {
+        "default": "plan",
+        "enum": [
+          "discussion",
+          "plan",
+          "adjust"
+        ],
+        "title": "Kind",
+        "type": "string"
+      },
+      "title": {
+        "default": "人工规划草案",
+        "maxLength": 200,
+        "minLength": 1,
+        "title": "Title",
+        "type": "string"
+      },
+      "summary": {
+        "maxLength": 20000,
+        "minLength": 1,
+        "title": "Summary",
+        "type": "string"
+      },
+      "questions": {
+        "items": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "maxItems": 100,
+        "title": "Questions",
+        "type": "array"
+      },
+      "source_message_ids": {
+        "items": {
+          "maximum": 9223372036854775807,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "maxItems": 200,
+        "title": "Source Message Ids",
+        "type": "array"
+      },
+      "tasks": {
+        "items": {
+          "$ref": "#/$defs/DraftTask"
+        },
+        "maxItems": 300,
+        "title": "Tasks",
+        "type": "array"
+      },
+      "supersedes_card_ids": {
+        "items": {
+          "maximum": 9223372036854775807,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "maxItems": 100,
+        "title": "Supersedes Card Ids",
+        "type": "array"
+      }
+    },
+    "required": [
+      "summary"
+    ],
+    "title": "AgentOutput",
+    "type": "object"
+  },
+  "environment": {
+    "python": "3.12.12 | packaged by conda-forge | (main, Oct 22 2025, 23:13:34) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "D:\\Anaconda3\\envs\\face_env\\python.exe",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "packages": {
+      "openai": "2.54.0",
+      "httpx": "0.28.1",
+      "pydantic": "2.12.5",
+      "SQLAlchemy": "2.0.45",
+      "fastapi": "0.135.3"
+    }
+  },
+  "model": null,
+  "base_url": null,
+  "freeze": null,
+  "preflight": null,
+  "stop_reason": null,
+  "comparison_scope": "同一完整初始上下文/消息；版本提示和工具能力的整体方案差异，不能推断纯工具因果效应"
+}

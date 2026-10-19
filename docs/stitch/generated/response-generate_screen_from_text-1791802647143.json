@@ -1,0 +1,49 @@
+{
+  "outputComponents": [
+    {
+      "design": {
+        "screens": [
+          {
+            "deviceType": "DESKTOP",
+            "generatedBy": "create_datastore_entry",
+            "height": "2048",
+            "htmlCode": {
+              "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzIxZmM5MjdlYWY4ODRmNzhhMjdmMDYzYTVjMjNkZjI1EgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+              "mimeType": "text/html",
+              "name": "projects/10095907054989016469/files/390ce7919e3346c3b733f440317448cd"
+            },
+            "id": "8a9e74c2494c40c0b0e25bfc50511f71",
+            "name": "projects/10095907054989016469/screens/8a9e74c2494c40c0b0e25bfc50511f71",
+            "screenMetadata": {
+              "agentType": "PRO_AGENT",
+              "status": "COMPLETE"
+            },
+            "screenType": "DESIGN",
+            "screenshot": {
+              "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VeIUF6QHVeDmZCsxyKd9oF7tQtigJlWzmExbFEY_39YhhOTCNWzAZGQkobxY2wpfW80BfgA9JTZKoIqAwOr336HSkNNsN20Zk_0wzTcuIbLDONYl5haawlgJr_x-iuPD8GNTXzadrstoX-wBlH7FXa5XFranDgWDqKZaJEbX2rTeoJSwDUVrsT5itYT-3JLIWROCvXObC5Kqs8u825OJS7I2cmKwntheJsYKiez8cVnDPdBLU5p96YFwg",
+              "name": "projects/10095907054989016469/files/eb492e3ffd8141939da6d78fa0795b4c"
+            },
+            "theme": {},
+            "title": "教师阶段审核 - 课协",
+            "width": "2560"
+          }
+        ],
+        "theme": {}
+      }
+    },
+    {
+      "text": "已根据“课协”统一浅色松石绿（Studio Teal `#2F6F65`）设计规范与严格的教师角色业务边界，生成了 1440×1100 桌面端「教师阶段审核」高保真页面（教师阶段审核 - 课协）：\n\n### 核心设计与业务逻辑实现：\n\n1. **统一设计语言与画布规格**：\n   - **版式与基底**：页面底色为纸白 `#FAFAFA`，内容卡片使用纯白 `#FFFFFF`，边框采用 1px 细结构灰 `#E4E4E7`，圆角规范为 12px，中文正文 15px，无衬线字体优雅排布。\n   - **强调色**：唯一强调色 Studio Teal `#2F6F65` 配合低强度 `#EEF5F3`（Teal Wash）用于高亮与当前选中项，严格杜绝多余渐变和外发光。\n\n2. **教师端专属导航与职责边界**：\n   - **导航结构**：侧栏（224px）仅包含「项目概览、已确认需求、任务看板、计划与排期、阶段成果、课程要求」，顶部带“一组课程项目 / 二组课程项目”快速切换下拉。\n   - **无跨界元素**：无学生聊天室入口、无学生内部 Agent 诊断卡片、无底层代码分支或消息原文，教师仅作为指导者观察与评估。\n\n3. **清晰的 1:2 非对称双列布局**：\n   - **左侧阶段与提交历史（约 1/3）**：\n     - 固定三个课程阶段：**阶段一（需求与计划，10-25）**、**阶段二（开发中期检查，11-15）**、**阶段三（最终系统验收，12-06）**。状态严格限定为：未提交、待审核、通过、需要修改。\n     - 阶段一历史版本清晰呈现：**v1 初始提交（需要修改，保留教师历史反馈“请补充权限矩阵与验收条件”）**、**v2 提交版本（待审核，当前选中）**。\n     - 明确指出后两阶段未提交时学生日常任务正常推进，教师审核不阻断学生协作。\n   - **右侧材料详情、进度快照与审核表单（约 2/3）**：\n     - **交付材料**：展示提交说明（“已补充需求关联、验收条件与延期依据”）、关联计划基准 v2.0，以及可供教师直接下载的阶段材料清单（`需求与计划演示.md`、排期甘特导出等）。杜绝虚假的 SHA-256 签名与全员签署流程。\n     - **客观进度快照**：真实展示 2 项任务、已完成 0 项，整体完成率严格标为 0%（不把单项 40% 误导为全项目完成），清楚罗列成员甲 `#T-101`（进行中 40%、剩余 4h、10-17 截止）与成员乙 `#T-102`（待开始 0%、剩余 6h、10-16 截止），杜绝虚构实际工时或分数。\n     - **审核表单**：提供明确的“检查结果”单选（通过 / 需要修改）与必填的“指导意见与评审批注”输入框，主操作按钮为“保存审核意见”，近旁说明“审核记录阶段结果，任务进度由成员更新”。"
+    },
+    {
+      "suggestion": "切换查看阶段一 v1 历史归档状态下的只读对比界面"
+    },
+    {
+      "suggestion": "生成教师端“项目概览”或“已确认需求”页面以补全教师工作台流"
+    },
+    {
+      "suggestion": "针对手机端窄屏折叠教师评审流程进行响应式适配设计"
+    }
+  ],
+  "projectId": "10095907054989016469",
+  "sessionId": "7618783825008342346"
+}

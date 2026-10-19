@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>课协 · 智协系统 - 任务看板与成员任务详情</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#28685f",
+            "on-secondary-fixed": "#1a1b23",
+            "on-secondary-container": "#62626b",
+            "on-secondary-fixed-variant": "#46464f",
+            "on-tertiary-fixed": "#360e04",
+            "secondary-fixed": "#e3e1ec",
+            "surface-container-low": "#f6f2f7",
+            "secondary": "#5e5e67",
+            "background": "#fbf8fc",
+            "primary-fixed": "#aeefe2",
+            "surface-container": "#f0edf1",
+            "on-tertiary-container": "#ffdad1",
+            "inverse-on-surface": "#f3f0f4",
+            "on-primary-fixed-variant": "#035047",
+            "zinc-wash": "#F4F4F5",
+            "surface-bright": "#fbf8fc",
+            "secondary-fixed-dim": "#c7c5d0",
+            "inverse-primary": "#93d3c6",
+            "on-surface": "#1b1b1e",
+            "teal-wash": "#EEF5F3",
+            "surface-white": "#FFFFFF",
+            "tertiary-fixed": "#ffdbd1",
+            "structural-line": "#E4E4E7",
+            "on-primary-container": "#afefe2",
+            "surface-variant": "#e4e1e6",
+            "studio-teal": "#2F6F65",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e4e1e6",
+            "secondary-ink": "#52525B",
+            "primary-fixed-dim": "#93d3c6",
+            "on-primary": "#ffffff",
+            "outline": "#6f7976",
+            "on-tertiary-fixed-variant": "#6d3829",
+            "secondary-container": "#e0dee9",
+            "outline-variant": "#bfc9c5",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "tertiary-container": "#905544",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#743e2e",
+            "zinc-ink": "#18181B",
+            "surface-dim": "#dcd9dd",
+            "primary": "#0f564d",
+            "on-surface-variant": "#3f4946",
+            "error": "#ba1a1a",
+            "surface-container-high": "#eae7eb",
+            "on-background": "#1b1b1e",
+            "on-primary-fixed": "#00201c",
+            "inverse-surface": "#303033",
+            "surface": "#fbf8fc",
+            "paper-canvas": "#FAFAFA",
+            "primary-container": "#2f6f65"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "label-numeric": ["JetBrains Mono", "monospace"],
+            "caption": ["Geist", "Noto Sans SC", "sans-serif"],
+            "headline-card": ["Geist", "Noto Sans SC", "sans-serif"],
+            "body-default": ["Geist", "Noto Sans SC", "sans-serif"],
+            "headline-section": ["Geist", "Noto Sans SC", "sans-serif"],
+            "headline-page": ["Geist", "Noto Sans SC", "sans-serif"],
+            "body-secondary": ["Geist", "Noto Sans SC", "sans-serif"]
+          },
+          "fontSize": {
+            "label-numeric": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-card": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-default": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-section": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-page": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-secondary": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #E4E4E7;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #D4D4D8;
+    }
+  </style>
+</head>
+<body class="h-full bg-paper-canvas text-zinc-ink antialiased overflow-hidden flex font-body-default">
+<!-- ==================== SHARED COMPONENT: SideNavBar ==================== -->
+<aside class="fixed top-0 left-0 h-screen w-56 z-40 flex flex-col justify-between p-space-md bg-surface-white dark:bg-surface border-r border-structural-line dark:border-outline-variant select-none">
+<div class="flex flex-col gap-y-4">
+<!-- App Header & Workspace Switcher -->
+<div class="px-2 pt-1 pb-2">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-6 h-6 rounded bg-studio-teal flex items-center justify-center text-surface-white font-headline-card text-xs">
+            课
+          </div>
+<span class="font-headline-section text-headline-section text-zinc-ink dark:text-inverse-on-surface tracking-tight">课协 · 智协系统</span>
+</div>
+<p class="font-caption text-caption text-secondary-ink pl-8">CS Course Studio</p>
+</div>
+<!-- Project Switcher Card -->
+<div class="px-2 py-2 bg-zinc-wash rounded-lg border border-structural-line">
+<div class="flex items-center justify-between">
+<div class="overflow-hidden">
+<span class="font-caption text-caption text-secondary-ink block truncate">一组课程项目</span>
+<span class="font-headline-card text-xs text-zinc-ink block truncate font-medium">CS301 软件工程实训</span>
+</div>
+<button class="text-secondary-ink hover:text-studio-teal transition-colors p-1" title="切换项目" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+</button>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 mt-1">
+<!-- 1. 工作台 -->
+<a class="flex items-center gap-2.5 px-3 py-2 text-secondary-ink dark:text-on-surface-variant hover:bg-zinc-wash dark:hover:bg-surface-variant rounded-lg font-body-secondary transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>工作台</span>
+</a>
+<!-- 2. 项目概览 -->
+<a class="flex items-center gap-2.5 px-3 py-2 text-secondary-ink dark:text-on-surface-variant hover:bg-zinc-wash dark:hover:bg-surface-variant rounded-lg font-body-secondary transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">overview</span>
+<span>项目概览</span>
+</a>
+<!-- 3. 团队协作 -->
+<a class="flex items-center gap-2.5 px-3 py-2 text-secondary-ink dark:text-on-surface-variant hover:bg-zinc-wash dark:hover:bg-surface-variant rounded-lg font-body-secondary transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">group_work</span>
+<span>团队协作</span>
+</a>
+<!-- 4. 需求清单 -->
+<a class="flex items-center gap-2.5 px-3 py-2 text-secondary-ink dark:text-on-surface-variant hover:bg-zinc-wash dark:hover:bg-surface-variant rounded-lg font-body-secondary transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">checklist</span>
+<span>需求清单</span>
+</a>
+<!-- 5. 任务看板 (ACTIVE) -->
+<a class="flex items-center gap-2.5 px-3 py-2 bg-teal-wash dark:bg-primary-container text-studio-teal dark:text-on-primary-container rounded-lg font-headline-card transition-colors duration-150 active:scale-[0.99] border-l-[3px] border-studio-teal" href="#">
+<span class="material-symbols-outlined text-studio-teal">view_kanban</span>
+<span>任务看板</span>
+</a>
+<!-- 6. 计划与排期 -->
+<a class="flex items-center gap-2.5 px-3 py-2 text-secondary-ink dark:text-on-surface-variant hover:bg-zinc-wash dark:hover:bg-surface-variant rounded-lg font-body-secondary transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span>计划与排期</span>
+</a>
+<!-- 7. 阶段成果 -->
+<a class="flex items-center gap-2.5 px-3 py-2 text-secondary-ink dark:text-on-surface-variant hover:bg-zinc-wash dark:hover:bg-surface-variant rounded-lg font-body-secondary transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span>阶段成果</span>
+</a>
+<!-- 8. 团队成员 -->
+<a class="flex items-center gap-2.5 px-3 py-2 text-secondary-ink dark:text-on-surface-variant hover:bg-zinc-wash dark:hover:bg-surface-variant rounded-lg font-body-secondary transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span>团队成员</span>
+</a>
+<!-- 9. 课程要求 -->
+<a class="flex items-center gap-2.5 px-3 py-2 text-secondary-ink dark:text-on-surface-variant hover:bg-zinc-wash dark:hover:bg-surface-variant rounded-lg font-body-secondary transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>课程要求</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer -->
+<div class="pt-3 border-t border-structural-line flex flex-col gap-1">
+<div class="flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-zinc-wash transition-colors">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-teal-wash text-studio-teal border border-studio-teal/30 flex items-center justify-center font-headline-card text-xs">
+            甲
+          </div>
+<div class="flex flex-col">
+<span class="font-body-secondary text-xs text-zinc-ink font-medium leading-none">一组成员甲</span>
+<span class="font-caption text-[11px] text-secondary-ink leading-tight">前端开发</span>
+</div>
+</div>
+</div>
+<button class="flex items-center gap-2 px-2 py-1.5 text-secondary-ink hover:text-zinc-ink hover:bg-zinc-wash rounded-lg transition-colors font-body-secondary text-xs w-full text-left" type="button">
+<span class="material-symbols-outlined text-[16px]">logout</span>
+<span>退出登录</span>
+</button>
+</div>
+</aside>
+<!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+<div class="pl-56 w-full h-screen flex flex-col">
+<!-- ==================== SHARED COMPONENT: TopNavBar ==================== -->
+<header class="h-16 w-full flex-none bg-surface-white dark:bg-surface border-b border-structural-line dark:border-outline-variant px-gutter flex items-center justify-between select-none z-30">
+<!-- Breadcrumbs & Date Anchor -->
+<div class="flex items-center gap-3">
+<nav class="flex items-center gap-1.5 font-body-secondary text-body-secondary text-secondary-ink">
+<span>课协</span>
+<span class="text-structural-line">/</span>
+<span>一组课程项目</span>
+<span class="text-structural-line">/</span>
+<span>CS301 软件工程实训</span>
+<span class="text-structural-line">/</span>
+<span class="font-headline-card text-zinc-ink text-sm">任务看板</span>
+</nav>
+<span class="h-3.5 w-px bg-structural-line mx-1"></span>
+<div class="flex items-center gap-1.5 text-secondary-ink px-2 py-0.5 rounded bg-zinc-wash border border-structural-line font-label-numeric text-[11px]">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>基准日期: 2026-10-12</span>
+</div>
+</div>
+<!-- Trailing Action Clustered Group -->
+<div class="flex items-center gap-3">
+<!-- Demo Data Badge -->
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-zinc-wash text-secondary-ink border border-structural-line">
+          演示数据
+        </span>
+<!-- Refresh Button -->
+<button class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-structural-line bg-surface-white text-secondary-ink hover:bg-zinc-wash transition-colors text-xs font-body-secondary" type="button">
+<span class="material-symbols-outlined text-[15px]">refresh</span>
+<span>刷新数据</span>
+</button>
+<!-- Notification Bell -->
+<button class="p-1.5 rounded-lg text-secondary-ink hover:bg-zinc-wash hover:text-zinc-ink transition-colors relative" title="通知提醒" type="button">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-studio-teal rounded-full"></span>
+</button>
+<span class="h-4 w-px bg-structural-line"></span>
+<!-- Profile Avatar Pill -->
+<div class="flex items-center gap-2 pl-1">
+<div class="w-7 h-7 rounded-full bg-teal-wash border border-studio-teal/30 flex items-center justify-center font-headline-card text-xs text-studio-teal">
+            甲
+          </div>
+<span class="font-body-secondary text-xs text-zinc-ink">一组成员甲</span>
+</div>
+</div>
+</header>
+<!-- ==================== WORKSPACE WORK AREA ==================== -->
+<div class="flex-1 flex overflow-hidden">
+<!-- MAIN KANBAN CANVAS (Fills Remaining Space on Left) -->
+<main class="flex-1 flex flex-col h-full bg-paper-canvas overflow-hidden">
+<!-- 1. 看板工具栏 -->
+<div class="h-14 flex-none border-b border-structural-line bg-surface-white px-gutter flex items-center justify-between gap-4">
+<!-- Left Search & Filter -->
+<div class="flex items-center gap-3 flex-1 max-w-2xl">
+<!-- Search Input -->
+<div class="relative w-80">
+<span class="absolute inset-y-0 left-0 flex items-center pl-2.5 pointer-events-none text-secondary-ink">
+<span class="material-symbols-outlined text-[16px]">search</span>
+</span>
+<input class="w-full pl-8 pr-3 py-1.5 bg-surface-white border border-structural-line rounded-lg text-xs font-body-secondary text-zinc-ink placeholder-secondary-ink focus:outline-none focus:border-studio-teal focus:ring-1 focus:ring-studio-teal transition-all" placeholder="按任务名称、编号或负责人搜索..." type="text" value="T-101"/>
+</div>
+<!-- Quick Filter: Only My Tasks (Checked) -->
+<label class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-studio-teal bg-teal-wash cursor-pointer select-none text-xs text-studio-teal font-medium">
+<input checked="" class="w-3.5 h-3.5 rounded text-studio-teal focus:ring-0 border-studio-teal accent-studio-teal cursor-pointer" type="checkbox"/>
+<span>只看本人任务</span>
+</label>
+<!-- Stage Filter Dropdown Trigger -->
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-structural-line bg-surface-white text-xs font-body-secondary text-zinc-ink hover:bg-zinc-wash cursor-pointer transition-colors">
+<span class="text-secondary-ink">阶段:</span>
+<span class="font-medium">阶段一 需求与计划</span>
+<span class="material-symbols-outlined text-[14px] text-secondary-ink">arrow_drop_down</span>
+</div>
+</div>
+<!-- Right Status Meta & Create Task -->
+<div class="flex items-center gap-4 flex-none">
+<div class="text-right">
+<span class="font-caption text-caption text-secondary-ink">
+                共 4 项任务 · 本人进行中 1 项 · <span class="font-label-numeric text-[11px] text-studio-teal">阶段一截止: 2026-10-25</span>
+</span>
+</div>
+<!-- New Task (Group Leader Action, subdued) -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-structural-line bg-zinc-wash text-secondary-ink cursor-not-allowed opacity-75 text-xs font-medium" disabled="" title="仅组长可创建新任务规划" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span>新建任务</span>
+<span class="text-[10px] text-secondary-ink font-normal">(组长)</span>
+</button>
+</div>
+</div>
+<!-- 2. 看板三列区域 (Asymmetric Columns: ~32% / 44% / 24%) -->
+<div class="flex-1 p-5 overflow-x-auto overflow-y-hidden">
+<div class="flex h-full gap-4 min-w-[780px]">
+<!-- ================= 列 1: 待开始 (1) ~32% ================= -->
+<div class="w-[32%] flex flex-col bg-zinc-wash/40 rounded-xl border border-structural-line p-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-structural-line">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-ink"></span>
+<span class="font-headline-card text-xs text-zinc-ink">待开始</span>
+<span class="px-1.5 py-0.5 rounded text-[11px] font-label-numeric font-medium bg-zinc-wash text-secondary-ink border border-structural-line">1</span>
+</div>
+<span class="font-caption text-[11px] text-secondary-ink">预计总工时 6h</span>
+</div>
+<!-- Column Tasks Container -->
+<div class="flex-1 overflow-y-auto space-y-3 custom-scrollbar pr-0.5">
+<!-- Task Card: #T-102 -->
+<div class="bg-surface-white rounded-xl border border-structural-line p-3.5 hover:border-zinc-ink/30 transition-all duration-150 cursor-pointer shadow-none">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-numeric text-xs font-semibold text-secondary-ink">#T-102</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-zinc-wash text-secondary-ink border border-structural-line">
+                      待开始
+                    </span>
+</div>
+<h4 class="font-headline-card text-sm text-zinc-ink leading-snug mb-2 font-medium">
+                    基础工作区 API 搭建与接入
+                  </h4>
+<!-- Related Requirement -->
+<div class="mb-3 px-2 py-1 bg-zinc-wash/60 rounded text-[11px] text-secondary-ink flex items-center gap-1.5 border border-structural-line/60">
+<span class="material-symbols-outlined text-[13px] text-secondary-ink">link</span>
+<span class="truncate">需求 #R-02 协作工作区基础架构</span>
+</div>
+<!-- Details Grid -->
+<div class="space-y-1.5 pt-2 border-t border-structural-line text-xs font-body-secondary text-secondary-ink">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                        负责人
+                      </span>
+<span class="text-zinc-ink font-medium">乙 一组成员乙</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span>
+                        截止日期
+                      </span>
+<span class="font-label-numeric text-[12px] text-zinc-ink">2026-10-16</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                        预估工时
+                      </span>
+<span class="font-label-numeric text-[12px] text-zinc-ink">6 小时</span>
+</div>
+</div>
+<!-- Blocker / Dependency Pill -->
+<div class="mt-3 pt-2 border-t border-structural-line/70 flex items-center justify-between">
+<span class="inline-flex items-center gap-1 text-[11px] text-secondary-ink">
+<span class="material-symbols-outlined text-[12px] text-secondary-ink">check_circle</span>
+                      无前置阻碍
+                    </span>
+<span class="text-[11px] text-secondary-ink">后端服务</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= 列 2: 进行中 (2) ~44% (Focus Area) ================= -->
+<div class="w-[44%] flex flex-col bg-teal-wash/20 rounded-xl border border-studio-teal/30 p-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-studio-teal/20">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-studio-teal"></span>
+<span class="font-headline-card text-xs text-studio-teal font-semibold">进行中</span>
+<span class="px-1.5 py-0.5 rounded text-[11px] font-label-numeric font-medium bg-teal-wash text-studio-teal border border-studio-teal/40">2</span>
+</div>
+<span class="font-caption text-[11px] text-studio-teal font-medium">重点攻坚阶段 · 剩余 12h</span>
+</div>
+<!-- Column Tasks Container -->
+<div class="flex-1 overflow-y-auto space-y-3 custom-scrollbar pr-0.5">
+<!-- CARD 1 (SELECTED & HIGHLIGHTED): #T-101 -->
+<div class="bg-surface-white rounded-xl border-2 border-studio-teal p-3.5 shadow-sm relative transition-all">
+<!-- Selected Active Indicator Bar -->
+<div class="absolute -left-[2px] top-4 bottom-4 w-1 bg-studio-teal rounded-r"></div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="font-label-numeric text-xs font-semibold text-studio-teal">#T-101</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-teal-wash text-studio-teal font-medium border border-studio-teal/30">
+                        当前选中
+                      </span>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-teal-wash text-studio-teal border border-studio-teal/30">
+                      进行中
+                    </span>
+</div>
+<h4 class="font-headline-card text-sm text-zinc-ink leading-snug mb-2 font-medium">
+                    实现账号权限与角色控制
+                  </h4>
+<!-- Related Requirement -->
+<div class="mb-3 px-2 py-1 bg-teal-wash/50 rounded text-[11px] text-studio-teal flex items-center gap-1.5 border border-studio-teal/20">
+<span class="material-symbols-outlined text-[13px] text-studio-teal">link</span>
+<span class="truncate">需求 #R-01 基础权限与角色定义</span>
+</div>
+<!-- Blocker Banner -->
+<div class="mb-3 px-2.5 py-1.5 bg-zinc-wash rounded-lg border border-structural-line flex items-start gap-1.5 text-xs text-secondary-ink">
+<span class="material-symbols-outlined text-[14px] text-zinc-ink mt-0.5 flex-none">warning</span>
+<span class="leading-tight text-[11px] text-zinc-ink">存在阻碍：需核对角色权限矩阵文档（讨论室申请顺延中）</span>
+</div>
+<!-- Progress Bar -->
+<div class="mb-3">
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="text-secondary-ink text-[11px]">当前完成进度</span>
+<span class="font-label-numeric text-[11px] font-semibold text-studio-teal">40%</span>
+</div>
+<div class="w-full bg-structural-line h-1.5 rounded-full overflow-hidden">
+<div class="bg-studio-teal h-full rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="space-y-1.5 pt-2 border-t border-structural-line text-xs font-body-secondary text-secondary-ink">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                        负责人
+                      </span>
+<span class="text-studio-teal font-medium flex items-center gap-1">
+                        甲 一组成员甲
+                        <span class="text-[10px] text-studio-teal/80 bg-teal-wash px-1 rounded">(本人)</span>
+</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span>
+                        截止日期
+                      </span>
+<div class="text-right">
+<span class="font-label-numeric text-[12px] text-zinc-ink font-medium">2026-10-17</span>
+<span class="block text-[10px] text-secondary-ink leading-tight">原 10-16 延期草案推进中</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                        剩余工时
+                      </span>
+<span class="font-label-numeric text-[12px] text-zinc-ink">4 小时</span>
+</div>
+</div>
+</div>
+<!-- CARD 2: #T-103 -->
+<div class="bg-surface-white rounded-xl border border-structural-line p-3.5 hover:border-zinc-ink/30 transition-all duration-150 cursor-pointer shadow-none">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-numeric text-xs font-semibold text-secondary-ink">#T-103</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-zinc-wash text-secondary-ink border border-structural-line">
+                      进行中
+                    </span>
+</div>
+<h4 class="font-headline-card text-sm text-zinc-ink leading-snug mb-2 font-medium">
+                    小组讨论室消息流原型与通信联调
+                  </h4>
+<!-- Related Requirement -->
+<div class="mb-3 px-2 py-1 bg-zinc-wash/60 rounded text-[11px] text-secondary-ink flex items-center gap-1.5 border border-structural-line/60">
+<span class="material-symbols-outlined text-[13px] text-secondary-ink">link</span>
+<span class="truncate">需求 #R-03 讨论室即时同步</span>
+</div>
+<!-- Progress Bar -->
+<div class="mb-3">
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="text-secondary-ink text-[11px]">当前完成进度</span>
+<span class="font-label-numeric text-[11px] font-medium text-zinc-ink">25%</span>
+</div>
+<div class="w-full bg-structural-line h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-ink h-full rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="space-y-1.5 pt-2 border-t border-structural-line text-xs font-body-secondary text-secondary-ink">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                        负责人
+                      </span>
+<span class="text-zinc-ink font-medium">长 组长·李长</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span>
+                        截止日期
+                      </span>
+<span class="font-label-numeric text-[12px] text-zinc-ink">2026-10-20</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                        剩余工时
+                      </span>
+<span class="font-label-numeric text-[12px] text-zinc-ink">8 小时</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= 列 3: 已完成 (1) ~24% ================= -->
+<div class="w-[24%] flex flex-col bg-zinc-wash/30 rounded-xl border border-structural-line p-3">
+<!-- Column Header -->
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-structural-line">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-headline-card text-xs text-secondary-ink">已完成</span>
+<span class="px-1.5 py-0.5 rounded text-[11px] font-label-numeric font-medium bg-zinc-wash text-secondary-ink border border-structural-line">1</span>
+</div>
+<span class="font-caption text-[11px] text-secondary-ink">实际耗时 4h</span>
+</div>
+<!-- Column Tasks Container -->
+<div class="flex-1 overflow-y-auto space-y-3 custom-scrollbar pr-0.5">
+<!-- Task Card: #T-100 -->
+<div class="bg-surface-white/90 rounded-xl border border-structural-line p-3.5 hover:border-zinc-ink/30 transition-all duration-150 cursor-pointer shadow-none opacity-90">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-numeric text-xs font-semibold text-secondary-ink">#T-100</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-zinc-wash text-secondary-ink border border-structural-line">
+                      已归档
+                    </span>
+</div>
+<h4 class="font-headline-card text-sm text-zinc-ink/90 leading-snug mb-2 font-medium">
+                    项目初始脚手架搭建与依赖确认
+                  </h4>
+<!-- Related Requirement -->
+<div class="mb-3 px-2 py-1 bg-zinc-wash/50 rounded text-[11px] text-secondary-ink flex items-center gap-1.5 border border-structural-line/60">
+<span class="material-symbols-outlined text-[13px] text-secondary-ink">link</span>
+<span class="truncate">需求 #R-00 环境基础</span>
+</div>
+<!-- Details Grid -->
+<div class="space-y-1.5 pt-2 border-t border-structural-line text-xs font-body-secondary text-secondary-ink">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                        负责人
+                      </span>
+<span class="text-zinc-ink font-medium">甲 一组成员甲</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                        完成日期
+                      </span>
+<span class="font-label-numeric text-[12px] text-zinc-ink">2026-10-10</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                        实际工时
+                      </span>
+<span class="font-label-numeric text-[12px] text-zinc-ink">4 小时</span>
+</div>
+</div>
+<!-- Archive Tag -->
+<div class="mt-3 pt-2 border-t border-structural-line flex items-center justify-between text-[11px] text-secondary-ink">
+<span class="flex items-center gap-1 text-studio-teal">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                      阶段一交付物已关联
+                    </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ==================== 3. 右侧任务详情抽屉 (Task Detail Drawer, 480px) ==================== -->
+<aside class="w-[480px] flex-none bg-surface-white border-l border-structural-line flex flex-col h-full z-20 shadow-none">
+<!-- 抽屉头部 Header -->
+<div class="h-16 flex-none border-b border-structural-line px-5 flex items-center justify-between">
+<div class="flex items-center gap-2.5 overflow-hidden">
+<span class="font-label-numeric text-xs font-bold text-studio-teal bg-teal-wash px-2 py-0.5 rounded border border-studio-teal/30 flex-none">#T-101</span>
+<h3 class="font-headline-section text-headline-section text-zinc-ink truncate text-sm font-semibold">
+              实现账号权限与角色控制
+            </h3>
+</div>
+<div class="flex items-center gap-2 flex-none pl-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-medium bg-zinc-wash text-secondary-ink border border-structural-line">
+              本人任务（成员编辑模式）
+            </span>
+<button class="text-secondary-ink hover:text-zinc-ink p-1 rounded-md hover:bg-zinc-wash transition-colors" title="收起抽屉" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- 抽屉内容主体 (Scrollable Body) -->
+<div class="flex-1 overflow-y-auto px-5 py-4 space-y-5 custom-scrollbar">
+<!-- ================= 上半部分：只读依据区域 (规划基准，防篡改) ================= -->
+<div class="bg-paper-canvas rounded-xl border border-structural-line p-4 space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-structural-line">
+<span class="text-xs font-headline-card text-zinc-ink font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-secondary-ink">lock</span>
+                规划基准（只读依据）
+              </span>
+<span class="text-[11px] text-secondary-ink font-caption">组长与课程评审依据</span>
+</div>
+<!-- 只读字段列表 -->
+<div class="space-y-2.5 text-xs font-body-secondary">
+<!-- 关联需求 -->
+<div class="flex items-start justify-between">
+<span class="text-secondary-ink w-24 flex-none">关联需求</span>
+<span class="text-zinc-ink text-right font-medium flex-1">需求 #R-01 统一账号与课程角色权限体系</span>
+</div>
+<!-- 验收条件 -->
+<div class="flex items-start justify-between">
+<span class="text-secondary-ink w-24 flex-none">验收条件</span>
+<span class="text-zinc-ink text-right flex-1 bg-surface-white px-2 py-1 rounded border border-structural-line text-[11px] leading-tight">
+                  接口与页面通过测试用例覆盖，由组长核验通过
+                </span>
+</div>
+<!-- 负责人 (带权限提示) -->
+<div class="flex items-center justify-between">
+<span class="text-secondary-ink w-24 flex-none">负责人</span>
+<div class="flex items-center gap-1.5">
+<span class="text-zinc-ink font-medium">一组成员甲（本人）</span>
+<span class="text-[10px] text-secondary-ink bg-zinc-wash px-1.5 py-0.2 rounded border border-structural-line">仅组长可调整</span>
+</div>
+</div>
+<!-- 规划截止日期 -->
+<div class="flex items-center justify-between">
+<span class="text-secondary-ink w-24 flex-none">规划截止日期</span>
+<div class="text-right">
+<span class="font-label-numeric text-[12px] text-zinc-ink font-medium">2026-10-17</span>
+<span class="text-[10px] text-secondary-ink block">当前阶段一节点: 2026-10-25</span>
+</div>
+</div>
+<!-- 所属阶段 -->
+<div class="flex items-center justify-between">
+<span class="text-secondary-ink w-24 flex-none">所属阶段</span>
+<span class="text-zinc-ink">阶段一（需求与计划）</span>
+</div>
+<!-- 依赖关系 -->
+<div class="flex items-start justify-between pt-1 border-t border-structural-line">
+<span class="text-secondary-ink w-24 flex-none">依赖关系</span>
+<div class="text-right text-[11px] space-y-0.5">
+<span class="text-secondary-ink block">前置依赖：基础脚手架已满足</span>
+<span class="text-studio-teal block font-medium">后置任务：#T-102 基础工作区接入（成员乙等待中）</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= 下半部分：成员可编辑的工作推进表单 ================= -->
+<div class="space-y-4">
+<div class="flex items-center justify-between pb-1 border-b border-structural-line">
+<span class="text-xs font-headline-card text-zinc-ink font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-studio-teal">edit_note</span>
+                成员工作推进填报
+              </span>
+<span class="text-[11px] text-studio-teal font-medium">本人编辑权限有效</span>
+</div>
+<!-- 表单控件 1: 任务状态切换 -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-zinc-ink">
+                当前任务状态 <span class="text-secondary-ink font-normal">（无需拖拽，可直接切换）</span>
+</label>
+<select class="w-full px-3 py-2 bg-surface-white border border-structural-line rounded-lg text-xs font-body-secondary text-zinc-ink focus:outline-none focus:border-studio-teal focus:ring-1 focus:ring-studio-teal transition-all">
+<option value="todo">待开始</option>
+<option selected="" value="in_progress">进行中 (推进中)</option>
+<option value="review">待组长核对验收</option>
+<option value="done">已完成并归档</option>
+</select>
+</div>
+<!-- 表单控件 2: 实际进度录入 & 进度条 -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="block text-xs font-medium text-zinc-ink">实际推进进度</label>
+<span class="font-label-numeric text-xs font-bold text-studio-teal">40%</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="w-full h-1.5 bg-structural-line rounded-lg appearance-none cursor-pointer accent-studio-teal" max="100" min="0" type="range" value="40"/>
+<div class="w-16 flex-none">
+<input class="w-full px-2 py-1 bg-surface-white border border-structural-line rounded text-xs font-label-numeric text-center text-zinc-ink focus:border-studio-teal focus:ring-0" type="text" value="40%"/>
+</div>
+</div>
+</div>
+<!-- 表单控件 3: 剩余工时与排期微提示 -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-zinc-ink">剩余工时预估 (小时)</label>
+<div class="relative">
+<input class="w-full px-3 py-1.5 bg-surface-white border border-structural-line rounded-lg text-xs font-label-numeric text-zinc-ink focus:outline-none focus:border-studio-teal focus:ring-1 focus:ring-studio-teal" type="number" value="4"/>
+<span class="absolute right-3 top-2 text-xs text-secondary-ink">小时</span>
+</div>
+<p class="text-[11px] text-secondary-ink leading-normal bg-zinc-wash p-2 rounded border border-structural-line">
+                微提示：若工时增加超限，将联动触发讨论室排期草案分析，系统不会阻断本地保存。
+              </p>
+</div>
+<!-- 表单控件 4: 成果物链接 -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-zinc-ink">阶段成果代码 / 文档链接</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-2.5 pointer-events-none text-secondary-ink">
+<span class="material-symbols-outlined text-[15px]">terminal</span>
+</span>
+<input class="w-full pl-8 pr-3 py-1.5 bg-surface-white border border-structural-line rounded-lg text-xs font-label-numeric text-zinc-ink focus:outline-none focus:border-studio-teal focus:ring-1 focus:ring-studio-teal" type="text" value="https://git.course.studio/cs301-g1/auth-core"/>
+</div>
+</div>
+<!-- 表单控件 5: 当前阻碍说明 -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-zinc-ink">
+                当前阻碍说明 <span class="text-secondary-ink font-normal">（如需协助或顺延请详述）</span>
+</label>
+<textarea class="w-full px-3 py-2 bg-surface-white border border-structural-line rounded-lg text-xs font-body-secondary text-zinc-ink focus:outline-none focus:border-studio-teal focus:ring-1 focus:ring-studio-teal leading-relaxed" rows="2">需核对角色权限矩阵与安全校验，原定10月16日联调紧张，已在讨论室申请顺延至10月17日</textarea>
+</div>
+<!-- 表单控件 6: 附件与证据 -->
+<div class="space-y-1.5">
+<label class="block text-xs font-medium text-zinc-ink">附件与草案凭证</label>
+<div class="flex items-center justify-between p-2 bg-surface-white rounded-lg border border-structural-line">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-[16px] text-studio-teal">description</span>
+<div class="overflow-hidden">
+<span class="text-xs text-zinc-ink block truncate font-medium">auth-matrix-draft.pdf</span>
+<span class="text-[10px] text-secondary-ink block">1.2 MB · 上传于今日 09:30</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-none">
+<button class="text-secondary-ink hover:text-studio-teal p-1" title="下载查看" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+<button class="text-secondary-ink hover:text-zinc-ink p-1" title="替换文件" type="button">
+<span class="material-symbols-outlined text-[16px]">change_circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 表单控件 7: 协作与核对记录摘要 -->
+<div class="p-2.5 bg-teal-wash/60 rounded-lg border border-studio-teal/30 space-y-1">
+<div class="flex items-center gap-1.5 text-xs text-studio-teal font-medium">
+<span class="material-symbols-outlined text-[14px]">forum</span>
+<span>协同讨论联动摘要</span>
+</div>
+<p class="text-[11px] text-secondary-ink leading-normal">
+                2026-10-12 09:42 讨论发言触发延期草案，等待组长确认发布。
+              </p>
+</div>
+</div>
+</div>
+<!-- 抽屉底栏操作栏 (Fixed Drawer Footer) -->
+<div class="h-24 flex-none border-t border-structural-line bg-surface-white px-5 py-3 flex flex-col justify-between">
+<div class="flex items-center gap-2.5">
+<!-- 主要按钮：保存进度更新 (44px) -->
+<button class="flex-1 h-11 bg-studio-teal hover:bg-[#255951] text-surface-white rounded-lg font-headline-card text-xs font-medium flex items-center justify-center gap-1.5 transition-colors shadow-none active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>保存进度更新</span>
+</button>
+<!-- 次要按钮：前往讨论室关联消息 (44px) -->
+<button class="h-11 px-3 bg-surface-white border border-structural-line hover:bg-zinc-wash text-zinc-ink rounded-lg font-body-secondary text-xs flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary-ink">chat</span>
+<span>前往讨论室关联消息</span>
+</button>
+</div>
+<!-- 提示说明 -->
+<p class="text-[11px] text-secondary-ink font-caption leading-tight text-center">
+            保存实际进度后若产生工时或日期偏移，将保留规划依据并在讨论室生成调整建议，不强行阻断保存。
+          </p>
+</div>
+</aside>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,60 @@
+erDiagram
+    USERS ||--o{ COURSES : teaches
+    COURSES ||--o{ PROJECTS : contains
+    USERS ||--o{ MEMBERS : joins
+    PROJECTS ||--o{ MEMBERS : has
+    PROJECTS ||--o{ REQUIREMENTS : defines
+    REQUIREMENTS ||--o{ TASKS : traces
+    USERS ||--o{ TASKS : assigned
+    TASKS ||--o{ COMMENTS : records
+    PROJECTS ||--o{ MESSAGES : records
+    PROJECTS ||--o{ CARDS : drafts
+    PROJECTS ||--o{ PLANS : versions
+    PLANS o|--o{ CARDS : published_result
+    PROJECTS ||--o{ SUBMISSIONS : submits
+    PROJECTS ||--o{ FILES : stores
+    PROJECTS o|--o{ AUDIT : audits
+    PROJECTS ||--o{ AGENT_RUNS : analyzes
+    PROJECTS ||--o{ AGENT_INTENTS : queues
+    PROJECTS {
+        int id PK
+        int course_id FK
+        int revision
+        int analyzed_message_id
+    }
+    MEMBERS {
+        int project_id FK
+        int user_id FK
+        string role
+        float weekly_hours
+    }
+    TASKS {
+        int id PK
+        int project_id FK
+        int requirement_id FK
+        int assignee_id FK
+        json dependencies
+        float remaining_hours
+        string status
+    }
+    CARDS {
+        int id PK
+        int base_revision
+        json source_message_ids
+        json tasks
+        int published_plan_id FK
+    }
+    PLANS {
+        int id PK
+        int project_id FK
+        int version
+        json tasks
+        json changes
+    }
+    AGENT_INTENTS {
+        int id PK
+        int project_id FK
+        string mode
+        string status
+        int message_id
+    }

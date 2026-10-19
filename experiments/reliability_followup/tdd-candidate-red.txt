@@ -1,0 +1,95 @@
+test_all_oracle_labels_pass_local_scorer_and_public_constraints (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_all_oracle_labels_pass_local_scorer_and_public_constraints) ... FAIL
+test_business_cases_are_new_and_deep_copied (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_business_cases_are_new_and_deep_copied) ... FAIL
+test_candidate_has_no_freeze_or_real_results (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_candidate_has_no_freeze_or_real_results) ... FAIL
+test_completed_task_protection_covers_every_entity_field (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_completed_task_protection_covers_every_entity_field) ... FAIL
+test_execution_sources_are_byte_identical_to_reviewed_v3 (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_execution_sources_are_byte_identical_to_reviewed_v3) ... FAIL
+test_expected_dates_and_hard_preservation_are_explicit (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_expected_dates_and_hard_preservation_are_explicit) ... FAIL
+test_fixed_timezone_message_identity_and_creator_integrity (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_fixed_timezone_message_identity_and_creator_integrity) ... FAIL
+test_initial_state_is_feasible_except_explicit_dependency_repair (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_initial_state_is_feasible_except_explicit_dependency_repair) ... FAIL
+test_no_expectation_or_oracle_fields_enter_serialized_input (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_no_expectation_or_oracle_fields_enter_serialized_input) ... FAIL
+test_preexisting_sources_results_and_locks_remain_unchanged (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_preexisting_sources_results_and_locks_remain_unchanged) ... FAIL
+
+======================================================================
+FAIL: test_all_oracle_labels_pass_local_scorer_and_public_constraints (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_all_oracle_labels_pass_local_scorer_and_public_constraints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_business_cases_are_new_and_deep_copied (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_business_cases_are_new_and_deep_copied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_candidate_has_no_freeze_or_real_results (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_candidate_has_no_freeze_or_real_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_completed_task_protection_covers_every_entity_field (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_completed_task_protection_covers_every_entity_field)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_execution_sources_are_byte_identical_to_reviewed_v3 (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_execution_sources_are_byte_identical_to_reviewed_v3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_expected_dates_and_hard_preservation_are_explicit (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_expected_dates_and_hard_preservation_are_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_fixed_timezone_message_identity_and_creator_integrity (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_fixed_timezone_message_identity_and_creator_integrity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_initial_state_is_feasible_except_explicit_dependency_repair (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_initial_state_is_feasible_except_explicit_dependency_repair)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_no_expectation_or_oracle_fields_enter_serialized_input (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_no_expectation_or_oracle_fields_enter_serialized_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+======================================================================
+FAIL: test_preexisting_sources_results_and_locks_remain_unchanged (experiments.reliability_followup.tests.test_candidate.CandidateTests.test_preexisting_sources_results_and_locks_remain_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\DevelopTools\biyesheji\experiments\reliability_followup\tests\test_candidate.py", line 21, in setUp
+    self.assertTrue((ROOT / 'cases.py').is_file(), '新业务题目尚未准备')
+AssertionError: False is not true : 新业务题目尚未准备
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+FAILED (failures=10)

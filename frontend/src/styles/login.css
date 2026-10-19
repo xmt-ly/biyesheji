@@ -1,0 +1,30 @@
+.login-page { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); min-height:100dvh; background:var(--surface) }
+.login-intro { padding:48px 10%; color:var(--ink); background:var(--wash); border-right:1px solid var(--border); position:relative }
+.login-intro::after { content:none }
+.login-intro .brand { margin-bottom:96px }
+.login-intro .brand strong { font-size:20px }
+.login-intro>.eyebrow { font-size:15px; color:var(--brand) }
+.login-intro h1 { font-size:36px; color:var(--ink); line-height:1.5; margin:24px 0; font-weight:650 }
+.login-intro>p { color:var(--muted); max-width:34em; line-height:1.8; font-size:15px }
+.login-flow { display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin:48px 0 }
+.login-flow span { border:1px solid var(--border); border-radius:8px; padding:12px 16px; font-size:14px; color:var(--brand); background:var(--surface) }
+.login-flow b { font-weight:400; color:var(--muted) }
+.login-note { font-size:14px; line-height:1.8; color:var(--muted); margin-top:64px; max-width:34em }
+.login-panel { padding:64px 12% 48px; display:flex; flex-direction:column; justify-content:center; min-width:0 }
+.login-panel h2 { font-size:28px; margin-bottom:8px }
+.login-panel>.muted { font-size:15px; margin-bottom:32px }
+.login-panel form>label { margin-bottom:24px; font-size:14px }
+.login-panel input { min-height:44px }
+.login-panel form>.button { margin-top:8px; min-height:44px }
+.demo-accounts { margin-top:32px; border-top:1px solid var(--border); padding-top:24px }
+.demo-accounts>strong { font-size:14px; color:var(--ink) }
+.demo-accounts .caption { font-size:14px; margin-top:4px }
+.demo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px }
+.demo-account { min-height:44px; border:1px solid var(--border); background:var(--wash); border-radius:8px; text-align:left; padding:8px 12px; color:var(--ink) }
+.demo-account:hover { border-color:var(--brand); background:var(--selected) }
+.demo-account strong { font-size:14px; display:block; overflow-wrap:anywhere }
+.demo-account span { font-size:14px; color:var(--muted) }
+.boot { display:flex; align-items:center; justify-content:center; min-height:100dvh; flex-direction:column; gap:16px; color:var(--muted) }
+.safe-link { overflow-wrap:anywhere }
+.safe-link .error { display:block }
+

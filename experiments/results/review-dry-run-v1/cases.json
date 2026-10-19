@@ -1,0 +1,2524 @@
+[
+  {
+    "id": "E01",
+    "split": "eval",
+    "category": "明确新增任务",
+    "mode": "plan",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-21",
+          "due_date": "2026-10-22",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "新增操作文档任务，张明负责，预计和剩余均为2小时，登录测试完成后于10月23日开始并当天交付，关联操作文档需求，验收包括部署步骤和操作截图。请形成计划。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "plan",
+      "tasks": [
+        {
+          "aliases": [
+            "操作文档",
+            "使用文档",
+            "操作说明"
+          ],
+          "facts": {
+            "existing_id": null,
+            "requirement_id": 103,
+            "assignee_id": 11,
+            "estimated_hours": 2,
+            "remaining_hours": 2,
+            "start_date": "2026-10-23",
+            "due_date": "2026-10-23",
+            "dependencies": [
+              "task_202"
+            ],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": [
+            [
+              "部署"
+            ],
+            [
+              "截图"
+            ]
+          ]
+        }
+      ],
+      "question_groups": [],
+      "summary_groups": [],
+      "supersedes": []
+    }
+  },
+  {
+    "id": "E02",
+    "split": "eval",
+    "category": "缺负责人和工时和日期",
+    "mode": "plan",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-21",
+          "due_date": "2026-10-22",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "我们还需要给结果导出加一个校验任务，验收是导出文件内容与页面一致。请安排。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "clarify",
+      "tasks": [],
+      "question_groups": [
+        [
+          "谁",
+          "负责人",
+          "哪位"
+        ],
+        [
+          "工时",
+          "小时"
+        ],
+        [
+          "开始"
+        ],
+        [
+          "截止",
+          "交付",
+          "完成日期"
+        ]
+      ],
+      "summary_groups": [],
+      "supersedes": []
+    }
+  },
+  {
+    "id": "E03",
+    "split": "eval",
+    "category": "更正负责人及旧卡关联",
+    "mode": "adjust",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-21",
+          "due_date": "2026-10-22",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": [
+        {
+          "id": 301,
+          "kind": "plan",
+          "title": "操作文档草案",
+          "summary": "文档安排待核对",
+          "questions": [],
+          "source_message_ids": [
+            400
+          ],
+          "supersedes_card_ids": [],
+          "tasks": [
+            {
+              "key": "new_work",
+              "existing_id": null,
+              "title": "操作文档",
+              "description": "",
+              "requirement_id": 103,
+              "acceptance": "包含部署步骤和操作截图",
+              "assignee_id": 11,
+              "estimated_hours": 2,
+              "remaining_hours": 2,
+              "dependencies": [
+                "task_202"
+              ],
+              "start_date": "2026-10-23",
+              "due_date": "2026-10-23",
+              "status": "todo",
+              "progress": 0,
+              "artifact_url": "",
+              "blocker": "",
+              "stage_index": 1
+            }
+          ],
+          "checks": {},
+          "status": "pending",
+          "base_revision": 1,
+          "feedback": [],
+          "creator_id": null,
+          "created_at": "2026-10-16T08:30:00+08:00",
+          "published_plan_id": null
+        }
+      ]
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "上一张操作文档草案负责人写错了，改成李华，其余工时、日期、验收和依赖都照旧，不要重复追问。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": [
+          301
+        ]
+      }
+    ],
+    "expected": {
+      "outcome": "plan",
+      "tasks": [
+        {
+          "aliases": [
+            "操作文档",
+            "使用文档",
+            "操作说明"
+          ],
+          "facts": {
+            "existing_id": null,
+            "requirement_id": 103,
+            "assignee_id": 12,
+            "estimated_hours": 2,
+            "remaining_hours": 2,
+            "start_date": "2026-10-23",
+            "due_date": "2026-10-23",
+            "dependencies": [
+              "task_202"
+            ],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": [
+            [
+              "部署"
+            ],
+            [
+              "截图"
+            ]
+          ]
+        }
+      ],
+      "question_groups": [],
+      "summary_groups": [],
+      "supersedes": [
+        301
+      ]
+    }
+  },
+  {
+    "id": "E04",
+    "split": "eval",
+    "category": "依赖时间冲突",
+    "mode": "adjust",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-20",
+          "due_date": "2026-10-21",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "检查登录接口与登录测试的依赖日期冲突。保持测试的李华负责人、4小时和两个工作日工期，测试在接口截止后的第一个工作日开始，接口日期保持不变。请给出修正计划。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "plan",
+      "tasks": [
+        {
+          "aliases": [
+            "登录测试",
+            "认证测试"
+          ],
+          "facts": {
+            "existing_id": 202,
+            "requirement_id": 101,
+            "assignee_id": 12,
+            "estimated_hours": 4,
+            "remaining_hours": 4,
+            "start_date": "2026-10-21",
+            "due_date": "2026-10-22",
+            "dependencies": [
+              "task_201"
+            ],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": []
+        }
+      ],
+      "question_groups": [],
+      "summary_groups": [],
+      "supersedes": []
+    }
+  },
+  {
+    "id": "E05",
+    "split": "eval",
+    "category": "容量需重排",
+    "mode": "plan",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-21",
+          "due_date": "2026-10-22",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "本周想再给张明加4小时操作文档，原希望10月22日至23日做。若超过他的周容量，允许挪到下一周的10月26日至27日，最晚27日完成；保留登录接口安排，不换负责人。关联操作文档需求，验收包含部署步骤和操作截图。请检查容量后安排。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "plan",
+      "tasks": [
+        {
+          "aliases": [
+            "操作文档",
+            "使用文档",
+            "操作说明"
+          ],
+          "facts": {
+            "existing_id": null,
+            "requirement_id": 103,
+            "assignee_id": 11,
+            "estimated_hours": 4,
+            "remaining_hours": 4,
+            "start_date": "2026-10-26",
+            "due_date": "2026-10-27",
+            "dependencies": [],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": [
+            [
+              "部署"
+            ],
+            [
+              "截图"
+            ]
+          ]
+        }
+      ],
+      "question_groups": [],
+      "summary_groups": [],
+      "supersedes": []
+    }
+  },
+  {
+    "id": "E06",
+    "split": "eval",
+    "category": "必做需求遗漏",
+    "mode": "plan",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录",
+          "操作文档"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "操作文档",
+          "priority": "must",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-21",
+          "due_date": "2026-10-22",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "请检查所有必做需求，给遗漏的操作文档补齐计划：王芳负责2小时，10月22日开始、23日交付，验收包含部署步骤和操作截图。已有登录与导出任务保持不变。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "plan",
+      "tasks": [
+        {
+          "aliases": [
+            "操作文档",
+            "使用文档",
+            "操作说明"
+          ],
+          "facts": {
+            "existing_id": null,
+            "requirement_id": 103,
+            "assignee_id": 13,
+            "estimated_hours": 2,
+            "remaining_hours": 2,
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "dependencies": [],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": [
+            [
+              "部署"
+            ],
+            [
+              "截图"
+            ]
+          ]
+        }
+      ],
+      "question_groups": [],
+      "summary_groups": [],
+      "supersedes": []
+    }
+  },
+  {
+    "id": "E07",
+    "split": "eval",
+    "category": "循环依赖",
+    "mode": "adjust",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [
+            "task_202"
+          ],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-21",
+          "due_date": "2026-10-22",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "登录接口与登录测试出现循环依赖。业务顺序应是先接口、再测试，删除接口对测试的依赖，保留测试对接口的依赖。负责人、工时与日期均不变，请形成修正。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "plan",
+      "tasks": [
+        {
+          "aliases": [
+            "登录接口",
+            "认证接口"
+          ],
+          "facts": {
+            "existing_id": 201,
+            "requirement_id": 101,
+            "assignee_id": 11,
+            "estimated_hours": 6,
+            "remaining_hours": 6,
+            "start_date": "2026-10-19",
+            "due_date": "2026-10-20",
+            "dependencies": [],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": []
+        }
+      ],
+      "question_groups": [],
+      "summary_groups": [],
+      "supersedes": []
+    }
+  },
+  {
+    "id": "E08",
+    "split": "eval",
+    "category": "不可行容量和期限",
+    "mode": "plan",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-10-20",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 2
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 20,
+          "remaining_hours": 20,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "登录接口还有20小时，只能张明做，10月19日开工、20日必须交付。不能减少工时、更换负责人或改变课程期限。请判断容量和期限是否允许，若不可行请说明并保留原计划。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "infeasible",
+      "tasks": [],
+      "question_groups": [],
+      "summary_groups": [
+        [
+          "不可行",
+          "无法",
+          "不能满足",
+          "超过"
+        ],
+        [
+          "容量",
+          "工时",
+          "小时"
+        ],
+        [
+          "截止",
+          "期限",
+          "20日",
+          "10-20"
+        ]
+      ],
+      "supersedes": []
+    }
+  },
+  {
+    "id": "E09",
+    "split": "eval",
+    "category": "已完成任务保护",
+    "mode": "plan",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-21",
+          "due_date": "2026-10-22",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "导出功能已完成，不能改动它。现在张明另做导出回归测试，2小时，10月23日开始并当天交付，依赖已完成的导出功能，关联结果导出需求，验收是导出文件与页面一致。请安排。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "plan",
+      "tasks": [
+        {
+          "aliases": [
+            "导出回归",
+            "导出测试"
+          ],
+          "facts": {
+            "existing_id": null,
+            "requirement_id": 102,
+            "assignee_id": 11,
+            "estimated_hours": 2,
+            "remaining_hours": 2,
+            "start_date": "2026-10-23",
+            "due_date": "2026-10-23",
+            "dependencies": [
+              "task_203"
+            ],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": [
+            [
+              "导出"
+            ],
+            [
+              "一致"
+            ]
+          ]
+        }
+      ],
+      "question_groups": [],
+      "summary_groups": [],
+      "supersedes": []
+    }
+  },
+  {
+    "id": "E10",
+    "split": "eval",
+    "category": "隐含延期传播",
+    "mode": "adjust",
+    "state": {
+      "course": {
+        "id": 1,
+        "teacher_id": 1,
+        "title": "软件协作课程",
+        "description": "完成可运行团队项目",
+        "acceptance_criteria": "按三个阶段提交成果",
+        "required_features": [
+          "账号登录"
+        ],
+        "optional_features": [
+          "结果导出"
+        ],
+        "references": [],
+        "status": "published",
+        "version": 1,
+        "history": [],
+        "stages": [
+          {
+            "name": "需求",
+            "deadline": "2026-10-18",
+            "deliverables": [
+              "需求清单"
+            ]
+          },
+          {
+            "name": "实现",
+            "deadline": "2026-11-06",
+            "deliverables": [
+              "功能演示"
+            ]
+          },
+          {
+            "name": "交付",
+            "deadline": "2026-11-13",
+            "deliverables": [
+              "项目材料"
+            ]
+          }
+        ]
+      },
+      "project": {
+        "id": 1,
+        "course_id": 1,
+        "name": "课程协作平台",
+        "description": "固定评价状态",
+        "status": "active",
+        "revision": 1,
+        "analyzed_message_id": 0,
+        "created_at": "2026-10-16T09:00:00+08:00"
+      },
+      "users": [
+        {
+          "id": 1,
+          "username": "teacher",
+          "name": "陈老师",
+          "identity": "teacher"
+        },
+        {
+          "id": 11,
+          "username": "zhangming",
+          "name": "张明",
+          "identity": "student"
+        },
+        {
+          "id": 12,
+          "username": "lihua",
+          "name": "李华",
+          "identity": "student"
+        },
+        {
+          "id": 13,
+          "username": "wangfang",
+          "name": "王芳",
+          "identity": "student"
+        }
+      ],
+      "members": [
+        {
+          "user_id": 11,
+          "role": "leader",
+          "skills": [
+            "后端",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 12,
+          "role": "member",
+          "skills": [
+            "测试",
+            "文档"
+          ],
+          "weekly_hours": 8
+        },
+        {
+          "user_id": 13,
+          "role": "member",
+          "skills": [
+            "前端",
+            "文档"
+          ],
+          "weekly_hours": 6
+        }
+      ],
+      "requirements": [
+        {
+          "id": 101,
+          "title": "账号登录",
+          "description": "实现账号认证",
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "course_feature": "账号登录",
+          "priority": "must",
+          "status": "confirmed"
+        },
+        {
+          "id": 102,
+          "title": "结果导出",
+          "description": "导出项目结果",
+          "acceptance": "能下载导出文件",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        },
+        {
+          "id": 103,
+          "title": "操作文档",
+          "description": "编写使用说明",
+          "acceptance": "包含部署步骤和操作截图",
+          "course_feature": "",
+          "priority": "should",
+          "status": "confirmed"
+        }
+      ],
+      "tasks": [
+        {
+          "key": "task_201",
+          "existing_id": 201,
+          "title": "登录接口",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确凭据可登录，错误凭据被拒绝",
+          "assignee_id": 11,
+          "estimated_hours": 6,
+          "remaining_hours": 6,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_202",
+          "existing_id": 202,
+          "title": "登录测试",
+          "description": "",
+          "requirement_id": 101,
+          "acceptance": "正确和错误凭据用例均通过",
+          "assignee_id": 12,
+          "estimated_hours": 4,
+          "remaining_hours": 4,
+          "dependencies": [
+            "task_201"
+          ],
+          "start_date": "2026-10-21",
+          "due_date": "2026-10-22",
+          "status": "todo",
+          "progress": 0,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        },
+        {
+          "key": "task_203",
+          "existing_id": 203,
+          "title": "导出功能",
+          "description": "",
+          "requirement_id": 102,
+          "acceptance": "能下载导出文件",
+          "assignee_id": 13,
+          "estimated_hours": 4,
+          "remaining_hours": 0,
+          "dependencies": [],
+          "start_date": "2026-10-19",
+          "due_date": "2026-10-20",
+          "status": "done",
+          "progress": 100,
+          "artifact_url": "",
+          "blocker": "",
+          "stage_index": 1
+        }
+      ],
+      "cards": []
+    },
+    "messages": [
+      {
+        "id": 401,
+        "user_id": 11,
+        "kind": "human",
+        "content": "登录接口确认要到10月23日周五才完成，开始日期和工时不变；测试仍由李华负责，4小时、占两个工作日，验收不变。请把后续依赖受到的影响一起调整。",
+        "created_at": "2026-10-16T09:00:00+08:00",
+        "client_id": "fixed-401",
+        "related_type": null,
+        "related_id": null,
+        "supersedes_card_ids": []
+      }
+    ],
+    "expected": {
+      "outcome": "plan",
+      "tasks": [
+        {
+          "aliases": [
+            "登录接口",
+            "认证接口"
+          ],
+          "facts": {
+            "existing_id": 201,
+            "requirement_id": 101,
+            "assignee_id": 11,
+            "estimated_hours": 6,
+            "remaining_hours": 6,
+            "start_date": "2026-10-19",
+            "due_date": "2026-10-23",
+            "dependencies": [],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": []
+        },
+        {
+          "aliases": [
+            "登录测试",
+            "认证测试"
+          ],
+          "facts": {
+            "existing_id": 202,
+            "requirement_id": 101,
+            "assignee_id": 12,
+            "estimated_hours": 4,
+            "remaining_hours": 4,
+            "start_date": "2026-10-26",
+            "due_date": "2026-10-27",
+            "dependencies": [
+              "task_201"
+            ],
+            "status": "todo",
+            "progress": 0,
+            "stage_index": 1
+          },
+          "acceptance_groups": []
+        }
+      ],
+      "question_groups": [],
+      "summary_groups": [],
+      "supersedes": []
+    }
+  }
+]

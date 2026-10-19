@@ -1,0 +1,5702 @@
+[
+  {
+    "job_id": "V3E01-01-baseline_v2",
+    "case_id": "V3E01",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "请新增设备借用操作视频，关联设备目录需求，孙浩负责，预计与剩余均3小时，10月22日开始、23日交付。前置是已完成的设备目录发布，保持这个已完成任务原样。视频验收须演示查找设备并提交预约，新视频尚未开始，进度为0。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E01-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "bc63bb27ba802b46112d7cc65314657e1b574a23f4d6bbf5a12f72394eeb1a78",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E01-01-improved_v3",
+    "case_id": "V3E01",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "请新增设备借用操作视频，关联设备目录需求，孙浩负责，预计与剩余均3小时，10月22日开始、23日交付。前置是已完成的设备目录发布，保持这个已完成任务原样。视频验收须演示查找设备并提交预约，新视频尚未开始，进度为0。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E01-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "bc63bb27ba802b46112d7cc65314657e1b574a23f4d6bbf5a12f72394eeb1a78",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E02-01-improved_v3",
+    "case_id": "V3E02",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "归还提醒需求要加一个短信验证任务。验收条件确定为：逾期设备只发送一次提醒，已归还设备不发送提醒。请安排这个新任务。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E02-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "f2f923778ef47749991cc7520a61b6d3899bde189abc2690193473756e045fa0",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E02-01-baseline_v2",
+    "case_id": "V3E02",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "归还提醒需求要加一个短信验证任务。验收条件确定为：逾期设备只发送一次提醒，已归还设备不发送提醒。请安排这个新任务。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E02-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "f2f923778ef47749991cc7520a61b6d3899bde189abc2690193473756e045fa0",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E03-01-baseline_v2",
+    "case_id": "V3E03",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "孙浩负责归还提醒页面核对，关联归还提醒需求，预计和剩余都是3小时，10月26日开始，无前置任务，尚未开始、进度0。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E03-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "验收是逾期标记可见、已归还状态不显示提醒；截止日期还没有定下来，请只问尚缺的信息。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E03-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "b213508fe53ca8e8f174718b07d872a960f686f9468e735d87a97915032c82a8",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E03-01-improved_v3",
+    "case_id": "V3E03",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "孙浩负责归还提醒页面核对，关联归还提醒需求，预计和剩余都是3小时，10月26日开始，无前置任务，尚未开始、进度0。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E03-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "验收是逾期标记可见、已归还状态不显示提醒；截止日期还没有定下来，请只问尚缺的信息。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E03-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "b213508fe53ca8e8f174718b07d872a960f686f9468e735d87a97915032c82a8",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E04-01-improved_v3",
+    "case_id": "V3E04",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "设备目录需求下需要新增设备库存盘点核对，依赖已完成的设备目录发布。验收是盘点数量与设备目录一致，放在实现联调阶段。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E04-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 22,
+          "kind": "human",
+          "content": "这项我来做。预计两小时，剩余也两小时，今天开始，明天交付；现在还未开始，进度为零。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E04-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "林悦"
+        }
+      ]
+    },
+    "common_input_sha256": "3cfaa96da18170933b014f7467a407935f8906b85465c9996326efb69c05aaaf",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E04-01-baseline_v2",
+    "case_id": "V3E04",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "设备目录需求下需要新增设备库存盘点核对，依赖已完成的设备目录发布。验收是盘点数量与设备目录一致，放在实现联调阶段。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E04-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 22,
+          "kind": "human",
+          "content": "这项我来做。预计两小时，剩余也两小时，今天开始，明天交付；现在还未开始，进度为零。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E04-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "林悦"
+        }
+      ]
+    },
+    "common_input_sha256": "3cfaa96da18170933b014f7467a407935f8906b85465c9996326efb69c05aaaf",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E05-01-baseline_v2",
+    "case_id": "V3E05",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "借用记录核对排早了，应在预约申请处理截止后的第一个工作日开始，仍占两个工作日。保持原林悦负责人、预计和剩余4小时、验收、依赖、状态、进度、阶段及其他原字段；预约申请处理日期保持原样，已完成的设备目录发布也原样保留。请修复排期。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E05-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "80fbf71d63217f4e17b16ea50508115110157a739cb0d77e0b00e8ccc7157aee",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E05-01-improved_v3",
+    "case_id": "V3E05",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "借用记录核对排早了，应在预约申请处理截止后的第一个工作日开始，仍占两个工作日。保持原林悦负责人、预计和剩余4小时、验收、依赖、状态、进度、阶段及其他原字段；预约申请处理日期保持原样，已完成的设备目录发布也原样保留。请修复排期。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E05-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "80fbf71d63217f4e17b16ea50508115110157a739cb0d77e0b00e8ccc7157aee",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E06-01-improved_v3",
+    "case_id": "V3E06",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "预约申请处理确认延到10月23日周五才完成，开始日期、负责人、预计与剩余工时、验收、依赖、状态、进度、阶段和其他原字段全部保持。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E06-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "请一并顺延借用记录核对：它仍占两个工作日，在前置任务截止后的第一个工作日开工，所有其他原字段不变。设备目录发布已经完成，保持原样。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E06-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "c88f9eb8974ba0dfd7b5894b1a0f263ac6fd9c95659e7d42c40f224d60d6084e",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E06-01-baseline_v2",
+    "case_id": "V3E06",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "预约申请处理确认延到10月23日周五才完成，开始日期、负责人、预计与剩余工时、验收、依赖、状态、进度、阶段和其他原字段全部保持。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E06-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "请一并顺延借用记录核对：它仍占两个工作日，在前置任务截止后的第一个工作日开工，所有其他原字段不变。设备目录发布已经完成，保持原样。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E06-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "c88f9eb8974ba0dfd7b5894b1a0f263ac6fd9c95659e7d42c40f224d60d6084e",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E01-02-improved_v3",
+    "case_id": "V3E01",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "请新增设备借用操作视频，关联设备目录需求，孙浩负责，预计与剩余均3小时，10月22日开始、23日交付。前置是已完成的设备目录发布，保持这个已完成任务原样。视频验收须演示查找设备并提交预约，新视频尚未开始，进度为0。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E01-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "bc63bb27ba802b46112d7cc65314657e1b574a23f4d6bbf5a12f72394eeb1a78",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E01-02-baseline_v2",
+    "case_id": "V3E01",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "请新增设备借用操作视频，关联设备目录需求，孙浩负责，预计与剩余均3小时，10月22日开始、23日交付。前置是已完成的设备目录发布，保持这个已完成任务原样。视频验收须演示查找设备并提交预约，新视频尚未开始，进度为0。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E01-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "bc63bb27ba802b46112d7cc65314657e1b574a23f4d6bbf5a12f72394eeb1a78",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E02-02-baseline_v2",
+    "case_id": "V3E02",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "归还提醒需求要加一个短信验证任务。验收条件确定为：逾期设备只发送一次提醒，已归还设备不发送提醒。请安排这个新任务。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E02-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "f2f923778ef47749991cc7520a61b6d3899bde189abc2690193473756e045fa0",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E02-02-improved_v3",
+    "case_id": "V3E02",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "归还提醒需求要加一个短信验证任务。验收条件确定为：逾期设备只发送一次提醒，已归还设备不发送提醒。请安排这个新任务。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E02-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "f2f923778ef47749991cc7520a61b6d3899bde189abc2690193473756e045fa0",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E03-02-improved_v3",
+    "case_id": "V3E03",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "孙浩负责归还提醒页面核对，关联归还提醒需求，预计和剩余都是3小时，10月26日开始，无前置任务，尚未开始、进度0。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E03-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "验收是逾期标记可见、已归还状态不显示提醒；截止日期还没有定下来，请只问尚缺的信息。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E03-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "b213508fe53ca8e8f174718b07d872a960f686f9468e735d87a97915032c82a8",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E03-02-baseline_v2",
+    "case_id": "V3E03",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "孙浩负责归还提醒页面核对，关联归还提醒需求，预计和剩余都是3小时，10月26日开始，无前置任务，尚未开始、进度0。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E03-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "验收是逾期标记可见、已归还状态不显示提醒；截止日期还没有定下来，请只问尚缺的信息。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E03-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "b213508fe53ca8e8f174718b07d872a960f686f9468e735d87a97915032c82a8",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E04-02-baseline_v2",
+    "case_id": "V3E04",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "设备目录需求下需要新增设备库存盘点核对，依赖已完成的设备目录发布。验收是盘点数量与设备目录一致，放在实现联调阶段。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E04-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 22,
+          "kind": "human",
+          "content": "这项我来做。预计两小时，剩余也两小时，今天开始，明天交付；现在还未开始，进度为零。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E04-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "林悦"
+        }
+      ]
+    },
+    "common_input_sha256": "3cfaa96da18170933b014f7467a407935f8906b85465c9996326efb69c05aaaf",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E04-02-improved_v3",
+    "case_id": "V3E04",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "设备目录需求下需要新增设备库存盘点核对，依赖已完成的设备目录发布。验收是盘点数量与设备目录一致，放在实现联调阶段。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E04-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 22,
+          "kind": "human",
+          "content": "这项我来做。预计两小时，剩余也两小时，今天开始，明天交付；现在还未开始，进度为零。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E04-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "林悦"
+        }
+      ]
+    },
+    "common_input_sha256": "3cfaa96da18170933b014f7467a407935f8906b85465c9996326efb69c05aaaf",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E05-02-improved_v3",
+    "case_id": "V3E05",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "借用记录核对排早了，应在预约申请处理截止后的第一个工作日开始，仍占两个工作日。保持原林悦负责人、预计和剩余4小时、验收、依赖、状态、进度、阶段及其他原字段；预约申请处理日期保持原样，已完成的设备目录发布也原样保留。请修复排期。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E05-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "80fbf71d63217f4e17b16ea50508115110157a739cb0d77e0b00e8ccc7157aee",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E05-02-baseline_v2",
+    "case_id": "V3E05",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "借用记录核对排早了，应在预约申请处理截止后的第一个工作日开始，仍占两个工作日。保持原林悦负责人、预计和剩余4小时、验收、依赖、状态、进度、阶段及其他原字段；预约申请处理日期保持原样，已完成的设备目录发布也原样保留。请修复排期。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E05-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "80fbf71d63217f4e17b16ea50508115110157a739cb0d77e0b00e8ccc7157aee",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E06-02-baseline_v2",
+    "case_id": "V3E06",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "预约申请处理确认延到10月23日周五才完成，开始日期、负责人、预计与剩余工时、验收、依赖、状态、进度、阶段和其他原字段全部保持。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E06-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "请一并顺延借用记录核对：它仍占两个工作日，在前置任务截止后的第一个工作日开工，所有其他原字段不变。设备目录发布已经完成，保持原样。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E06-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "c88f9eb8974ba0dfd7b5894b1a0f263ac6fd9c95659e7d42c40f224d60d6084e",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "V3E06-02-improved_v3",
+    "case_id": "V3E06",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "实验室设备借用平台",
+          "revision": 3,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 2,
+          "title": "实验室服务软件实践",
+          "description": "构建设备借用服务",
+          "acceptance_criteria": "完成阶段评审与运行演示",
+          "required_features": [
+            "设备目录",
+            "预约申请"
+          ],
+          "optional_features": [
+            "归还提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "需求确认",
+              "deadline": "2026-10-16",
+              "deliverables": [
+                "需求清单"
+              ]
+            },
+            {
+              "name": "实现联调",
+              "deadline": "2026-11-04",
+              "deliverables": [
+                "功能联调"
+              ]
+            },
+            {
+              "name": "验收交付",
+              "deadline": "2026-11-18",
+              "deliverables": [
+                "演示材料"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 421,
+            "project_id": 1,
+            "title": "设备目录",
+            "description": "查询可借设备",
+            "acceptance": "展示设备名称与借用状态",
+            "course_feature": "设备目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 422,
+            "project_id": 1,
+            "title": "预约申请",
+            "description": "提交预约申请",
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "course_feature": "预约申请",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 423,
+            "project_id": 1,
+            "title": "借用核对",
+            "description": "核对借用记录",
+            "acceptance": "借用人和设备记录一致",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          },
+          {
+            "id": 424,
+            "project_id": 1,
+            "title": "归还提醒",
+            "description": "提示逾期归还",
+            "acceptance": "逾期提醒且已归还不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-10-20T09:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "脚本"
+            ],
+            "weekly_hours": 16.0,
+            "name": "周辰",
+            "username": "zhouchen"
+          },
+          {
+            "user_id": 22,
+            "role": "member",
+            "skills": [
+              "测试",
+              "联调"
+            ],
+            "weekly_hours": 16.0,
+            "name": "林悦",
+            "username": "linyue"
+          },
+          {
+            "user_id": 23,
+            "role": "member",
+            "skills": [
+              "前端",
+              "演示"
+            ],
+            "weekly_hours": 12.0,
+            "name": "孙浩",
+            "username": "sunhao"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "设备目录发布",
+            "description": "",
+            "requirement_id": 421,
+            "acceptance": "展示设备名称与借用状态",
+            "assignee_id": 23,
+            "estimated_hours": 5.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-15",
+            "due_date": "2026-10-16",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_631",
+            "existing_id": 631
+          },
+          {
+            "title": "预约申请处理",
+            "description": "",
+            "requirement_id": 422,
+            "acceptance": "可提交申请且重复申请被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 6.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_631"
+            ],
+            "start_date": "2026-10-20",
+            "due_date": "2026-10-21",
+            "status": "doing",
+            "progress": 25.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_632",
+            "existing_id": 632
+          },
+          {
+            "title": "借用记录核对",
+            "description": "",
+            "requirement_id": 423,
+            "acceptance": "借用人和设备记录一致",
+            "assignee_id": 22,
+            "estimated_hours": 4.0,
+            "remaining_hours": 4.0,
+            "dependencies": [
+              "task_632",
+              "task_631"
+            ],
+            "start_date": "2026-10-22",
+            "due_date": "2026-10-23",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_633",
+            "existing_id": 633
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 821,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "预约申请处理确认延到10月23日周五才完成，开始日期、负责人、预计与剩余工时、验收、依赖、状态、进度、阶段和其他原字段全部保持。",
+          "created_at": "2026-10-20T09:00:00+08:00",
+          "client_id": "V3E06-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        },
+        {
+          "id": 822,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "请一并顺延借用记录核对：它仍占两个工作日，在前置任务截止后的第一个工作日开工，所有其他原字段不变。设备目录发布已经完成，保持原样。",
+          "created_at": "2026-10-20T09:01:00+08:00",
+          "client_id": "V3E06-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "周辰"
+        }
+      ]
+    },
+    "common_input_sha256": "c88f9eb8974ba0dfd7b5894b1a0f263ac6fd9c95659e7d42c40f224d60d6084e",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  }
+]

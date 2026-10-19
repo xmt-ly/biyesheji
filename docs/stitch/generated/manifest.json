@@ -1,0 +1,105 @@
+{
+  "projectId": "10095907054989016469",
+  "projectUrl": "https://stitch.withgoogle.com/projects/10095907054989016469",
+  "screens": [
+    {
+      "number": 2,
+      "screenId": "5ce06f5962c642648072f745769ef39d",
+      "title": "02 团队协作与 Agent 分析",
+      "generatedAt": "2026-10-12T10:39:25.408Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzY1MDQyMjc1ZDkzMjQ1NTM5ODNjYjNkM2I3MDVhZWUyEgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1W6H9sz1gMjYu45z5jtUHWc7B4jhPKULiYrTl18-MbMZKCx8jugTPMSCMbWCsrtVYDrgS8uJ7iZL10PY6W1z9j7IDSCg3ky5RUCarR0qfJbrmhyvxxDnwwDstDheh5pd3hXFPWkCPrNhqHYMT1uEvcPAQjdobNsD9Ih_vbL9dP3iF4KparZf4PFUOVzZNy4qSs9j7lmVqWgjyNEzF4AUE-gOblc3Ocw5N3Zgn5NY49786Pdh2nJM1EGLlsy",
+      "width": "2560",
+      "height": "2048"
+    },
+    {
+      "number": 1,
+      "screenId": "e5c2fac9ed81407695dcf8e7b917598a",
+      "title": "01 学生工作台",
+      "generatedAt": "2026-10-12T10:50:13.501Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2QzYjUzM2VjZGQyZTQxN2RiNGQxMDYxOGUxMGI3ZDM3EgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XwFxXG3UEhZ3mg0pv0r9scTrW8f1I_100RuUGpQVRLbJhezEY5v4os6yDjCMBEkUgUCI8-WNHWnbGyYKifEJ1y1JFPxA6BOiahaiYT0AtgQHuMkTxP5TU39qQMvDLs25S26EXTRcMxo6mt8_3N6-WIVSFKDXpGXobsolrF41c3eBrU_pVgscAfzXn-iex-xwNMhWfPgmG6zkK4l7x5BZkBfC0l7JkQLMkreDa4TPn4zfhToKwT3abjmclM",
+      "width": "2560",
+      "height": "2376"
+    },
+    {
+      "number": 4,
+      "screenId": "69adb3a41c12444bacab1d635bc1b80c",
+      "title": "04 计划与排期",
+      "generatedAt": "2026-10-12T10:52:37.510Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2ZjYjQ1NGY3MmIyYTQ1ZjdhYTljM2UzMDRjMmFjY2VlEgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UKJpdT2zVRNBEmB760U7Ulg6C_36dIfBP4XsWqcF9bwzAbPSPwAzV46hX1koz8NTw6fgH6Cxxw_mHywAjETBmdzNFjcO59coBLJXoDXoeHJOZ5rGSAaJaSM65DnKrHNHtuUMf7vGKmdOVxwQkHPFOVtqvVPa8lPY6LTMvEH5PKdxrgzCsJ_V9Znp3NYWOfT6VquxNPAyauJbtkGbU2HmI_ogVPjIaGv6SHjLpR0o_VfMEjGt9IIBc0kXeo",
+      "width": "2560",
+      "height": "2048"
+    },
+    {
+      "number": 3,
+      "screenId": "f3ac9438933c45e5a6c7455fdd0fcbed",
+      "title": "03 任务看板与成员任务详情",
+      "generatedAt": "2026-10-12T10:55:49.265Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzk2OWI0OWI0Zjk3NTQ2NDE5YjEyZmRlZWE2YzhhNjlmEgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1V7Di8yWlCzwPtYATVjOLyO2NCAWuFGsShX9U7le9eHnkcm2HkG9tkkUBxzN-4WvpmKeafgYyJcRP9_-3TKwzyBp8yb6il17bKAR7NzW0GpKCTkI-14CfHw9SxpSaAPLk-yq86PiZmzV_S-ZfC3V8LBDYXDvFGPdZY8m-pX6ZyIKsFkdx__CjxK_9vNTepzkBXdQ3U9G9yi5PW5VuuGLCp-pwrIS3OwQE5nCFkf1UkSd9YwpFKAH--Zq040",
+      "width": "2560",
+      "height": "2048"
+    },
+    {
+      "number": 5,
+      "screenId": "8a9e74c2494c40c0b0e25bfc50511f71",
+      "title": "05 教师阶段审核",
+      "generatedAt": "2026-10-12T10:57:27.144Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzIxZmM5MjdlYWY4ODRmNzhhMjdmMDYzYTVjMjNkZjI1EgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1VeIUF6QHVeDmZCsxyKd9oF7tQtigJlWzmExbFEY_39YhhOTCNWzAZGQkobxY2wpfW80BfgA9JTZKoIqAwOr336HSkNNsN20Zk_0wzTcuIbLDONYl5haawlgJr_x-iuPD8GNTXzadrstoX-wBlH7FXa5XFranDgWDqKZaJEbX2rTeoJSwDUVrsT5itYT-3JLIWROCvXObC5Kqs8u825OJS7I2cmKwntheJsYKiez8cVnDPdBLU5p96YFwg",
+      "width": "2560",
+      "height": "2048"
+    }
+  ],
+  "archivedScreens": [
+    {
+      "number": 1,
+      "screenId": "3810f939f3134c559557d1b2f5c41717",
+      "title": "01 学生工作台",
+      "generatedAt": "2026-10-11T13:45:17.358Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2ZhNDhlZGZjYzVkYzQ5N2Q4NTc2ODhjYzI2ODM1ZjhiEgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1WAwVie-2OCpPoTWMQ-lQYQ5of5BN3TTaOpC9p_Mko9_7k-Zz3Dg0xT7d5AVvCWKOzW2l5GZCG8BWh3hVW5Un7Cnxw9_qYEXTDisxGekQGyS_XNbHwa_ZGdivIFj1yknuUWHftwWv-wRzmF1_1WN9EYdI2Mk12yArmRQvKz9oq9V_UDULxRWUFMJklbwXS88g3NgqJk6f6hnSxNazQaGwz1YVC0Br7NuDXqnYpguFuYBSLCg5oe5o0yOSf9"
+    },
+    {
+      "number": 4,
+      "screenId": "85b9a974acc0402bbae5f27f21c22e38",
+      "title": "04 计划与排期",
+      "generatedAt": "2026-10-12T10:44:50.482Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzBhZWNiMzQyNDcwZjQzOWI4NzBkNGQ3YjNjZDUyZDhiEgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1XOao8M1ryaRAa2Y1KDe2Hx8BnExOJB_YQoI83sEU_ERTkq0_ORTFgiYraowdqjvLb6RHgcKX0LbGWIRSIohHDxwLqoYuwluqHpsmXsfLtsWNGmraQyRDjGYEiAMJUYGJhL1OBWw7BYELUv61Oy8zu4QgR5pWKSRPOG61SfQSq-pyW9L7qWexWfxtzXXCNHpJWRiEVUR7dXekbs4VHN0FXB2bFKP4BLj62lb4apElpKQF5UhtErtbYWCgIV",
+      "width": "2560",
+      "height": "5408"
+    },
+    {
+      "number": 3,
+      "screenId": "6f9b4b4fffbc420a9d24377c614ea6d8",
+      "title": "03 任务看板与成员任务详情",
+      "generatedAt": "2026-10-12T10:42:29.084Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzQ1MDNiYTE3YTE0YTQ4YmY4ZjJkNzJmNDM1ZTNlOTBiEgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1V81bW3fNn9SKVy86S1SuV6ukVyCRiiZq0q1f0Vm1GA_cs6AnrbNO5E46Ll_Gbw-XU8JHgKhtgJRuF-uICuC72r7SQ3EO4UsDixtdHpaIJeQCFgEzqzxkuynxnVoX2b4hcZDakUh-YSAXpYlNTgifi6VkiEmS2ByxFgqjS5sLcqD3qHVB4ysRyRdhvSk8g9Yd7LdMsEaX4-b02-ZaUV465IzfDj8M4ZpZdS6mJFZcwwRLqXznvBUYofbFQ",
+      "width": "2560",
+      "height": "2048"
+    },
+    {
+      "number": 5,
+      "screenId": "ebdabd7d0ac343bb83b2909d3963c3ae",
+      "title": "05 教师阶段审核",
+      "generatedAt": "2026-10-12T10:46:40.743Z",
+      "exported": true,
+      "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzUyOGI2NDY2MTFjNzQ5YTJiMmMwZjBhMGIzYTg2OWU3EgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+      "imageUrl": "https://lh3.googleusercontent.com/aida/AEtjO1W-MUa_CpWvDQX971Pajc7_iXilFjQCsRtalyPzvToFeeMQNpioZlEZfljCdOVMz7IxlGHbs4_3hL-EaX3ODak-840Lyb15LC0wkwJiH36jj04XqZQ33Aq5dW2DVaz1kvHIIRLTasEsA5ln3vMG1uOdiA4NoRWr-BYApyWyOI9c2U5MY-vMil7V_NqU4UEULQ_dzKk0CxVolzWlBhZxNoyc74zOupj3DLiwAWltdlr7Ad_gukRk9QvsRqLS",
+      "width": "2560",
+      "height": "2048"
+    }
+  ]
+}

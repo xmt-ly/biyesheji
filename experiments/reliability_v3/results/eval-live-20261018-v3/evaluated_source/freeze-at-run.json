@@ -1,0 +1,42 @@
+{
+  "version": "2026-10-20-reliability-v3.1",
+  "cases_sha256": "394a7364154ca2cd4a7edf56897f51320ce87df7eb61636c829006a572910907",
+  "protocol_sha256": "69d76418fb4f9e64d23d8db1ffb6d14cdeacb56d560c77af543fb1d8b3ee784d",
+  "source_sha256": {
+    "__init__.py": "99bfb35af4ae894fadf76d13938e0d0e5258fa6d9a487263c2e91ba115e24584",
+    "backend.py": "9d51a8b571d6290206128d1f7589bed1fffd5531f3fa289e865357ee0a88fad1",
+    "cases.py": "3d953f54c865495ea05adc325fecea31089d3f2ed3cbe06f54ff28ae566e723a",
+    "runner.py": "b1dd1b225af5c64f2b744850e057d39d5967feed928bdbcd489ffce54fad2109",
+    "scoring.py": "c0154df6d4fff6efcae4e6317c9cde129c0b4e4f5e37368455be5924ef2defa3",
+    "state.py": "4b936b5ab2204dba7fbd2e93be23d9e36bcbd9361bd3bb0756408323a8e9afe7",
+    "tests/test_protocol.py": "d83eba025fb4a772883b45e961ff380cbfcf6624da3fc748a5c5969c1665c245",
+    "PROTOCOL.md": "3e00dfed9980448d861976c76b3d02620be47147e613b8165c3ac711a5aa9e7c",
+    "README.md": "add939f33a65c9bc3b49060e3750926f4615876966dbb3975284a8662808a7e4",
+    "baseline/agent.py": "249ee3f3e5eae67abbe1f9e52299b5509fb50b3eb8593eed2c4fc51d21befaae",
+    "baseline/database.py": "0f090729bcbdcde97cb7bddc6e57f8e0e35b86ace16f2fecd6ad93651b37eddc",
+    "baseline/manifest.json": "0f0533b73915e0d4fd2973cfb68dc9931fdfae9f8664819b3933bed21dbf3a93",
+    "baseline/models.py": "a699ec3cfce9f5961ee92a354fba325cf969712b3856de45416c61e8cd3b4324",
+    "baseline/permissions.py": "ac99b9d3ed0d17618eec924cbb832b03e8ea3e42fbc6c73b8ac9d6c213533474",
+    "baseline/planning.py": "968fbb218dcd6d057258fba6bf3cdf979cf0cc4427f4e674765799201fc2e95f",
+    "baseline/schemas.py": "3a33d4d62ab296bdc7442c68affc92877227eddc327814d4baf076554da981a2",
+    "baseline/serializers.py": "7a6f1a45ff3fc8c02251cfe8c837130afc8a647edf9c28b1e9b6ccf727e7e97b",
+    "production/agent.py": "8980815acb7f05d3e0c0ff1af8362d09b8d9ad2a6b569b56affd7f825168814e",
+    "production/agent_output.py": "6a09e1e753f6bbdbdac01333527fac31870eb1a4ef54361219fc3a8354387749",
+    "production/database.py": "0f090729bcbdcde97cb7bddc6e57f8e0e35b86ace16f2fecd6ad93651b37eddc",
+    "production/models.py": "a699ec3cfce9f5961ee92a354fba325cf969712b3856de45416c61e8cd3b4324",
+    "production/permissions.py": "ac99b9d3ed0d17618eec924cbb832b03e8ea3e42fbc6c73b8ac9d6c213533474",
+    "production/planning.py": "968fbb218dcd6d057258fba6bf3cdf979cf0cc4427f4e674765799201fc2e95f",
+    "production/schemas.py": "3a33d4d62ab296bdc7442c68affc92877227eddc327814d4baf076554da981a2",
+    "production/serializers.py": "7a6f1a45ff3fc8c02251cfe8c837130afc8a647edf9c28b1e9b6ccf727e7e97b",
+    "shared/transport.py": "905cca7ee455d810eb45921299a26d47fbdbb26bf1b3d803dfe77f9e8f494ff5"
+  },
+  "baseline_sha256": {
+    "agent.py": "249ee3f3e5eae67abbe1f9e52299b5509fb50b3eb8593eed2c4fc51d21befaae",
+    "schemas.py": "3a33d4d62ab296bdc7442c68affc92877227eddc327814d4baf076554da981a2",
+    "planning.py": "968fbb218dcd6d057258fba6bf3cdf979cf0cc4427f4e674765799201fc2e95f",
+    "models.py": "a699ec3cfce9f5961ee92a354fba325cf969712b3856de45416c61e8cd3b4324",
+    "serializers.py": "7a6f1a45ff3fc8c02251cfe8c837130afc8a647edf9c28b1e9b6ccf727e7e97b",
+    "database.py": "0f090729bcbdcde97cb7bddc6e57f8e0e35b86ace16f2fecd6ad93651b37eddc",
+    "permissions.py": "ac99b9d3ed0d17618eec924cbb832b03e8ea3e42fbc6c73b8ac9d6c213533474"
+  }
+}

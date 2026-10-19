@@ -1,0 +1,15 @@
+flowchart LR
+    U[教师与学生浏览器] -->|HTTP JSON| A[FastAPI 路由与身份校验]
+    A --> P[项目权限与业务规则]
+    P --> D[(SQLite 业务数据)]
+    P --> F[受控附件存储]
+    P --> I[持久分析意图]
+    I --> M[AgentManager 有界分析]
+    M --> T[ProjectTools 查询与检查]
+    T --> D
+    M -->|兼容 SDK| L[外部模型接口]
+    L --> M
+    M --> C[内部草案与运行记录]
+    C --> D
+    A --> H[单进程 Hub]
+    H -->|WebSocket 事件| U

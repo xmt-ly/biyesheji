@@ -1,0 +1,122 @@
+@media(min-width:1600px) {
+  .page-area { padding:32px 40px 48px }
+  .chat-panel { min-height:680px }
+  .message-body { font-size:15px }
+  .message-body header strong,.message-body header time { font-size:14px }
+  .analysis-card { padding:24px }
+}
+@media(max-width:1200px) {
+  .page-area { padding:24px }
+  .topbar { padding:0 24px; gap:16px }
+  .collaboration-grid { gap:16px }
+  .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .stat-grid { gap:12px }
+  .stat { padding:16px }
+  .kanban { gap:12px }
+  .kanban-column { padding:12px }
+  .task-card { padding:16px }
+  .stage-grid { gap:16px }
+  .stage-grid>.panel { padding:16px }
+  .login-intro { padding-left:8%; padding-right:8% }
+  .login-intro h1 { font-size:32px }
+  .login-panel { padding-left:10%; padding-right:10% }
+  .login-flow { gap:12px }
+  .login-flow span { padding:12px }
+  .chat-messages,.chat-composer { padding-left:16px; padding-right:16px }
+  .analysis-controls,.analysis-card { padding:16px }
+}
+@media(max-width:1023px) {
+  .app-shell { grid-template-columns:minmax(0,1fr) }
+  .sidebar { visibility:hidden; transform:translateX(-100%); transition:transform 180ms; box-shadow:0 8px 28px rgba(24,24,27,.06) }
+  .menu-open .sidebar { visibility:visible; transform:translateX(0) }
+  .sidebar-brand-row { margin-left:0; margin-right:0; gap:0 }
+  .sidebar-close,.menu-trigger { display:inline-flex }
+  .sidebar .brand small { font-size:14px }
+  .main-workspace { grid-column:1 }
+  .collaboration-grid { grid-template-columns:minmax(0,62fr) minmax(0,38fr) }
+  .chat-panel { min-height:560px }
+  .stat-grid,.member-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .stage-grid { grid-template-columns:minmax(0,1fr) }
+  .stage-card { min-height:0 }
+  .stage-card .button { margin-top:12px }
+  .stage-grid fieldset { margin:0 }
+  .stage-grid:has(fieldset) { gap:16px; margin-bottom:16px }
+  .kanban { grid-template-columns:repeat(3,minmax(0,1fr)) }
+  .kanban-column { min-height:240px }
+  .two-column { grid-template-columns:minmax(0,1fr); gap:0 }
+  .task-detail-grid { grid-template-columns:minmax(0,1fr) }
+  .comment-panel { border-left:0; padding-left:0; border-top:1px solid var(--border); padding-top:24px }
+  .login-intro { padding:40px 8% }
+  .login-intro h1 { font-size:28px }
+  .login-flow { flex-wrap:wrap; gap:12px }
+  .login-panel { padding:48px 8% }
+}
+@media(max-width:767px) {
+  .topbar { height:64px; padding:0 12px; gap:8px }
+  .topbar-location { gap:4px }
+  .breadcrumb { font-size:14px; gap:8px }
+  .breadcrumb-project,.breadcrumb-separator { display:none }
+  .breadcrumb strong { overflow:hidden; text-overflow:ellipsis }
+  .topbar-actions { gap:8px }
+  .topbar-actions .avatar { display:none }
+  .demo-label { padding:3px 8px; font-size:14px }
+  .refresh-button { width:44px; padding:8px!important }
+  .refresh-button span { display:none }
+  .page-area { padding:24px 16px 32px }
+  .page-head { align-items:flex-start; flex-direction:column; gap:16px }
+  .page-head h1 { font-size:clamp(24px,6vw,28px) }
+  .page-head p { font-size:15px }
+  .stat-grid,.project-grid,.member-grid,.stage-grid,.kanban,.collaboration-grid { grid-template-columns:minmax(0,1fr) }
+  .stat { padding:16px }
+  .stat>strong { font-size:28px }
+  .panel { padding:16px; margin-bottom:24px }
+  .section-head { align-items:flex-start; flex-wrap:wrap; gap:12px }
+  .form-grid { grid-template-columns:minmax(0,1fr); gap:0 }
+  .modal-mask { padding:12px }
+  .modal { padding:20px; max-height:calc(100dvh - 24px) }
+  .drawer-mask { padding:0 }
+  .modal-drawer { width:100%; padding:20px; max-height:100dvh; border:0 }
+  .modal-drawer>.section-head { top:-20px; margin:-20px -20px 24px; padding:12px 20px; flex-wrap:nowrap; align-items:center }
+  .modal-drawer .form-grid { grid-template-columns:minmax(0,1fr) }
+  .form-actions { flex-wrap:wrap }
+  .form-actions .button { flex:1 }
+  .kanban-column { min-height:140px }
+  .kanban-column .task-card { width:100%; margin-right:0 }
+  .toolbar .search-field { width:100% }
+  .toolbar>.muted { margin-left:0 }
+  .compare-selectors { display:block }
+  .compare-selectors>span { display:none }
+  .workload-row { grid-template-columns:72px minmax(0,1fr) 48px; gap:12px }
+  .workload-row small { grid-column:2/4; margin-top:-4px }
+  .draft-add-bar { flex-wrap:wrap }
+  .draft-add-bar label { min-width:100%; flex-basis:100% }
+  .chat-panel { padding:0; position:static; height:auto; min-height:0; max-height:none }
+  .chat-header { flex-wrap:wrap; padding:16px }
+  .chat-messages { min-height:240px; max-height:55dvh; padding:16px }
+  .chat-composer { padding:16px }
+  .chat-composer footer { flex-wrap:wrap; align-items:flex-start }
+  .chat-composer footer .caption { max-width:100% }
+  .relation-bar label { min-width:120px }
+  .analysis-column { display:grid; grid-template-columns:minmax(0,1fr); gap:0 }
+  .analysis-controls { margin-top:0 }
+  .connection-status { font-size:14px }
+  .analysis-card { padding:16px }
+  .review header { flex-wrap:wrap }
+  .review time { margin-left:0 }
+  .file-row { flex-wrap:wrap }
+  .file-row .row-actions { width:100% }
+  .login-page { display:block }
+  .login-intro { padding:24px 24px 32px; border-right:0; border-bottom:1px solid var(--border) }
+  .login-intro .brand { margin-bottom:24px }
+  .login-intro .brand strong { font-size:18px }
+  .login-intro>.eyebrow { font-size:14px }
+  .login-intro h1 { font-size:28px; line-height:1.5; margin:12px 0 }
+  .login-intro>p { font-size:15px; margin-bottom:0 }
+  .login-flow,.login-note { display:none }
+  .login-panel { padding:32px 24px }
+  .login-panel h2 { font-size:24px }
+  .demo-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .banner { padding:12px; font-size:14px; align-items:flex-start }
+  .page-head.compact { margin-bottom:24px }
+}
+

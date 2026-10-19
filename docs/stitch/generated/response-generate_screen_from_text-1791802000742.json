@@ -1,0 +1,316 @@
+{
+  "outputComponents": [
+    {
+      "design": {
+        "screens": [
+          {
+            "designSystem": {
+              "designSystem": {
+                "displayName": "Studio Calm",
+                "styleGuidelines": "## Brand & Style\n\nThis design system embodies a serene, focused \"Studio Calm\" aesthetic tailored for course project collaboration. Rooted in structured minimalism, the visual environment prioritizes intellectual clarity, quiet focus, and immediate scannability over decoration. \n\nThe aesthetic references clean, tactile paper stationery paired with precise architectural drafting tools: crisp zinc neutral surfaces, disciplined divider rules, and an exclusive accent of restrained teal. It deliberately avoids AI-associated neon glowing accents, saturated decorative gradients, marketing badges, and synthetic gamification cards. The emotional tone is dependable, thoughtful, quiet, and collegiate.\n\n## Layout & Spacing\n\nLayout conforms to an asymmetrical dual-column workspace model:\n- **Navigation Shell**: A fixed 224px left sidebar is complemented by a 64px header bar on desktop.\n- **Main Canvas**: Divided into an asymmetrical split — approximately 2/3 width devoted to primary working stages (personal agenda, sprint tasks, core deliverable boards) and 1/3 width allocated to auxiliary context (peer draft reviews, dependency alerts, milestone deadlines).\n- **Responsive Adaptations**:\n  - **Desktop (>= 1200px)**: 2/3 and 1/3 workspace layout alongside persistent 224px left sidebar.\n  - **Tablet (768px - 1199px)**: Sidebar condenses to compact rail; workspace stacks the auxiliary context underneath primary boards with 1.25rem gaps.\n  - **Mobile (< 768px)**: Single-column flow; 64px header converts into mobile bar with slide-over drawer; gutter/margin shrinks to 1rem.\n\n## Elevation & Depth\n\nVisual hierarchy is conveyed exclusively via **low-contrast structural outlines and subtle tonal layering**, rejecting deep atmospheric drops or fuzzy shadows:\n- **Baseline Canvas**: Base floor sits at `#FAFAFA`.\n- **Card Surfaces**: Raised containers use `#FFFFFF` bounded by a crisp `1px solid #E4E4E7` border.\n- **Flat Elevation**: Shadows are avoided on static items. For contextual floating layers (dropdown menus, popovers, active dialog modals), an ultra-diffused, ambient shadow (`0 4px 16px -2px rgba(24, 24, 27, 0.06)`) is combined with the `1px` structural outline.\n- **Active Tonal Shifts**: State selection uses the quiet `#EEF5F3` tinted surface wash, keeping UI planes grounded without visual noise.\n\n## Components\n\n- **Sidebar (224px)**: Pure white background with a right-hand `1px solid #E4E4E7` line. Nav items feature 8px corners, secondary ink text, and transition to `#EEF5F3` with Studio Teal text and active bar on selection.\n- **Top Header (64px)**: White surface with bottom structural line. Houses workspace switcher, breadcrumbs, demo-data indicator pills, and user avatar.\n- **Task Cards**: White background, 12px border radius, 1px `#E4E4E7` line. Clearly segment:\n  - Task state tag and remaining work hours (monospace text).\n  - Explicit deadline and milestone association links.\n  - Distinct blocker warning banners (using `#F4F4F5` with a discrete warning border, avoiding alarmist loud red).\n  - Primary button in `#2F6F65` and secondary ghost action button.\n- **Buttons**:\n  - *Primary*: Background `#2F6F65`, text `#FFFFFF`, 8px radius, hover state `#255951`.\n  - *Secondary*: Background `#FFFFFF`, border `1px solid #E4E4E7`, text `#18181B`, hover state `#F4F4F5`.\n  - *Ghost*: Background transparent, text `#52525B`, hover background `#F4F4F5`.\n- **Form Inputs & Search**: Background `#FFFFFF`, border `1px solid #E4E4E7`, 8px radius, placeholder in `#52525B`. Focus state transitions border to `#2F6F65` with a subtle outline ring.\n- **Chips & Badges**: 8px rounded tags with 4px vertical padding. Regular metadata tags use `#F4F4F5` with `#52525B` text; highlighted or selected tags use `#EEF5F3` with `#2F6F65` text.\n- **Checkboxes & Radios**: 16px geometric markers with 1px border. Checked state fills with `#2F6F65` displaying white vector mark.\n- **Data & Activity Lists**: Borderless row items separated by `1px solid #E4E4E7` dividers; hover transitions row to `#F4F4F5`.",
+                "theme": {
+                  "bodyFont": "GEIST",
+                  "bodyFontFamily": "Geist",
+                  "colorMode": "LIGHT",
+                  "colorVariant": "FIDELITY",
+                  "customColor": "#2f6f65",
+                  "designMd": "---\nname: Studio Calm\ncolors:\n  surface: '#fbf8fc'\n  surface-dim: '#dcd9dd'\n  surface-bright: '#fbf8fc'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f6f2f7'\n  surface-container: '#f0edf1'\n  surface-container-high: '#eae7eb'\n  surface-container-highest: '#e4e1e6'\n  on-surface: '#1b1b1e'\n  on-surface-variant: '#3f4946'\n  inverse-surface: '#303033'\n  inverse-on-surface: '#f3f0f4'\n  outline: '#6f7976'\n  outline-variant: '#bfc9c5'\n  surface-tint: '#28685f'\n  primary: '#0f564d'\n  on-primary: '#ffffff'\n  primary-container: '#2f6f65'\n  on-primary-container: '#afefe2'\n  inverse-primary: '#93d3c6'\n  secondary: '#5e5e67'\n  on-secondary: '#ffffff'\n  secondary-container: '#e0dee9'\n  on-secondary-container: '#62626b'\n  tertiary: '#743e2e'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#905544'\n  on-tertiary-container: '#ffdad1'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#aeefe2'\n  primary-fixed-dim: '#93d3c6'\n  on-primary-fixed: '#00201c'\n  on-primary-fixed-variant: '#035047'\n  secondary-fixed: '#e3e1ec'\n  secondary-fixed-dim: '#c7c5d0'\n  on-secondary-fixed: '#1a1b23'\n  on-secondary-fixed-variant: '#46464f'\n  tertiary-fixed: '#ffdbd1'\n  tertiary-fixed-dim: '#ffb5a0'\n  on-tertiary-fixed: '#360e04'\n  on-tertiary-fixed-variant: '#6d3829'\n  background: '#fbf8fc'\n  on-background: '#1b1b1e'\n  surface-variant: '#e4e1e6'\n  paper-canvas: '#FAFAFA'\n  surface-white: '#FFFFFF'\n  zinc-wash: '#F4F4F5'\n  structural-line: '#E4E4E7'\n  zinc-ink: '#18181B'\n  secondary-ink: '#52525B'\n  studio-teal: '#2F6F65'\n  teal-wash: '#EEF5F3'\ntypography:\n  headline-page:\n    fontFamily: Geist\n    fontSize: 28px\n    fontWeight: '600'\n    lineHeight: 36px\n    letterSpacing: -0.02em\n  headline-section:\n    fontFamily: Geist\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 26px\n    letterSpacing: -0.01em\n  headline-card:\n    fontFamily: Geist\n    fontSize: 16px\n    fontWeight: '600'\n    lineHeight: 24px\n  body-default:\n    fontFamily: Geist\n    fontSize: 15px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-secondary:\n    fontFamily: Geist\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 22px\n  label-numeric:\n    fontFamily: JetBrains Mono\n    fontSize: 13px\n    fontWeight: '500'\n    lineHeight: 18px\n  caption:\n    fontFamily: Geist\n    fontSize: 12px\n    fontWeight: '500'\n    lineHeight: 16px\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  gutter: 1.5rem\n  margin: 1.5rem\n  space-xs: 0.25rem\n  space-sm: 0.5rem\n  space-md: 0.75rem\n  space-lg: 1rem\n  space-xl: 1.5rem\n---\n\n# Design System: 课协 · 课程项目智能协作系统\n\n## 1. Visual Theme & Atmosphere\n- 风格：安静的浅色课程工作室风格（Studio Calm），内容优先，结构清晰\n- 基础基调：Zinc 中性灰，纸面白底底色，细结构分隔线，微圆角（8px 按钮，12px 容器卡片）\n- 强调色：唯一松石绿 Studio Teal `#2F6F65`，次级选中底色淡松石 Teal Wash `#EEF5F3`\n- 中文排版：Geist, Noto Sans SC, sans-serif；等宽数字 Geist Mono\n- 避免 AI 霓虹、渐变大标题、虚假评分或营销卡片\n\n## 2. Color Palette & Roles\n- Paper Canvas (底色): #FAFAFA\n- Surface White (卡片/弹窗/容器): #FFFFFF\n- Zinc Wash (浅灰底色/悬停): #F4F4F5\n- Structural Line (边框线): #E4E4E7\n- Zinc Ink (主要文字): #18181B\n- Secondary Ink (次级说明): #52525B\n- Studio Teal (唯一强调色): #2F6F65\n- Teal Wash (选中底色): #EEF5F3\n\n## 3. Typography\n- 字体：Geist, Noto Sans SC, PingFang SC, sans-serif\n- 代码/数值：Geist Mono, JetBrains Mono, monospace\n- 标题：页标题 28px/650，区块标题 18px/600，卡片标题 16px/600\n- 正文：15px/1.65，表单/次级 14px\n\n## 4. Components\n- 侧栏：宽 224px，白底，右侧 1px 细线，学生完整导航项目\n- 顶栏：高 64px，白底，项目切换、面包屑、演示数据标记及用户信息\n- 工作台布局：左侧约 2/3 主工作区（本人下一步与核心任务），右侧约 1/3 辅助协作区（待核对草案与阶段提醒）\n- 任务卡：清晰展示状态、剩余工时、截止时间、需求关联、阻碍文字提示，主次动作明确\n",
+                  "font": "GEIST",
+                  "headlineFont": "GEIST",
+                  "headlineFontFamily": "Geist",
+                  "labelFont": "JETBRAINS_MONO",
+                  "labelFontFamily": "JetBrains Mono",
+                  "namedColors": {
+                    "background": "#fbf8fc",
+                    "error": "#ba1a1a",
+                    "error_container": "#ffdad6",
+                    "inverse_on_surface": "#f3f0f4",
+                    "inverse_primary": "#93d3c6",
+                    "inverse_surface": "#303033",
+                    "on_background": "#1b1b1e",
+                    "on_error": "#ffffff",
+                    "on_error_container": "#93000a",
+                    "on_primary": "#ffffff",
+                    "on_primary_container": "#afefe2",
+                    "on_primary_fixed": "#00201c",
+                    "on_primary_fixed_variant": "#035047",
+                    "on_secondary": "#ffffff",
+                    "on_secondary_container": "#62626b",
+                    "on_secondary_fixed": "#1a1b23",
+                    "on_secondary_fixed_variant": "#46464f",
+                    "on_surface": "#1b1b1e",
+                    "on_surface_variant": "#3f4946",
+                    "on_tertiary": "#ffffff",
+                    "on_tertiary_container": "#ffdad1",
+                    "on_tertiary_fixed": "#360e04",
+                    "on_tertiary_fixed_variant": "#6d3829",
+                    "outline": "#6f7976",
+                    "outline_variant": "#bfc9c5",
+                    "paper-canvas": "#FAFAFA",
+                    "primary": "#0f564d",
+                    "primary_container": "#2f6f65",
+                    "primary_fixed": "#aeefe2",
+                    "primary_fixed_dim": "#93d3c6",
+                    "secondary": "#5e5e67",
+                    "secondary-ink": "#52525B",
+                    "secondary_container": "#e0dee9",
+                    "secondary_fixed": "#e3e1ec",
+                    "secondary_fixed_dim": "#c7c5d0",
+                    "structural-line": "#E4E4E7",
+                    "studio-teal": "#2F6F65",
+                    "surface": "#fbf8fc",
+                    "surface-white": "#FFFFFF",
+                    "surface_bright": "#fbf8fc",
+                    "surface_container": "#f0edf1",
+                    "surface_container_high": "#eae7eb",
+                    "surface_container_highest": "#e4e1e6",
+                    "surface_container_low": "#f6f2f7",
+                    "surface_container_lowest": "#ffffff",
+                    "surface_dim": "#dcd9dd",
+                    "surface_tint": "#28685f",
+                    "surface_variant": "#e4e1e6",
+                    "teal-wash": "#EEF5F3",
+                    "tertiary": "#743e2e",
+                    "tertiary_container": "#905544",
+                    "tertiary_fixed": "#ffdbd1",
+                    "tertiary_fixed_dim": "#ffb5a0",
+                    "zinc-ink": "#18181B",
+                    "zinc-wash": "#F4F4F5"
+                  },
+                  "overrideNeutralColor": "#18181b",
+                  "overridePrimaryColor": "#2f6f65",
+                  "overrideSecondaryColor": "#52525b",
+                  "roundness": "ROUND_EIGHT",
+                  "spacing": {
+                    "gutter": "1.5rem",
+                    "margin": "1.5rem",
+                    "space-lg": "1rem",
+                    "space-md": "0.75rem",
+                    "space-sm": "0.5rem",
+                    "space-xl": "1.5rem",
+                    "space-xs": "0.25rem"
+                  },
+                  "spacingScale": 2,
+                  "typography": {
+                    "body-default": {
+                      "fontFamily": "Geist",
+                      "fontSize": "15px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px"
+                    },
+                    "body-secondary": {
+                      "fontFamily": "Geist",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "22px"
+                    },
+                    "caption": {
+                      "fontFamily": "Geist",
+                      "fontSize": "12px",
+                      "fontWeight": "500",
+                      "lineHeight": "16px"
+                    },
+                    "headline-card": {
+                      "fontFamily": "Geist",
+                      "fontSize": "16px",
+                      "fontWeight": "600",
+                      "lineHeight": "24px"
+                    },
+                    "headline-page": {
+                      "fontFamily": "Geist",
+                      "fontSize": "28px",
+                      "fontWeight": "600",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "36px"
+                    },
+                    "headline-section": {
+                      "fontFamily": "Geist",
+                      "fontSize": "18px",
+                      "fontWeight": "600",
+                      "letterSpacing": "-0.01em",
+                      "lineHeight": "26px"
+                    },
+                    "label-numeric": {
+                      "fontFamily": "JetBrains Mono",
+                      "fontSize": "13px",
+                      "fontWeight": "500",
+                      "lineHeight": "18px"
+                    }
+                  }
+                }
+              },
+              "name": "assets/c91e42b7bf0a4156ba52ca59cd60d4bc",
+              "version": "1"
+            },
+            "deviceType": "DESKTOP",
+            "generatedBy": "figaro_agent",
+            "height": "2048",
+            "htmlCode": {
+              "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzUyOGI2NDY2MTFjNzQ5YTJiMmMwZjBhMGIzYTg2OWU3EgsSBxDtzJbcpgoYAZIBJAoKcHJvamVjdF9pZBIWQhQxMDA5NTkwNzA1NDk4OTAxNjQ2OQ&filename=&opi=96797242",
+              "mimeType": "text/html",
+              "name": "projects/10095907054989016469/files/2f8e2a62dd4743eb887a8fa62b7a858f"
+            },
+            "id": "ebdabd7d0ac343bb83b2909d3963c3ae",
+            "name": "projects/10095907054989016469/screens/ebdabd7d0ac343bb83b2909d3963c3ae",
+            "prompt": "页面标题：05 教师阶段审核（页面名称：阶段成果与审核）。\n严格遵循 DESIGN.md 规范与“课协 · 课程项目智能协作系统”的设计语言：\n1. 风格与色彩：\n   - 浅色课程工作室风格：纸面白 Paper Canvas (#FAFAFA)、内容白 Surface White (#FFFFFF)、浅锌灰 Zinc Wash (#F4F4F5)、结构灰 Structural Line (#E4E4E7)、深锌墨 Zinc Ink (#18181B)、次级墨 Secondary Ink (#52525B)、松石绿 Studio Teal (#2F6F65)、淡松石 Teal Wash (#EEF5F3)。\n   - 禁用纯黑、禁用蓝紫渐变、禁用AI光晕、禁用营销大标题与等宽功能卡，禁止任何emoji。\n   - 顶部保留统一的“演示数据”标签和基准日期“2026-10-12”。\n\n2. 教师端侧栏（宽224px / w-56，严格遵守教师权限边界）：\n   - 顶部品牌：“课协 · 课程项目协作”；\n   - 教师当前身份：“张教师 (指导教师)”；\n   - 指导团队切换选择器：支持在“一组课程项目 (当前)”与“二组课程项目”之间切换；\n   - 教师专属导航菜单（绝不包含团队协作、内部Agent分析或私有草案）：\n     * 项目概览 (overview)\n     * 已确认需求 (checklist)\n     * 任务看板 (view_kanban)\n     * 计划与排期 (calendar_month)\n     * 阶段成果 (verified) —— [当前高亮选中状态]\n     * 课程要求 (menu_book)\n   - 底部教师账号信息：“张教师 · CS301指导教师”，退出登录。\n\n3. 顶栏 (高度64px)：\n   - 面包屑：CS301 软件工程实训 / 一组课程项目 / 阶段成果与审核\n   - 演示基准日期：2026-10-12 | 演示数据\n   - 快捷动作：“刷新数据”，教师头像“张”。\n\n4. 核心非对称工作区布局（左侧约 340px 阶段与版本列表，右侧宽工作区详情与审核表单）：\n   - 左侧栏【三个阶段与提交历史】：\n     * 顶部标题：“课程评审阶段与版本提交”；说明：“教师负责按阶段核验已发布成果”。\n     * 阶段一：需求与计划检查 (截止: 2026-10-25) —— 当前选中展开。\n       - 包含两个提交版本历史：\n         1. 提交版本 v2 (2026-10-12 14:30 提交) · 状态：通过 (已审核) —— [当前查看详情]\n         2. 提交版本 v1 (2026-10-10 11:20 提交) · 状态：需要修改 (2026-10-11 已驳回)\n     * 阶段二：开发中期检查 (截止: 2026-11-15) · 状态：未提交 (组内进行中)\n     * 阶段三：最终系统验收 (截止: 2026-12-06) · 状态：未提交\n   \n   - 右侧主区【选中版本详情、交付物、进度快照与审核表单】：\n     * 顶部版本标题与状态横条：\n       - 展示“阶段一：需求与计划检查 · 提交版本 v2”\n       - 提交时间：2026-10-12 14:30 | 提交人：组长·李长 | 关联计划版本：v2.0 (已发布)\n       - 状态徽章：“通过 (审核已归档)”与版本对比切换标签（可切换查看 v1 历史与教师指导记录）。\n     * 交付物与提交说明卡片：\n       - 交付物清单：包含规范附件《需求与计划演示.md》(142 KB, 包含“下载附件”按钮)；以及《CS301-G1_系统架构与需求规格说明书_v2.0.pdf》(2.4 MB)；\n       - 提供“材料下载与完整性检查”状态提示（可模拟下载异常重试交互文案）；\n       - 组内提交说明：详细记录组长关于“已补充角色权限矩阵与安全校验用例，更新计划v2.0排期，全组成员已核对一致”的陈述。\n     * 公开进度快照（教师只读客观数据，不含内部聊天或私有Agent）：\n       - 关联计划版本：v2.0 (当前执行中)\n       - 任务总数：4项 (进行中 2项, 待开始 2项, 完成度 40%)\n       - 关键里程碑检查：M1 阶段一评审节点 (2026-10-25 截止)，前置链路闭环且无超期风险。\n     * 教师阶段审核记录与表单区：\n       - 历史记录：展示针对 v1 的“需要修改”指导意见（“v1中缺少具体权限角色的用例验收标准，计划甘特图中接口联调缓冲时间不足，请核对后重提”）；\n       - 本次 v2 审核记录与表单：\n         * 审核判定：单选切换“通过 (符合阶段要求)”与“需要修改”；\n         * 必填教师指导意见输入域：“已核对补充的权限矩阵及更新后的甘特图v2.0，关键路径清晰，满足阶段一验收标准，准予通过。”\n         * 约束声明：“说明：阶段审核通过代表阶段成果达标，不会自动将组内任务状态变更为全部完成。组员仍需按计划推进任务。”\n         * 动作按钮：“保存审核意见” (主要按钮，Studio Teal #2F6F65)、“导出评审记录” (次要按钮)。\n     * 额外交互提示与状态支持：\n       - 顶部包含“待审核”、“材料缺失需修改”状态快速过滤筛选提示与异常轻量警示，完全契合真实课程检查工作区定位。",
+            "screenMetadata": {
+              "agentType": "PRO_AGENT",
+              "status": "COMPLETE"
+            },
+            "screenType": "DESIGN",
+            "screenshot": {
+              "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1W-MUa_CpWvDQX971Pajc7_iXilFjQCsRtalyPzvToFeeMQNpioZlEZfljCdOVMz7IxlGHbs4_3hL-EaX3ODak-840Lyb15LC0wkwJiH36jj04XqZQ33Aq5dW2DVaz1kvHIIRLTasEsA5ln3vMG1uOdiA4NoRWr-BYApyWyOI9c2U5MY-vMil7V_NqU4UEULQ_dzKk0CxVolzWlBhZxNoyc74zOupj3DLiwAWltdlr7Ad_gukRk9QvsRqLS",
+              "name": "projects/10095907054989016469/files/4f38551d2f6f42218c642b3a2e70cfc1"
+            },
+            "theme": {
+              "bodyFont": "GEIST",
+              "bodyFontFamily": "Geist",
+              "colorMode": "LIGHT",
+              "colorVariant": "FIDELITY",
+              "customColor": "#2f6f65",
+              "font": "GEIST",
+              "headlineFont": "GEIST",
+              "headlineFontFamily": "Geist",
+              "labelFont": "JETBRAINS_MONO",
+              "labelFontFamily": "JetBrains Mono",
+              "namedColors": {
+                "background": "#fbf8fc",
+                "error": "#ba1a1a",
+                "error_container": "#ffdad6",
+                "inverse_on_surface": "#f3f0f4",
+                "inverse_primary": "#93d3c6",
+                "inverse_surface": "#303033",
+                "on_background": "#1b1b1e",
+                "on_error": "#ffffff",
+                "on_error_container": "#93000a",
+                "on_primary": "#ffffff",
+                "on_primary_container": "#afefe2",
+                "on_primary_fixed": "#00201c",
+                "on_primary_fixed_variant": "#035047",
+                "on_secondary": "#ffffff",
+                "on_secondary_container": "#62626b",
+                "on_secondary_fixed": "#1a1b23",
+                "on_secondary_fixed_variant": "#46464f",
+                "on_surface": "#1b1b1e",
+                "on_surface_variant": "#3f4946",
+                "on_tertiary": "#ffffff",
+                "on_tertiary_container": "#ffdad1",
+                "on_tertiary_fixed": "#360e04",
+                "on_tertiary_fixed_variant": "#6d3829",
+                "outline": "#6f7976",
+                "outline_variant": "#bfc9c5",
+                "paper-canvas": "#FAFAFA",
+                "primary": "#0f564d",
+                "primary_container": "#2f6f65",
+                "primary_fixed": "#aeefe2",
+                "primary_fixed_dim": "#93d3c6",
+                "secondary": "#5e5e67",
+                "secondary-ink": "#52525B",
+                "secondary_container": "#e0dee9",
+                "secondary_fixed": "#e3e1ec",
+                "secondary_fixed_dim": "#c7c5d0",
+                "structural-line": "#E4E4E7",
+                "studio-teal": "#2F6F65",
+                "surface": "#fbf8fc",
+                "surface-white": "#FFFFFF",
+                "surface_bright": "#fbf8fc",
+                "surface_container": "#f0edf1",
+                "surface_container_high": "#eae7eb",
+                "surface_container_highest": "#e4e1e6",
+                "surface_container_low": "#f6f2f7",
+                "surface_container_lowest": "#ffffff",
+                "surface_dim": "#dcd9dd",
+                "surface_tint": "#28685f",
+                "surface_variant": "#e4e1e6",
+                "teal-wash": "#EEF5F3",
+                "tertiary": "#743e2e",
+                "tertiary_container": "#905544",
+                "tertiary_fixed": "#ffdbd1",
+                "tertiary_fixed_dim": "#ffb5a0",
+                "zinc-ink": "#18181B",
+                "zinc-wash": "#F4F4F5"
+              },
+              "overrideNeutralColor": "#18181b",
+              "overridePrimaryColor": "#2f6f65",
+              "overrideSecondaryColor": "#52525b",
+              "roundness": "ROUND_EIGHT",
+              "spacing": {
+                "gutter": "1.5rem",
+                "margin": "1.5rem",
+                "space-lg": "1rem",
+                "space-md": "0.75rem",
+                "space-sm": "0.5rem",
+                "space-xl": "1.5rem",
+                "space-xs": "0.25rem"
+              },
+              "spacingScale": 2,
+              "typography": {
+                "body-default": {
+                  "fontFamily": "Geist",
+                  "fontSize": "15px",
+                  "fontWeight": "400",
+                  "lineHeight": "24px"
+                },
+                "body-secondary": {
+                  "fontFamily": "Geist",
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "lineHeight": "22px"
+                },
+                "caption": {
+                  "fontFamily": "Geist",
+                  "fontSize": "12px",
+                  "fontWeight": "500",
+                  "lineHeight": "16px"
+                },
+                "headline-card": {
+                  "fontFamily": "Geist",
+                  "fontSize": "16px",
+                  "fontWeight": "600",
+                  "lineHeight": "24px"
+                },
+                "headline-page": {
+                  "fontFamily": "Geist",
+                  "fontSize": "28px",
+                  "fontWeight": "600",
+                  "letterSpacing": "-0.02em",
+                  "lineHeight": "36px"
+                },
+                "headline-section": {
+                  "fontFamily": "Geist",
+                  "fontSize": "18px",
+                  "fontWeight": "600",
+                  "letterSpacing": "-0.01em",
+                  "lineHeight": "26px"
+                },
+                "label-numeric": {
+                  "fontFamily": "JetBrains Mono",
+                  "fontSize": "13px",
+                  "fontWeight": "500",
+                  "lineHeight": "18px"
+                }
+              }
+            },
+            "title": "教师阶段审核",
+            "width": "2560"
+          }
+        ],
+        "theme": {}
+      }
+    },
+    {
+      "text": "已完成第5个高保真中文桌面Web页面——**「教师阶段审核」**（页面标题：阶段成果与审核），严格遵循统一的 `DESIGN.md` 规范与当前设计系统，保持与前4个页面的视觉风格、组件秩序与业务边界高度一致。\n\n---\n\n### 设计与业务落地细节\n\n1. **统一品牌与视觉质感**\n   - **配色体系**：严格采用浅色课程工作室规范，包含纸面白（`#FAFAFA`）、内容白（`#FFFFFF`）、浅锌灰（`#F4F4F5`）、结构灰（`#E4E4E7`）、深锌墨（`#18181B`）以及唯一的品牌强调色松石绿（`#2F6F65`）与淡松石背景（`#EEF5F3`）。\n   - **零禁忌元素**：全界面无 emoji、无蓝紫 AI 渐变、无营销大标题与无意义装饰卡片；右上角与各数据模块均标准标注“演示数据”标签及基准日期 `2026-10-12`。\n\n2. **教师端专属侧栏与严格权限边界**\n   - **项目切换**：顶部提供教师指导团队切换选择器，支持在教师指导的“一组课程项目 (当前)”与“二组课程项目”之间便捷切换。\n   - **清晰权限边界**：侧栏导航仅包含教师可访问的 6 个模块（项目概览、已确认需求、任务看板、计划与排期、**阶段成果 [高亮选中]**、课程要求）；**彻底排除了**学生内部的“团队协作”、内部讨论聊天室及私有 Agent 分析建议。\n   - **底部身份卡**：清晰标注“张教师 · CS301 指导教师”，体现课程检查工作区而非管理员后台的定位。\n\n3. **非对称两栏工作区布局**\n   - **左侧：三个阶段与提交版本列表（约 340px）**\n     - 阶段顺序严格遵循大纲要求：**阶段一：需求与计划检查**（截止 2026-10-25）、**阶段二：开发中期检查**（截止 2026-11-15）、**阶段三：最终系统验收**（截止 2026-12-06）。\n     - 阶段一完整展开呈现版本迭代历史：包含历史版本 `v1 提交版本`（2026-10-11 驳回需修改，附带历史驳回意见）与当前最新 `v2 提交版本`（2026-10-12 提交，已审核归档通过）。\n   - **右侧：选中版本详情、交付物、客观进度快照与审核记录表单**\n     - **版本头部**：展示 v2 提交时间、提交人（组长·李长）、关联计划版本（已发布 v2.0）及版本快速切换标签。\n     - **交付物材料**：提供《需求与计划演示.md》（142 KB）及《CS301-G1_系统架构与需求规格说明书_v2.0.pdf》（2.4 MB），包含下载按钮及 SHA-256 完整性检验标识。\n     - **组内说明**：完整呈现团队在 v2 中补充权限矩阵、测试用例与工时缓冲的改动陈述及全员签名。\n     - **公开进度快照（只读客观镜像）**：提供公开的 4 项任务统计（2项进行中、2项待开始）、关键里程碑 M1 达标情况，以及工时研判。\n     - **教师审核判定与指导记录**：上方完整保留 v1 历史指导意见，下方提供当前版本指导记录；底部严格标注“阶段审核通过不代表内部任务全部自动完成”的业务约束，主操作采用 Studio Teal 实底按钮“保存审核意见”。\n\n4. **异常与筛选状态支持**\n   - 顶栏包含快速筛选（全部阶段、已归档通过、待重新复核），并针对材料下载完整性与异常提供明确的反馈机制，完全契合真实高校课程团队的实践评审场景。"
+    },
+    {
+      "suggestion": "查看手机端 390px 尺寸下的阶段审核适配方案"
+    },
+    {
+      "suggestion": "查看阶段一 v1 驳回状态与教师填写审核表单时的编辑态交互"
+    },
+    {
+      "suggestion": "对已完成的 5 个页面进行整体设计系统与数据流闭环核对"
+    }
+  ],
+  "projectId": "10095907054989016469",
+  "sessionId": "10967949705349728750"
+}

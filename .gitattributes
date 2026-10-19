@@ -1,0 +1,2 @@
+# 实验冻结清单按文件原始字节计算 SHA-256，克隆时保留原有换行。
+* -text whitespace=trailing-space,space-before-tab,cr-at-eol

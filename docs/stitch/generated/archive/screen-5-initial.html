@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-paper-canvas" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>05 教师阶段审核 - 阶段成果与审核 - 课协 · 智协系统</title>
+<!-- Google Fonts: Geist & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#ffb5a0",
+            "tertiary": "#743e2e",
+            "on-surface": "#1b1b1e",
+            "on-secondary-fixed": "#1a1b23",
+            "surface-tint": "#28685f",
+            "inverse-surface": "#303033",
+            "tertiary-container": "#905544",
+            "on-surface-variant": "#3f4946",
+            "outline-variant": "#bfc9c5",
+            "surface": "#fbf8fc",
+            "on-secondary-fixed-variant": "#46464f",
+            "secondary-fixed": "#e3e1ec",
+            "surface-container": "#f0edf1",
+            "outline": "#6f7976",
+            "primary": "#0f564d",
+            "primary-fixed": "#aeefe2",
+            "on-tertiary-fixed": "#360e04",
+            "zinc-ink": "#18181B",
+            "error": "#ba1a1a",
+            "surface-variant": "#e4e1e6",
+            "structural-line": "#E4E4E7",
+            "on-tertiary": "#ffffff",
+            "secondary": "#5e5e67",
+            "on-primary-fixed-variant": "#035047",
+            "on-background": "#1b1b1e",
+            "zinc-wash": "#F4F4F5",
+            "studio-teal": "#2F6F65",
+            "surface-container-high": "#eae7eb",
+            "on-tertiary-fixed-variant": "#6d3829",
+            "surface-white": "#FFFFFF",
+            "secondary-fixed-dim": "#c7c5d0",
+            "background": "#fbf8fc",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#ffdbd1",
+            "primary-container": "#2f6f65",
+            "primary-fixed-dim": "#93d3c6",
+            "on-primary": "#ffffff",
+            "teal-wash": "#EEF5F3",
+            "paper-canvas": "#FAFAFA",
+            "on-tertiary-container": "#ffdad1",
+            "on-secondary-container": "#62626b",
+            "inverse-primary": "#93d3c6",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#afefe2",
+            "secondary-container": "#e0dee9",
+            "surface-container-low": "#f6f2f7",
+            "secondary-ink": "#52525B",
+            "inverse-on-surface": "#f3f0f4",
+            "on-error": "#ffffff",
+            "surface-dim": "#dcd9dd",
+            "on-primary-fixed": "#00201c",
+            "surface-container-highest": "#e4e1e6",
+            "surface-bright": "#fbf8fc",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-section": ["Geist"],
+            "label-numeric": ["JetBrains Mono"],
+            "headline-card": ["Geist"],
+            "caption": ["Geist"],
+            "body-secondary": ["Geist"],
+            "headline-page": ["Geist"],
+            "body-default": ["Geist"]
+          },
+          "fontSize": {
+            "headline-section": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "label-numeric": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+            "headline-card": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "body-secondary": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "headline-page": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-default": ["15px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="h-full bg-paper-canvas text-zinc-ink antialiased flex flex-col font-body-default text-body-default overflow-x-hidden selection:bg-teal-wash selection:text-studio-teal">
+<!-- ==================== SIDE NAV BAR (224px / w-56) ==================== -->
+<aside class="fixed top-0 left-0 h-screen w-56 z-40 flex flex-col justify-between p-space-md border-r border-structural-line bg-surface-white">
+<!-- Top Area: Brand & Team Switcher -->
+<div class="flex flex-col gap-space-md">
+<!-- Brand Logo Header -->
+<div class="flex items-center gap-space-sm px-space-xs py-space-xs">
+<div class="w-8 h-8 rounded-lg bg-teal-wash border border-structural-line flex items-center justify-center text-studio-teal">
+<span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-section text-headline-section text-zinc-ink tracking-tight truncate leading-tight">课协 · 智协系统</span>
+<span class="font-caption text-caption text-secondary-ink truncate">CS Course Studio</span>
+</div>
+</div>
+<!-- Instructor Role & Team Switcher Component -->
+<div class="p-space-sm bg-zinc-wash rounded-lg border border-structural-line flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-secondary-ink">
+<span class="font-caption text-caption font-medium">指导团队切换</span>
+<span class="font-label-numeric text-caption px-1.5 py-0.5 rounded bg-surface-white text-studio-teal border border-structural-line">教师权限</span>
+</div>
+<div class="relative">
+<select class="w-full bg-surface-white border border-structural-line rounded text-body-secondary font-body-secondary text-zinc-ink py-1.5 px-2 pr-6 appearance-none focus:outline-none focus:border-studio-teal transition-colors cursor-pointer" id="teamSelector">
+<option selected="" value="group1">一组课程项目 (当前)</option>
+<option value="group2">二组课程项目</option>
+</select>
+<span class="material-symbols-outlined absolute right-1.5 top-2 text-secondary-ink pointer-events-none text-[16px]" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+<!-- Teacher Navigation Menu (Strict Instructor Scope) -->
+<nav aria-label="教师主要导航" class="flex flex-col gap-0.5 mt-1">
+<!-- 项目概览 -->
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-secondary text-body-secondary text-secondary-ink hover:bg-zinc-wash transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="overview">overview</span>
+<span>项目概览</span>
+</a>
+<!-- 已确认需求 -->
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-secondary text-body-secondary text-secondary-ink hover:bg-zinc-wash transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="checklist">checklist</span>
+<span>已确认需求</span>
+</a>
+<!-- 任务看板 -->
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-secondary text-body-secondary text-secondary-ink hover:bg-zinc-wash transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="view_kanban">view_kanban</span>
+<span>任务看板</span>
+</a>
+<!-- 计划与排期 -->
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-secondary text-body-secondary text-secondary-ink hover:bg-zinc-wash transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
+<span>计划与排期</span>
+</a>
+<!-- 阶段成果 (Active State per JSON/Prompt) -->
+<a class="flex items-center gap-2.5 px-3 py-2 bg-teal-wash text-studio-teal rounded-lg font-headline-card text-body-secondary border border-structural-line duration-150 shadow-none" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-medium">阶段成果</span>
+<span class="ml-auto w-1.5 h-1.5 rounded-full bg-studio-teal"></span>
+</a>
+<!-- 课程要求 -->
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body-secondary text-body-secondary text-secondary-ink hover:bg-zinc-wash transition-colors duration-150 active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="menu_book">menu_book</span>
+<span>课程要求</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Area: Teacher Account & Exit -->
+<div class="flex flex-col gap-2 pt-space-md border-t border-structural-line">
+<div class="flex items-center gap-2.5 px-2 py-1.5">
+<div class="w-8 h-8 rounded-full bg-teal-wash border border-structural-line text-studio-teal flex items-center justify-center font-headline-card text-[14px]">
+          张
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-card text-[13px] text-zinc-ink truncate">张教师</span>
+<span class="font-caption text-caption text-secondary-ink truncate">CS301 指导教师</span>
+</div>
+</div>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg font-body-secondary text-caption text-secondary-ink hover:bg-zinc-wash transition-colors duration-150 text-left">
+<span class="material-symbols-outlined text-[16px]" data-icon="logout">logout</span>
+<span>退出登录</span>
+</button>
+</div>
+</aside>
+<!-- ==================== TOP NAV BAR (Height: 64px) ==================== -->
+<header class="fixed top-0 right-0 left-56 h-16 z-30 flex items-center justify-between px-gutter bg-surface-white border-b border-structural-line">
+<!-- Left: Breadcrumbs -->
+<nav aria-label="页面层级" class="flex items-center gap-2 text-body-secondary font-body-secondary">
+<span class="text-secondary-ink hover:text-zinc-ink cursor-pointer">CS301 软件工程实训</span>
+<span class="material-symbols-outlined text-secondary-ink text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-secondary-ink hover:text-zinc-ink cursor-pointer">一组课程项目</span>
+<span class="material-symbols-outlined text-secondary-ink text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="font-headline-card text-zinc-ink font-semibold">阶段成果与审核</span>
+</nav>
+<!-- Right: Status Indicators & Actions -->
+<div class="flex items-center gap-3">
+<!-- Benchmark Date & Demo Tag -->
+<div class="flex items-center gap-2 bg-zinc-wash px-2.5 py-1 rounded border border-structural-line font-label-numeric text-caption text-secondary-ink">
+<span class="material-symbols-outlined text-[15px] text-secondary-ink" data-icon="calendar_today">calendar_today</span>
+<span>2026-10-12</span>
+<span class="text-structural-line">|</span>
+<span class="px-1.5 py-0.2 bg-teal-wash text-studio-teal rounded text-[11px] font-medium border border-structural-line">演示数据</span>
+</div>
+<!-- Quick Action: Refresh -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-structural-line bg-surface-white hover:bg-zinc-wash text-secondary-ink text-body-secondary font-body-secondary transition-colors duration-150" id="refreshDataBtn" title="刷新阶段成果数据">
+<span class="material-symbols-outlined text-[16px]" data-icon="refresh">refresh</span>
+<span>刷新数据</span>
+</button>
+<!-- Notification Indicator -->
+<button class="relative p-1.5 rounded-lg border border-structural-line hover:bg-zinc-wash text-secondary-ink transition-colors" title="通知提醒">
+<span class="material-symbols-outlined text-[18px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-studio-teal ring-2 ring-surface-white"></span>
+</button>
+<!-- Profile Avatar -->
+<div class="w-8 h-8 rounded-full bg-zinc-wash border border-structural-line text-zinc-ink flex items-center justify-center font-headline-card text-[13px] font-medium" title="张教师 (指导教师)">
+        张
+      </div>
+</div>
+</header>
+<!-- ==================== MAIN CONTENT CANVAS ==================== -->
+<main class="ml-56 mt-16 p-gutter flex-1 overflow-y-auto">
+<!-- Top System Alert / Status Banner -->
+<div class="mb-5 flex flex-wrap items-center justify-between gap-3 p-3.5 bg-surface-white border border-structural-line rounded-xl">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-studio-teal text-[20px]" data-icon="verified_user">verified_user</span>
+<div class="flex items-center gap-2 text-body-secondary">
+<span class="font-headline-card text-[14px] text-zinc-ink">教师督导通道已接入</span>
+<span class="text-secondary-ink text-[13px]">· 当前处于“阶段一：需求与计划检查”复审期，已接收到最新提交修订版 (v2)。</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-caption font-body-secondary text-secondary-ink">快速筛选：</span>
+<button class="px-2 py-0.5 rounded bg-teal-wash text-studio-teal border border-structural-line font-caption text-caption">全部阶段 (3)</button>
+<button class="px-2 py-0.5 rounded bg-zinc-wash text-secondary-ink hover:text-zinc-ink border border-structural-line font-caption text-caption">已归档通过</button>
+<button class="px-2 py-0.5 rounded bg-zinc-wash text-secondary-ink hover:text-zinc-ink border border-structural-line font-caption text-caption">待重新复核</button>
+</div>
+</div>
+<!-- Asymmetrical Dual-Column Workspace Layout (Left: ~340px, Right: Flex Main) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+<!-- ================= LEFT COLUMN: STAGES & SUBMISSIONS (~340px / 4 cols) ================= -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<!-- Stage Overview Header Card -->
+<div class="bg-surface-white border border-structural-line rounded-xl p-4 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-card text-headline-card text-zinc-ink font-semibold">课程评审阶段与版本提交</h2>
+<span class="font-label-numeric text-caption px-2 py-0.5 rounded bg-zinc-wash text-secondary-ink border border-structural-line">共3个阶段</span>
+</div>
+<p class="font-body-secondary text-caption text-secondary-ink leading-relaxed">
+            教师负责按阶段核验已发布成果。阶段成果需经教师签署意见后方可归档进入下一阶段。
+          </p>
+</div>
+<!-- Stage Timeline Accordion / List -->
+<div class="flex flex-col gap-3">
+<!-- STAGE 1: ACTIVE & EXPANDED -->
+<div class="bg-surface-white border-2 border-studio-teal/70 rounded-xl overflow-hidden">
+<!-- Stage Header -->
+<div class="p-3.5 bg-teal-wash/60 border-b border-structural-line flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-studio-teal"></span>
+<span class="font-headline-card text-[15px] text-zinc-ink font-semibold">阶段一：需求与计划检查</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-secondary-ink font-label-numeric text-caption">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span>截止: 2026-10-25</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-teal-wash text-studio-teal text-caption font-medium border border-studio-teal/30">
+                审核通过 (v2)
+              </span>
+</div>
+<!-- Version History Inside Stage 1 -->
+<div class="p-2.5 flex flex-col gap-2 bg-paper-canvas/50">
+<span class="font-caption text-caption text-secondary-ink px-1.5">提交历史与版本变更</span>
+<!-- Version v2 (Active Selected Item) -->
+<div class="p-3 bg-surface-white rounded-lg border-2 border-studio-teal shadow-none flex flex-col gap-2 cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-teal-wash font-label-numeric text-caption font-semibold text-studio-teal">v2</span>
+<span class="font-headline-card text-body-secondary text-zinc-ink font-medium">提交版本 v2</span>
+<span class="text-[11px] font-caption text-studio-teal bg-teal-wash px-1 rounded">当前展示</span>
+</div>
+<span class="font-label-numeric text-caption px-2 py-0.5 rounded bg-teal-wash text-studio-teal font-medium border border-structural-line">
+                    通过 (已审核)
+                  </span>
+</div>
+<div class="flex items-center justify-between text-secondary-ink font-label-numeric text-caption">
+<span>2026-10-12 14:30 提交</span>
+<span>提交人: 组长·李长</span>
+</div>
+<div class="text-caption font-body-secondary text-secondary-ink bg-zinc-wash p-2 rounded border border-structural-line text-[12px]">
+                  修改说明：补充了角色权限矩阵与安全校验用例，更新排期至甘特图v2.0。
+                </div>
+</div>
+<!-- Version v1 (Rejected Item) -->
+<div class="p-3 bg-surface-white rounded-lg border border-structural-line hover:border-secondary-ink/40 transition-colors flex flex-col gap-2 cursor-pointer opacity-85">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded bg-zinc-wash font-label-numeric text-caption font-medium text-secondary-ink">v1</span>
+<span class="font-body-secondary text-body-secondary text-zinc-ink">提交版本 v1</span>
+</div>
+<span class="font-label-numeric text-caption px-2 py-0.5 rounded bg-zinc-wash text-secondary-ink font-medium border border-structural-line">
+                    需要修改 (已驳回)
+                  </span>
+</div>
+<div class="flex items-center justify-between text-secondary-ink font-label-numeric text-caption">
+<span>2026-10-10 11:20 提交</span>
+<span class="text-error">2026-10-11 驳回</span>
+</div>
+<div class="text-caption font-body-secondary text-secondary-ink bg-zinc-wash/60 p-2 rounded border border-structural-line text-[12px]">
+                  教师意见：缺少明确权限角色用例，联调缓冲时间不足。
+                </div>
+</div>
+</div>
+</div>
+<!-- STAGE 2: UPCOMING -->
+<div class="bg-surface-white border border-structural-line rounded-xl p-3.5 flex flex-col gap-2 opacity-90">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-headline-card text-[15px] text-zinc-ink font-semibold">阶段二：开发中期检查</span>
+<div class="flex items-center gap-2 mt-1 text-secondary-ink font-label-numeric text-caption">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span>截止: 2026-11-15</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-zinc-wash text-secondary-ink text-caption font-medium border border-structural-line">
+                未提交 (组内进行中)
+              </span>
+</div>
+<p class="font-body-secondary text-caption text-secondary-ink">
+              预期提交：核心后端接口原型、前后端联调测试记录与中期进度演示。
+            </p>
+</div>
+<!-- STAGE 3: UPCOMING -->
+<div class="bg-surface-white border border-structural-line rounded-xl p-3.5 flex flex-col gap-2 opacity-75">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-headline-card text-[15px] text-zinc-ink font-semibold">阶段三：最终系统验收</span>
+<div class="flex items-center gap-2 mt-1 text-secondary-ink font-label-numeric text-caption">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span>截止: 2026-12-06</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-zinc-wash text-secondary-ink text-caption font-medium border border-structural-line">
+                未提交
+              </span>
+</div>
+<p class="font-body-secondary text-caption text-secondary-ink">
+              预期提交：软件可执行部署包、源代码仓库签署归档、用户使用手册及终审PPT。
+            </p>
+</div>
+</div>
+<!-- Instructor Evaluation Metric Notes -->
+<div class="p-3.5 bg-zinc-wash border border-structural-line rounded-xl flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary-ink text-[18px] shrink-0 mt-0.5" data-icon="info">info</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-card text-caption text-zinc-ink font-medium">评审细则提示</span>
+<p class="font-body-secondary text-caption text-secondary-ink leading-relaxed">
+              根据教研大纲，阶段一重点评估“业务流程图闭环性”与“WBS拆解工时合理度”。若涉及数据库表设计变更，需核验数据字典一致性。
+            </p>
+</div>
+</div>
+</div>
+<!-- ================= RIGHT COLUMN: STAGE DETAILS & REVIEW FORM (8 cols) ================= -->
+<div class="lg:col-span-8 flex flex-col gap-5">
+<!-- Header Banner: Selected Version Details & Compare Actions -->
+<div class="bg-surface-white border border-structural-line rounded-xl p-5 flex flex-col gap-4">
+<div class="flex flex-wrap items-start justify-between gap-3 border-b border-structural-line pb-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2.5">
+<h1 class="font-headline-section text-headline-section text-zinc-ink font-bold">
+                  阶段一：需求与计划检查 · 提交版本 v2
+                </h1>
+<span class="px-2.5 py-0.5 rounded bg-teal-wash text-studio-teal font-label-numeric text-caption font-semibold border border-studio-teal/30">
+                  通过 (审核已归档)
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-secondary-ink font-label-numeric text-caption mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="event">event</span>
+                  提交时间：2026-10-12 14:30
+                </span>
+<span class="text-structural-line">|</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="person">person</span>
+                  提交人：组长·李长
+                </span>
+<span class="text-structural-line">|</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="timeline">timeline</span>
+                  关联计划版本：v2.0 (已发布)
+                </span>
+</div>
+</div>
+<!-- Version Switcher Pills -->
+<div class="flex items-center border border-structural-line rounded-lg p-0.5 bg-zinc-wash">
+<button class="px-3 py-1 rounded bg-surface-white text-studio-teal font-headline-card text-caption font-semibold shadow-none border border-structural-line">
+                v2 (最新版)
+              </button>
+<button class="px-3 py-1 rounded text-secondary-ink hover:text-zinc-ink font-body-secondary text-caption transition-colors">
+                v1 (已驳回历史)
+              </button>
+</div>
+</div>
+<!-- Section 1: Deliverables & Team Submission Notes -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Deliverables List Card -->
+<div class="flex flex-col gap-2.5 p-3.5 bg-paper-canvas rounded-lg border border-structural-line">
+<div class="flex items-center justify-between">
+<span class="font-headline-card text-[14px] text-zinc-ink font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-studio-teal" data-icon="folder_zip">folder_zip</span>
+                  提交交付物附件 (2份)
+                </span>
+<span class="text-[12px] font-label-numeric text-secondary-ink">完整性自检：正常</span>
+</div>
+<!-- File Item 1 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-white rounded border border-structural-line">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-7 h-7 rounded bg-teal-wash text-studio-teal flex items-center justify-center shrink-0 border border-structural-line">
+<span class="material-symbols-outlined text-[16px]" data-icon="description">description</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-card text-[13px] text-zinc-ink truncate" title="需求与计划演示.md">需求与计划演示.md</span>
+<span class="font-label-numeric text-[11px] text-secondary-ink">142 KB · Markdown 规范文档</span>
+</div>
+</div>
+<button class="px-2 py-1 bg-surface-white hover:bg-zinc-wash border border-structural-line rounded text-caption font-body-secondary text-zinc-ink flex items-center gap-1 transition-colors shrink-0">
+<span class="material-symbols-outlined text-[14px]" data-icon="download">download</span>
+<span>下载</span>
+</button>
+</div>
+<!-- File Item 2 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-white rounded border border-structural-line">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-7 h-7 rounded bg-zinc-wash text-secondary-ink flex items-center justify-center shrink-0 border border-structural-line">
+<span class="material-symbols-outlined text-[16px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-card text-[13px] text-zinc-ink truncate" title="CS301-G1_系统架构与需求规格说明书_v2.0.pdf">CS301-G1_系统架构与需求规格说明书_v2.0.pdf</span>
+<span class="font-label-numeric text-[11px] text-secondary-ink">2.4 MB · 包含角色权限矩阵</span>
+</div>
+</div>
+<button class="px-2 py-1 bg-surface-white hover:bg-zinc-wash border border-structural-line rounded text-caption font-body-secondary text-zinc-ink flex items-center gap-1 transition-colors shrink-0">
+<span class="material-symbols-outlined text-[14px]" data-icon="download">download</span>
+<span>下载</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 text-caption text-secondary-ink pt-1">
+<span class="material-symbols-outlined text-[14px] text-studio-teal" data-icon="task_alt">task_alt</span>
+<span>SHA-256 签名校验已通过，材料结构完整合规。</span>
+</div>
+</div>
+<!-- Team Submission Note Card -->
+<div class="flex flex-col gap-2 p-3.5 bg-paper-canvas rounded-lg border border-structural-line">
+<span class="font-headline-card text-[14px] text-zinc-ink font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-studio-teal" data-icon="chat">chat</span>
+                组内提交说明与变更陈述
+              </span>
+<div class="bg-surface-white p-3 rounded border border-structural-line flex flex-col gap-2 h-full justify-between">
+<p class="font-body-secondary text-body-secondary text-zinc-ink leading-relaxed text-[13px]">
+                  “已按教师于 2026-10-11 的批注意见，补充了角色权限矩阵与安全校验用例（见附件第4.2节）；更新计划至 v2.0 排期，增加了接口联调3天缓冲期；全组成员已召开组会核对一致，申请阶段一验收通过。”
+                </p>
+<div class="flex items-center justify-between text-caption font-label-numeric text-secondary-ink border-t border-structural-line pt-2">
+<span>签署人：李长、陈明、王思、赵珂</span>
+<span>全员确认已同步</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Public Progress Snapshot (Objective Read-only Metrics) -->
+<div class="p-4 bg-zinc-wash/40 rounded-lg border border-structural-line flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-card text-[14px] text-zinc-ink font-semibold">公开进度与计划快照</span>
+<span class="font-label-numeric text-caption text-secondary-ink">(只读客观镜像 · 关联计划 v2.0)</span>
+</div>
+<span class="font-label-numeric text-caption px-2 py-0.5 rounded bg-surface-white text-studio-teal border border-structural-line">
+                执行中 · 总体完成度 40%
+              </span>
+</div>
+<!-- Metric Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-label-numeric">
+<!-- Metric 1 -->
+<div class="bg-surface-white p-3 rounded border border-structural-line flex flex-col">
+<span class="font-caption text-caption text-secondary-ink font-body-secondary">任务统计总览</span>
+<span class="text-[20px] font-bold text-zinc-ink mt-0.5">4 <span class="text-caption font-normal text-secondary-ink">项</span></span>
+<span class="text-caption text-secondary-ink mt-1">进行中 2项 · 待开始 2项</span>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-white p-3 rounded border border-structural-line flex flex-col">
+<span class="font-caption text-caption text-secondary-ink font-body-secondary">关键里程碑 M1</span>
+<span class="text-[14px] font-semibold text-studio-teal mt-1">阶段一评审节点</span>
+<span class="text-caption text-secondary-ink mt-1">2026-10-25 截止 (前置闭环)</span>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-white p-3 rounded border border-structural-line flex flex-col">
+<span class="font-caption text-caption text-secondary-ink font-body-secondary">工时与风险研判</span>
+<span class="text-[14px] font-semibold text-zinc-ink mt-1">计划工时 64h / 实际 28h</span>
+<span class="text-caption text-studio-teal mt-1">无超期风险 · 缓冲期充足</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Teacher Review History & Review Evaluation Form -->
+<div class="bg-surface-white border border-structural-line rounded-xl p-5 flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-structural-line pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-studio-teal text-[20px]" data-icon="rate_review">rate_review</span>
+<h2 class="font-headline-card text-headline-card text-zinc-ink font-semibold">教师阶段审核判定与指导记录</h2>
+</div>
+<span class="font-caption text-caption text-secondary-ink">指导教师：张教师 · 审核存档</span>
+</div>
+<!-- History Item: v1 Rejected Guidance Note -->
+<div class="p-3.5 bg-paper-canvas rounded-lg border border-structural-line flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-numeric text-caption">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.2 rounded bg-zinc-wash text-secondary-ink border border-structural-line">v1 指导记录</span>
+<span class="font-headline-card text-zinc-ink font-medium">判定结果：需要修改</span>
+</div>
+<span class="text-secondary-ink">评审时间：2026-10-11 09:40</span>
+</div>
+<p class="font-body-secondary text-body-secondary text-secondary-ink text-[13px] bg-surface-white p-2.5 rounded border border-structural-line">
+              “v1中缺少具体权限角色的用例验收标准，计划甘特图中接口联调缓冲时间不足，未考虑网络适配测试耗时，请全组核对后补充并重新提交。”
+            </p>
+</div>
+<!-- Active Form: v2 Audit Decision Form -->
+<form class="flex flex-col gap-4 pt-1" id="auditForm" onsubmit="event.preventDefault(); alert('审核意见已成功保存并归档！');">
+<!-- Decision Radio Group -->
+<div class="flex flex-col gap-2">
+<label class="font-headline-card text-[14px] text-zinc-ink font-semibold flex items-center gap-1.5">
+<span>审核判定结果</span>
+<span class="text-studio-teal">*</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- Option 1: Pass -->
+<label class="flex items-start gap-3 p-3 bg-teal-wash/60 rounded-lg border-2 border-studio-teal cursor-pointer">
+<input checked="" class="mt-1 text-studio-teal focus:ring-studio-teal border-structural-line" name="auditDecision" type="radio" value="pass"/>
+<div class="flex flex-col">
+<span class="font-headline-card text-[14px] text-zinc-ink font-semibold">通过 (符合阶段要求)</span>
+<span class="font-body-secondary text-caption text-secondary-ink">成果物完整齐备，满足教学大纲阶段一指标，允许归档。</span>
+</div>
+</label>
+<!-- Option 2: Need Revision -->
+<label class="flex items-start gap-3 p-3 bg-surface-white rounded-lg border border-structural-line hover:bg-zinc-wash/50 cursor-pointer transition-colors">
+<input class="mt-1 text-studio-teal focus:ring-studio-teal border-structural-line" name="auditDecision" type="radio" value="revision"/>
+<div class="flex flex-col">
+<span class="font-headline-card text-[14px] text-zinc-ink font-semibold">需要修改</span>
+<span class="font-body-secondary text-caption text-secondary-ink">成果存在关键缺陷或缺漏，需驳回并要求小组限时修改。</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Teacher Guidance Textarea -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-headline-card text-[14px] text-zinc-ink font-semibold" for="teacherComments">
+                  教师指导意见与评审评语 <span class="text-studio-teal">*</span>
+</label>
+<span class="font-label-numeric text-caption text-secondary-ink">支持 Markdown 规范文本</span>
+</div>
+<textarea class="w-full bg-surface-white border border-structural-line rounded-lg p-3 text-body-secondary font-body-secondary text-zinc-ink focus:outline-none focus:border-studio-teal focus:ring-1 focus:ring-studio-teal leading-relaxed" id="teacherComments" rows="4">已核对补充的权限矩阵及更新后的甘特图v2.0，关键路径清晰，满足阶段一验收标准，准予通过。</textarea>
+</div>
+<!-- Constraint & Policy Notice -->
+<div class="p-3 bg-zinc-wash rounded-lg border border-structural-line flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary-ink text-[18px] shrink-0 mt-0.5" data-icon="policy">policy</span>
+<p class="font-body-secondary text-caption text-secondary-ink leading-relaxed">
+<strong class="text-zinc-ink font-medium">约束声明：</strong>阶段审核通过代表阶段成果达标，不会自动将组内任务状态变更为全部完成。组员仍需按既定排期推进具体开发与测试任务。
+              </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-structural-line">
+<div class="flex items-center gap-2 text-caption text-secondary-ink font-label-numeric">
+<span class="material-symbols-outlined text-[15px] text-studio-teal" data-icon="history_toggle_off">history_toggle_off</span>
+<span>最后保存记录：2026-10-12 15:10</span>
+</div>
+<div class="flex items-center gap-3">
+<!-- Secondary: Export -->
+<button class="px-4 py-2 bg-surface-white border border-structural-line rounded-lg font-headline-card text-body-secondary text-zinc-ink hover:bg-zinc-wash transition-colors duration-150 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="print">print</span>
+<span>导出评审记录</span>
+</button>
+<!-- Primary: Save Review -->
+<button class="px-5 py-2 bg-studio-teal hover:bg-[#255951] text-surface-white rounded-lg font-headline-card text-body-secondary font-semibold transition-colors duration-150 flex items-center gap-1.5 shadow-none active:scale-[0.99]" type="submit">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>保存审核意见</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Lightweight Micro-Interaction Script -->
+<script>
+    // Refresh button micro-interaction
+    const refreshBtn = document.getElementById('refreshDataBtn');
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', function() {
+        const icon = refreshBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.add('animate-spin');
+          setTimeout(() => {
+            icon.classList.remove('animate-spin');
+          }, 600);
+        }
+      });
+    }
+
+    // Team selector feedback
+    const selector = document.getElementById('teamSelector');
+    if (selector) {
+      selector.addEventListener('change', function(e) {
+        if (e.target.value === 'group2') {
+          alert('已切换至“二组课程项目”，正在同步阶段成果审查数据...');
+        }
+      });
+    }
+  </script>
+</body></html>

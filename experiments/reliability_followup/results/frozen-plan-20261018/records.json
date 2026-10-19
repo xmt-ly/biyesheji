@@ -1,0 +1,5726 @@
+[
+  {
+    "job_id": "FUE01-01-baseline_v2",
+    "case_id": "FUE01",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "我们给新生补一份场地预约使用说明，挂在场地目录需求下。罗霖负责，预计4小时，剩余也是4小时，11月5日动手，11月6日交付。以前置的场地目录整理为基础，它已经完成，原记录不要改。说明需要演示查找场地并提交预约；新任务尚未开始，进度0。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE01-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "56eb6248c28ad308ce973ff75112dc6f8631a7556ec5aacfce48a39d8ad213e8",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE01-01-improved_v3",
+    "case_id": "FUE01",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "我们给新生补一份场地预约使用说明，挂在场地目录需求下。罗霖负责，预计4小时，剩余也是4小时，11月5日动手，11月6日交付。以前置的场地目录整理为基础，它已经完成，原记录不要改。说明需要演示查找场地并提交预约；新任务尚未开始，进度0。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE01-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "56eb6248c28ad308ce973ff75112dc6f8631a7556ec5aacfce48a39d8ad213e8",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE02-01-improved_v3",
+    "case_id": "FUE02",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "使用提醒需求还要补一个取消预约提醒核验任务。验收先定下来：取消预约后不再提醒，正常预约在使用前只提醒一次。先把需要确认的执行安排列出来。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE02-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "5659855741f359d2c5a3201fcd4ea090e6ebae2613eaaac63be892771a5982b0",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE02-01-baseline_v2",
+    "case_id": "FUE02",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "使用提醒需求还要补一个取消预约提醒核验任务。验收先定下来：取消预约后不再提醒，正常预约在使用前只提醒一次。先把需要确认的执行安排列出来。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE02-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "5659855741f359d2c5a3201fcd4ea090e6ebae2613eaaac63be892771a5982b0",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE03-01-baseline_v2",
+    "case_id": "FUE03",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "使用提醒页面的文案核对由罗霖做，关联使用提醒需求。预计3小时，剩余3小时，11月9日开始，不依赖别的任务，还没开始、进度0。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE03-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "文案验收就是使用时间、场地名称显示正确，取消预约不显示提醒。交付哪天还没商量，请只追问这一个缺项。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE03-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "cf7a2b1e9172a87f185dbfbe17c90383ab606312cf8b0900373bc81465088501",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE03-01-improved_v3",
+    "case_id": "FUE03",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "使用提醒页面的文案核对由罗霖做，关联使用提醒需求。预计3小时，剩余3小时，11月9日开始，不依赖别的任务，还没开始、进度0。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE03-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "文案验收就是使用时间、场地名称显示正确，取消预约不显示提醒。交付哪天还没商量，请只追问这一个缺项。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE03-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "cf7a2b1e9172a87f185dbfbe17c90383ab606312cf8b0900373bc81465088501",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE04-01-improved_v3",
+    "case_id": "FUE04",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "再增加场地使用时段核验，关联场地目录，依赖已完成的场地目录整理，放在功能联调阶段。开放时段与场地目录一致就算验收通过。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE04-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 72,
+          "kind": "human",
+          "content": "这件事交给我吧，预计三小时，剩余也是三小时。今天开始，明天下班前交付。目前还没动手，进度为零。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE04-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "顾宁"
+        }
+      ]
+    },
+    "common_input_sha256": "10f1a5f201a267e6771e035ead87b32eace9568dfe1c508c6304146c52f5eea9",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE04-01-baseline_v2",
+    "case_id": "FUE04",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "再增加场地使用时段核验，关联场地目录，依赖已完成的场地目录整理，放在功能联调阶段。开放时段与场地目录一致就算验收通过。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE04-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 72,
+          "kind": "human",
+          "content": "这件事交给我吧，预计三小时，剩余也是三小时。今天开始，明天下班前交付。目前还没动手，进度为零。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE04-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "顾宁"
+        }
+      ]
+    },
+    "common_input_sha256": "10f1a5f201a267e6771e035ead87b32eace9568dfe1c508c6304146c52f5eea9",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE05-01-baseline_v2",
+    "case_id": "FUE05",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "预约记录复核现在和前置的场地申请受理撞在同两天了。请把复核挪到受理截止后的第一个工作日开始，复核仍用两个工作日。顾宁、预计和剩余3小时、原验收、描述、依赖、阶段、状态、进度及其他字段都保留。场地申请受理的安排不动，已完成的场地目录整理也不要改。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE05-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "a63e8e9a878fcb0fb9700710bd763dc8f0cf78fac3d028c6c357e3615540aefb",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE05-01-improved_v3",
+    "case_id": "FUE05",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "预约记录复核现在和前置的场地申请受理撞在同两天了。请把复核挪到受理截止后的第一个工作日开始，复核仍用两个工作日。顾宁、预计和剩余3小时、原验收、描述、依赖、阶段、状态、进度及其他字段都保留。场地申请受理的安排不动，已完成的场地目录整理也不要改。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE05-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "a63e8e9a878fcb0fb9700710bd763dc8f0cf78fac3d028c6c357e3615540aefb",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE06-01-improved_v3",
+    "case_id": "FUE06",
+    "repetition": 1,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "场地申请受理要到11月6日周五才能交付。只改它的截止日期，原开始日期、负责人、预计和剩余工时、验收、描述、依赖、阶段、状态、进度及其他字段一律保留。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE06-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "后面的预约记录复核也一起顺延：从前置截止后的第一个工作日开始，仍排两个工作日，其他全部原字段不变。场地目录整理已经完成，整个任务保持原样。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE06-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "4063eb7ab38994d93ed0b066dd666250ebb5ff27f8a08984160e6c1e04fa0e0f",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE06-01-baseline_v2",
+    "case_id": "FUE06",
+    "repetition": 1,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "场地申请受理要到11月6日周五才能交付。只改它的截止日期，原开始日期、负责人、预计和剩余工时、验收、描述、依赖、阶段、状态、进度及其他字段一律保留。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE06-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "后面的预约记录复核也一起顺延：从前置截止后的第一个工作日开始，仍排两个工作日，其他全部原字段不变。场地目录整理已经完成，整个任务保持原样。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE06-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "4063eb7ab38994d93ed0b066dd666250ebb5ff27f8a08984160e6c1e04fa0e0f",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE01-02-improved_v3",
+    "case_id": "FUE01",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "我们给新生补一份场地预约使用说明，挂在场地目录需求下。罗霖负责，预计4小时，剩余也是4小时，11月5日动手，11月6日交付。以前置的场地目录整理为基础，它已经完成，原记录不要改。说明需要演示查找场地并提交预约；新任务尚未开始，进度0。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE01-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "56eb6248c28ad308ce973ff75112dc6f8631a7556ec5aacfce48a39d8ad213e8",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE01-02-baseline_v2",
+    "case_id": "FUE01",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "我们给新生补一份场地预约使用说明，挂在场地目录需求下。罗霖负责，预计4小时，剩余也是4小时，11月5日动手，11月6日交付。以前置的场地目录整理为基础，它已经完成，原记录不要改。说明需要演示查找场地并提交预约；新任务尚未开始，进度0。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE01-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "56eb6248c28ad308ce973ff75112dc6f8631a7556ec5aacfce48a39d8ad213e8",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE02-02-baseline_v2",
+    "case_id": "FUE02",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "使用提醒需求还要补一个取消预约提醒核验任务。验收先定下来：取消预约后不再提醒，正常预约在使用前只提醒一次。先把需要确认的执行安排列出来。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE02-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "5659855741f359d2c5a3201fcd4ea090e6ebae2613eaaac63be892771a5982b0",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE02-02-improved_v3",
+    "case_id": "FUE02",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "使用提醒需求还要补一个取消预约提醒核验任务。验收先定下来：取消预约后不再提醒，正常预约在使用前只提醒一次。先把需要确认的执行安排列出来。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE02-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "5659855741f359d2c5a3201fcd4ea090e6ebae2613eaaac63be892771a5982b0",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE03-02-improved_v3",
+    "case_id": "FUE03",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "使用提醒页面的文案核对由罗霖做，关联使用提醒需求。预计3小时，剩余3小时，11月9日开始，不依赖别的任务，还没开始、进度0。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE03-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "文案验收就是使用时间、场地名称显示正确，取消预约不显示提醒。交付哪天还没商量，请只追问这一个缺项。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE03-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "cf7a2b1e9172a87f185dbfbe17c90383ab606312cf8b0900373bc81465088501",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE03-02-baseline_v2",
+    "case_id": "FUE03",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "使用提醒页面的文案核对由罗霖做，关联使用提醒需求。预计3小时，剩余3小时，11月9日开始，不依赖别的任务，还没开始、进度0。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE03-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "文案验收就是使用时间、场地名称显示正确，取消预约不显示提醒。交付哪天还没商量，请只追问这一个缺项。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE03-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "cf7a2b1e9172a87f185dbfbe17c90383ab606312cf8b0900373bc81465088501",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE04-02-baseline_v2",
+    "case_id": "FUE04",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "再增加场地使用时段核验，关联场地目录，依赖已完成的场地目录整理，放在功能联调阶段。开放时段与场地目录一致就算验收通过。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE04-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 72,
+          "kind": "human",
+          "content": "这件事交给我吧，预计三小时，剩余也是三小时。今天开始，明天下班前交付。目前还没动手，进度为零。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE04-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "顾宁"
+        }
+      ]
+    },
+    "common_input_sha256": "10f1a5f201a267e6771e035ead87b32eace9568dfe1c508c6304146c52f5eea9",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE04-02-improved_v3",
+    "case_id": "FUE04",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "plan",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "再增加场地使用时段核验，关联场地目录，依赖已完成的场地目录整理，放在功能联调阶段。开放时段与场地目录一致就算验收通过。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE04-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 72,
+          "kind": "human",
+          "content": "这件事交给我吧，预计三小时，剩余也是三小时。今天开始，明天下班前交付。目前还没动手，进度为零。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE04-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "顾宁"
+        }
+      ]
+    },
+    "common_input_sha256": "10f1a5f201a267e6771e035ead87b32eace9568dfe1c508c6304146c52f5eea9",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE05-02-improved_v3",
+    "case_id": "FUE05",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "预约记录复核现在和前置的场地申请受理撞在同两天了。请把复核挪到受理截止后的第一个工作日开始，复核仍用两个工作日。顾宁、预计和剩余3小时、原验收、描述、依赖、阶段、状态、进度及其他字段都保留。场地申请受理的安排不动，已完成的场地目录整理也不要改。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE05-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "a63e8e9a878fcb0fb9700710bd763dc8f0cf78fac3d028c6c357e3615540aefb",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE05-02-baseline_v2",
+    "case_id": "FUE05",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "预约记录复核现在和前置的场地申请受理撞在同两天了。请把复核挪到受理截止后的第一个工作日开始，复核仍用两个工作日。顾宁、预计和剩余3小时、原验收、描述、依赖、阶段、状态、进度及其他字段都保留。场地申请受理的安排不动，已完成的场地目录整理也不要改。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE05-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "a63e8e9a878fcb0fb9700710bd763dc8f0cf78fac3d028c6c357e3615540aefb",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE06-02-baseline_v2",
+    "case_id": "FUE06",
+    "repetition": 2,
+    "group": "baseline_v2",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "场地申请受理要到11月6日周五才能交付。只改它的截止日期，原开始日期、负责人、预计和剩余工时、验收、描述、依赖、阶段、状态、进度及其他字段一律保留。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE06-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "后面的预约记录复核也一起顺延：从前置截止后的第一个工作日开始，仍排两个工作日，其他全部原字段不变。场地目录整理已经完成，整个任务保持原样。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE06-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "4063eb7ab38994d93ed0b066dd666250ebb5ff27f8a08984160e6c1e04fa0e0f",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  },
+  {
+    "job_id": "FUE06-02-improved_v3",
+    "case_id": "FUE06",
+    "repetition": 2,
+    "group": "improved_v3",
+    "status": "not_run",
+    "output": null,
+    "raw_submission": null,
+    "score": null,
+    "common_input": {
+      "mode": "adjust",
+      "project_context": {
+        "project": {
+          "id": 1,
+          "name": "校园共享场地预约",
+          "revision": 4,
+          "timezone": "Asia/Shanghai"
+        },
+        "course": {
+          "id": 1,
+          "teacher_id": 12,
+          "title": "校园公共服务课程实践",
+          "description": "建设共享场地预约服务",
+          "acceptance_criteria": "完成业务核验、联调与交付展示",
+          "required_features": [
+            "场地目录",
+            "预约受理"
+          ],
+          "optional_features": [
+            "使用提醒"
+          ],
+          "references": [],
+          "status": "published",
+          "version": 1,
+          "stages": [
+            {
+              "name": "调研定稿",
+              "deadline": "2026-10-30",
+              "deliverables": [
+                "场地开放规则"
+              ]
+            },
+            {
+              "name": "功能联调",
+              "deadline": "2026-11-20",
+              "deliverables": [
+                "预约流程联调"
+              ]
+            },
+            {
+              "name": "交付展示",
+              "deadline": "2026-12-04",
+              "deliverables": [
+                "使用手册与演示"
+              ]
+            }
+          ]
+        },
+        "requirements": [
+          {
+            "id": 1701,
+            "project_id": 1,
+            "title": "场地目录",
+            "description": "查找校内可预约场地",
+            "acceptance": "列出场地名称、位置和开放时段",
+            "course_feature": "场地目录",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1702,
+            "project_id": 1,
+            "title": "预约受理",
+            "description": "按场地和时段受理预约",
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "course_feature": "预约受理",
+            "priority": "must",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1703,
+            "project_id": 1,
+            "title": "预约记录核验",
+            "description": "核验预约归属和时段记录",
+            "acceptance": "预约人、场地和时段记录相符",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          },
+          {
+            "id": 1704,
+            "project_id": 1,
+            "title": "使用提醒",
+            "description": "提示预约者按时使用场地",
+            "acceptance": "临近使用时间提醒，已取消预约不提醒",
+            "course_feature": "",
+            "priority": "should",
+            "status": "confirmed",
+            "creator_id": 21,
+            "created_at": "2026-11-02T10:00:00+08:00"
+          }
+        ],
+        "members": [
+          {
+            "user_id": 21,
+            "role": "leader",
+            "skills": [
+              "服务端",
+              "预约规则"
+            ],
+            "weekly_hours": 15.0,
+            "name": "何澄",
+            "username": "hecheng_fu"
+          },
+          {
+            "user_id": 72,
+            "role": "member",
+            "skills": [
+              "测试",
+              "开放规则核验"
+            ],
+            "weekly_hours": 13.0,
+            "name": "顾宁",
+            "username": "guning_fu"
+          },
+          {
+            "user_id": 73,
+            "role": "member",
+            "skills": [
+              "界面",
+              "操作说明"
+            ],
+            "weekly_hours": 11.0,
+            "name": "罗霖",
+            "username": "luolin_fu"
+          }
+        ],
+        "tasks": [
+          {
+            "title": "场地目录整理",
+            "description": "整理体育馆和活动室的开放信息",
+            "requirement_id": 1701,
+            "acceptance": "列出场地名称、位置和开放时段",
+            "assignee_id": 73,
+            "estimated_hours": 4.0,
+            "remaining_hours": 0.0,
+            "dependencies": [],
+            "start_date": "2026-10-29",
+            "due_date": "2026-10-30",
+            "status": "done",
+            "progress": 100.0,
+            "artifact_url": "/artifacts/venue-catalog-v1",
+            "blocker": "",
+            "stage_index": 0,
+            "key": "task_2701",
+            "existing_id": 2701
+          },
+          {
+            "title": "场地申请受理",
+            "description": "实现校内场地时段申请处理",
+            "requirement_id": 1702,
+            "acceptance": "空闲时段可预约，冲突时段被拒绝",
+            "assignee_id": 21,
+            "estimated_hours": 7.0,
+            "remaining_hours": 5.0,
+            "dependencies": [
+              "task_2701"
+            ],
+            "start_date": "2026-11-02",
+            "due_date": "2026-11-03",
+            "status": "doing",
+            "progress": 30.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2702",
+            "existing_id": 2702
+          },
+          {
+            "title": "预约记录复核",
+            "description": "对照申请单核验预约记录",
+            "requirement_id": 1703,
+            "acceptance": "预约人、场地和时段记录相符",
+            "assignee_id": 72,
+            "estimated_hours": 3.0,
+            "remaining_hours": 3.0,
+            "dependencies": [
+              "task_2702",
+              "task_2701"
+            ],
+            "start_date": "2026-11-04",
+            "due_date": "2026-11-05",
+            "status": "todo",
+            "progress": 0.0,
+            "artifact_url": "",
+            "blocker": "",
+            "stage_index": 1,
+            "key": "task_2703",
+            "existing_id": 2703
+          }
+        ],
+        "pending_cards": []
+      },
+      "messages": [
+        {
+          "id": 3701,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "场地申请受理要到11月6日周五才能交付。只改它的截止日期，原开始日期、负责人、预计和剩余工时、验收、描述、依赖、阶段、状态、进度及其他字段一律保留。",
+          "created_at": "2026-11-02T10:00:00+08:00",
+          "client_id": "FUE06-0",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        },
+        {
+          "id": 3702,
+          "project_id": 1,
+          "user_id": 21,
+          "kind": "human",
+          "content": "后面的预约记录复核也一起顺延：从前置截止后的第一个工作日开始，仍排两个工作日，其他全部原字段不变。场地目录整理已经完成，整个任务保持原样。",
+          "created_at": "2026-11-02T10:01:00+08:00",
+          "client_id": "FUE06-1",
+          "related_type": null,
+          "related_id": null,
+          "supersedes_card_ids": [],
+          "sender_name": "何澄"
+        }
+      ]
+    },
+    "common_input_sha256": "4063eb7ab38994d93ed0b066dd666250ebb5ff27f8a08984160e6c1e04fa0e0f",
+    "api_calls": [],
+    "tools": [],
+    "elapsed_ms": null,
+    "error": null,
+    "stop_reason": null
+  }
+]

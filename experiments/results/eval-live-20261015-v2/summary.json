@@ -1,0 +1,595 @@
+{
+  "groups": {
+    "agent": {
+      "planned": 20,
+      "attempted": 20,
+      "completed": 14,
+      "failed": 6,
+      "invalid": 0,
+      "not_run": 0,
+      "success": 7,
+      "success_rate_attempted": 0.35,
+      "plan_eligible_attempts": 16,
+      "feasible_nonempty": 11,
+      "plan_feasible_rate": 0.6875,
+      "clarify": {
+        "attempts": 2,
+        "success": 0
+      },
+      "infeasible": {
+        "attempts": 2,
+        "success": 2
+      },
+      "extraction": {
+        "tp": 151,
+        "fp": 107,
+        "fn": 79,
+        "precision": 0.5852713178294574,
+        "recall": 0.6565217391304348,
+        "f1": 0.6188524590163934
+      },
+      "task_extraction": {
+        "tp": 12,
+        "fp": 8,
+        "fn": 6,
+        "precision": 0.6,
+        "recall": 0.6666666666666666,
+        "f1": 0.631578947368421
+      },
+      "field_extraction": {
+        "tp": 139,
+        "fp": 99,
+        "fn": 73,
+        "precision": 0.5840336134453782,
+        "recall": 0.6556603773584906,
+        "f1": 0.6177777777777778
+      },
+      "per_field": {
+        "acceptance": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "acceptance_keywords": {
+          "tp": 6,
+          "fp": 8,
+          "fn": 2,
+          "precision": 0.42857142857142855,
+          "recall": 0.75,
+          "f1": 0.5454545454545454
+        },
+        "assignee_id": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "dependencies": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "due_date": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "estimated_hours": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "existing_id": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "progress": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "remaining_hours": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "requirement_id": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "stage_index": {
+          "tp": 9,
+          "fp": 11,
+          "fn": 9,
+          "precision": 0.45,
+          "recall": 0.5,
+          "f1": 0.47368421052631576
+        },
+        "start_date": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        },
+        "status": {
+          "tp": 12,
+          "fp": 8,
+          "fn": 6,
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421
+        }
+      },
+      "constraint_pass_counts": {
+        "duplicate_key": 11,
+        "invalid_task": 11,
+        "completed_task": 11,
+        "reserved_key": 11,
+        "invalid_requirement": 11,
+        "invalid_assignee": 11,
+        "missing_acceptance": 11,
+        "invalid_hours": 11,
+        "invalid_date": 11,
+        "date_order": 11,
+        "date_range": 11,
+        "invalid_stage": 11,
+        "stage_deadline": 11,
+        "requirement_coverage": 11,
+        "course_feature_coverage": 11,
+        "invalid_dependency": 11,
+        "dependency_time": 11,
+        "dependency_cycle": 11,
+        "weekly_capacity": 11
+      },
+      "constraint_denominator": 16,
+      "constraint_pass_ratio": 0.6875,
+      "api_requests": 44,
+      "cost_usd": null,
+      "cost_known_requests": 38,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "question_groups_expected": 8,
+      "question_groups_found": 0,
+      "unexpected_questions": 0,
+      "duplicate_questions": 0,
+      "supersedes_correct": 14,
+      "mean_elapsed_ms": 47697.7,
+      "elapsed_known_attempts": 20
+    },
+    "chat_only": {
+      "planned": 20,
+      "attempted": 20,
+      "completed": 5,
+      "failed": 2,
+      "invalid": 13,
+      "not_run": 0,
+      "success": 2,
+      "success_rate_attempted": 0.1,
+      "plan_eligible_attempts": 16,
+      "feasible_nonempty": 1,
+      "plan_feasible_rate": 0.0625,
+      "clarify": {
+        "attempts": 2,
+        "success": 2
+      },
+      "infeasible": {
+        "attempts": 2,
+        "success": 0
+      },
+      "extraction": {
+        "tp": 12,
+        "fp": 1,
+        "fn": 218,
+        "precision": 0.9230769230769231,
+        "recall": 0.05217391304347826,
+        "f1": 0.09876543209876543
+      },
+      "task_extraction": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 17,
+        "precision": 1.0,
+        "recall": 0.05555555555555555,
+        "f1": 0.10526315789473684
+      },
+      "field_extraction": {
+        "tp": 11,
+        "fp": 1,
+        "fn": 201,
+        "precision": 0.9166666666666666,
+        "recall": 0.05188679245283019,
+        "f1": 0.09821428571428571
+      },
+      "per_field": {
+        "acceptance": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 6,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "acceptance_keywords": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 7,
+          "precision": 1.0,
+          "recall": 0.125,
+          "f1": 0.2222222222222222
+        },
+        "assignee_id": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "dependencies": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "due_date": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "estimated_hours": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "existing_id": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "progress": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "remaining_hours": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "requirement_id": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "stage_index": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 18,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "start_date": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        "status": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 17,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        }
+      },
+      "constraint_pass_counts": {
+        "duplicate_key": 1,
+        "invalid_task": 1,
+        "completed_task": 1,
+        "reserved_key": 1,
+        "invalid_requirement": 1,
+        "invalid_assignee": 1,
+        "missing_acceptance": 1,
+        "invalid_hours": 1,
+        "invalid_date": 1,
+        "date_order": 1,
+        "date_range": 1,
+        "invalid_stage": 1,
+        "stage_deadline": 1,
+        "requirement_coverage": 1,
+        "course_feature_coverage": 1,
+        "invalid_dependency": 1,
+        "dependency_time": 1,
+        "dependency_cycle": 1,
+        "weekly_capacity": 1
+      },
+      "constraint_denominator": 16,
+      "constraint_pass_ratio": 0.0625,
+      "api_requests": 20,
+      "cost_usd": null,
+      "cost_known_requests": 18,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "question_groups_expected": 8,
+      "question_groups_found": 8,
+      "unexpected_questions": 7,
+      "duplicate_questions": 0,
+      "supersedes_correct": 5,
+      "mean_elapsed_ms": 26717.15,
+      "elapsed_known_attempts": 20
+    },
+    "context_only": {
+      "planned": 20,
+      "attempted": 20,
+      "completed": 10,
+      "failed": 4,
+      "invalid": 6,
+      "not_run": 0,
+      "success": 6,
+      "success_rate_attempted": 0.3,
+      "plan_eligible_attempts": 16,
+      "feasible_nonempty": 8,
+      "plan_feasible_rate": 0.5,
+      "clarify": {
+        "attempts": 2,
+        "success": 0
+      },
+      "infeasible": {
+        "attempts": 2,
+        "success": 2
+      },
+      "extraction": {
+        "tp": 113,
+        "fp": 66,
+        "fn": 117,
+        "precision": 0.6312849162011173,
+        "recall": 0.49130434782608695,
+        "f1": 0.5525672371638142
+      },
+      "task_extraction": {
+        "tp": 9,
+        "fp": 5,
+        "fn": 9,
+        "precision": 0.6428571428571429,
+        "recall": 0.5,
+        "f1": 0.5625
+      },
+      "field_extraction": {
+        "tp": 104,
+        "fp": 61,
+        "fn": 108,
+        "precision": 0.6303030303030303,
+        "recall": 0.49056603773584906,
+        "f1": 0.5517241379310345
+      },
+      "per_field": {
+        "acceptance": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "acceptance_keywords": {
+          "tp": 2,
+          "fp": 5,
+          "fn": 6,
+          "precision": 0.2857142857142857,
+          "recall": 0.25,
+          "f1": 0.26666666666666666
+        },
+        "assignee_id": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "dependencies": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "due_date": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "estimated_hours": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "existing_id": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "progress": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "remaining_hours": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "requirement_id": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "stage_index": {
+          "tp": 8,
+          "fp": 6,
+          "fn": 10,
+          "precision": 0.5714285714285714,
+          "recall": 0.4444444444444444,
+          "f1": 0.5
+        },
+        "start_date": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        },
+        "status": {
+          "tp": 9,
+          "fp": 5,
+          "fn": 9,
+          "precision": 0.6428571428571429,
+          "recall": 0.5,
+          "f1": 0.5625
+        }
+      },
+      "constraint_pass_counts": {
+        "duplicate_key": 8,
+        "invalid_task": 8,
+        "completed_task": 8,
+        "reserved_key": 8,
+        "invalid_requirement": 8,
+        "invalid_assignee": 8,
+        "missing_acceptance": 8,
+        "invalid_hours": 8,
+        "invalid_date": 8,
+        "date_order": 8,
+        "date_range": 8,
+        "invalid_stage": 8,
+        "stage_deadline": 8,
+        "requirement_coverage": 8,
+        "course_feature_coverage": 8,
+        "invalid_dependency": 8,
+        "dependency_time": 8,
+        "dependency_cycle": 8,
+        "weekly_capacity": 8
+      },
+      "constraint_denominator": 16,
+      "constraint_pass_ratio": 0.5,
+      "api_requests": 20,
+      "cost_usd": null,
+      "cost_known_requests": 17,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "question_groups_expected": 8,
+      "question_groups_found": 0,
+      "unexpected_questions": 0,
+      "duplicate_questions": 0,
+      "supersedes_correct": 10,
+      "mean_elapsed_ms": 39536.0,
+      "elapsed_known_attempts": 20
+    }
+  },
+  "limitations": [
+    "冻结别名和精确字段仅衡量机械匹配；等义重命名及其他可行日期可能低估表现。",
+    "人工复核应独立保留意见，不得回改冻结标签、覆盖机械分数或删除失败。",
+    "不同组的信息范围和调用预算不同，不能据此声称纯工具调用的因果提升。"
+  ],
+  "run_mode": "live",
+  "split": "eval",
+  "seed": 20261016,
+  "repetitions": 2,
+  "cases_sha256": "bada0c0497f91ecc45e174c957a48e93d41fecf922dd8be3b4f8d9e30182a856",
+  "protocol_sha256": "8f4befb7543d41f5707652152557c4df2a65f5fb56f2125002398719349fbb64",
+  "comparison_complete": true,
+  "coverage_by_group": {
+    "chat_only": 20,
+    "context_only": 20,
+    "agent": 20
+  },
+  "comparison_balanced": true,
+  "ranking_permitted": true,
+  "planned": 60,
+  "attempted": 60,
+  "model_requests": 84,
+  "stop_reason": null,
+  "interpretation": "只有完整且各组覆盖一致的结果可作为全套比较；局部结果不可据此排名。"
+}
