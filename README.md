@@ -67,6 +67,7 @@ Set-Location D:\DevelopTools\biyesheji
 - [交付与答辩说明](docs/交付与答辩说明.md)：无凭据打包、新目录启动与约 7 分钟演示路线。
 - [GitHub 使用说明](docs/GitHub使用说明.md)：仓库内容、换电脑获取项目和后续提交方法。
 - [云端接续说明](docs/云端接续说明.md)：脱敏项目上下文、云端安装建议和待完成事项。
+- [学生端深化与数据可视化开发计划](docs/superpowers/plans/2026-10-19-student-collaboration-and-dashboard-roadmap.md)：16项待开发功能、4个批次、数据口径及验收要求，尚未实施。
 - [交付修订版复验结果](docs/交付修订版复验结果.md)：新一轮 24 项分析、46 次请求的完整结果与限制。
 
 源码在 `backend/` 和 `frontend/`，辅助脚本在 `scripts/`。默认 `data/` 保存业务数据，`work/` 保存测试和备份材料；`.env`、数据与构建产物均已列入忽略规则。
